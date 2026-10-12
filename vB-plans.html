@@ -275,19 +275,9 @@ html{overflow-x:hidden}
 .wolfx-lp .gift .ul{-webkit-tap-highlight-color:transparent}
 
 
-/* ---- CTA LIFETIME: oro fundido metalico + brillo lento (solo en modo Lifetime) ---- */
-.wolfx-lp.life .mcta,
-.wolfx-lp.life .become-btn,
-.sticky-btn.lt{
-  background:linear-gradient(180deg,#f7dd83 0%,#e6c254 34%,#cca231 66%,#b1861d 100%) !important;
-  box-shadow:0 10px 24px rgba(178,132,25,.42),inset 0 1px 0 rgba(255,255,255,.7),inset 0 -2px 7px rgba(120,80,0,.28);
-  position:relative;overflow:hidden}
-.wolfx-lp.life .mcta::after,
-.wolfx-lp.life .become-btn::after,
-.sticky-btn.lt::after{
-  content:"";position:absolute;top:0;left:-75%;width:55%;height:100%;pointer-events:none;
-  background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);
-  transform:skewX(-20deg);animation:sweepLife 12s ease-in-out infinite}
+/* ---- CTA LIFETIME [2026-10-12]: mismo boton que Monthly (Jaime: "mismo tipo de
+   botones en lifetime que en monthly"). Fuera el oro fundido propio de Lifetime;
+   el destello de .mcta ya es comun a los dos modos. Se queda la animacion. ---- */
 @keyframes sweepLife{0%{left:-75%}30%{left:155%}100%{left:155%}}
 @media(prefers-reduced-motion:reduce){
   .wolfx-lp.life .mcta::after,.wolfx-lp.life .become-btn::after,.sticky-btn.lt::after{display:none}}
