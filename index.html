@@ -1,69 +1,62 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>WolfX Preview</title>
 <style>
-/* Indice de previews: dos grupos de enlaces grandes, comparacion al lado. */
-:root{--bg:#f4f5f7;--card:#ffffff;--ink:#14161d;--muted:#6a7180;--line:#e4e6ec;--gold:#c9a227;--gold-ink:#241a05;--soft:#fffaef;--tag:#8a6a12;
-  --f:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121318;--card:#1c1e25;--ink:#eef0f4;--muted:#a3a9b6;--line:#2d3039;--gold:#e0bd4b;--gold-ink:#241a05;--soft:#2a2516;--tag:#e8c860;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#121318;--card:#1c1e25;--ink:#eef0f4;--muted:#a3a9b6;--line:#2d3039;--gold:#e0bd4b;--gold-ink:#241a05;--soft:#2a2516;--tag:#e8c860;color-scheme:dark}
+/* Indice de previews: enlaces grandes; estados de pago rapido como controles de revision. */
+:root{--bg:#f4f5f7;--card:#ffffff;--ink:#14161d;--muted:#6a7180;--line:#e4e6ec;--gold:#c9a227;--gold-ink:#241a05;--tag:#8a6a12;--ok:#1d7a46;
+  --f:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121318;--card:#1c1e25;--ink:#eef0f4;--muted:#a3a9b6;--line:#2d3039;--tag:#e8c860;--ok:#5ccf8e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121318;--card:#1c1e25;--ink:#eef0f4;--muted:#a3a9b6;--line:#2d3039;--tag:#e8c860;--ok:#5ccf8e;color-scheme:dark}
 body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--f);margin:0}
-.w{max-width:720px;margin:0 auto;padding-block:24px 56px;padding-inline:16px}
+.w{max-width:760px;margin:0 auto;padding-block:24px 56px;padding-inline:16px}
 h1{font-size:26px;line-height:1.15;margin:0 0 4px;letter-spacing:-.4px}
-.sub{color:var(--muted);margin:0 0 22px;font-size:15px}
+.sub{color:var(--muted);margin:0 0 20px;font-size:15px}
 h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
-.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-a.go{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);text-decoration:none;min-height:44px}
-a.go b{font-size:16px}
-a.go span{font-size:13.5px;color:var(--muted)}
-a.go.main{background:linear-gradient(180deg,#e8c860,#c9a227);border:0;color:var(--gold-ink)}
-a.go.main span{color:#4a3a0a}
-a.go:focus-visible{outline:3px solid var(--tag);outline-offset:2px}
-.cmp{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:10px;font-size:14px}
-.cmp a{color:var(--tag);font-weight:600}
-.note{margin-top:12px;font-size:13.5px;color:var(--muted)}
-details{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+a.go{display:block;background:linear-gradient(180deg,#e8c860,#c9a227);color:var(--gold-ink);border-radius:14px;padding:14px 16px;text-decoration:none;font-weight:700;min-height:44px;box-sizing:border-box}
+a.go span{display:block;font-weight:500;font-size:13.5px;color:#4a3a0a}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td a{color:var(--tag);font-weight:600;text-decoration:none;display:inline-block;padding:6px 4px}
+.note{margin-top:10px;font-size:13.5px;color:var(--muted)}
+.note a{color:var(--tag);font-weight:600}
+details{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
 summary{cursor:pointer;font-weight:700;min-height:28px}
 details ul{padding-left:18px;margin:8px 0 4px;font-size:14.5px}
-details li{margin:4px 0}
-.ok{color:#1d7a46;font-weight:700}.nt{color:var(--tag);font-weight:700}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ok{color:#5ccf8e}}
-:root[data-theme="dark"] .ok{color:#5ccf8e}
+details li{margin:5px 0}
+.ok{color:var(--ok);font-weight:700}.nt{color:var(--tag);font-weight:700}
 code{font-size:.9em;overflow-wrap:anywhere}
 </style></head><body>
 <div class="w">
   <h1>WolfX: planes y checkout</h1>
-  <p class="sub">Vista previa para tocar y probar. No hay nada publicado y ningún botón cobra. Versión: commit <b id="ver">780ee96</b>.</p>
+  <p class="sub">Vista previa para tocar y probar. No hay nada publicado y ningún botón cobra. Versión: commit <b id="ver">d38768a</b>.</p>
 
   <h2>Planes</h2>
-  <div class="grid">
-    <a class="go main" href="plans-nuevo.html"><b>Planes, versión nueva</b><span>Los botones Get abren la maqueta del checkout de ese producto.</span></a>
-    <a class="go" href="plans-actual.html"><b>Planes, como están hoy</b><span>Para comparar</span></a>
-  </div>
+  <a class="go" href="plans-nuevo.html">Planes, versión nueva<span>Cada Get abre el checkout de su producto.</span></a>
+  <p class="note"><a href="plans-actual.html">Planes, como están hoy</a></p>
 
-  <h2>Checkout nuevo (maqueta)</h2>
-  <div class="grid">
-    <a class="go main" href="nuevo-1292.html"><b>Forex + Gold Monthly</b><span>$89</span></a>
-    <a class="go" href="nuevo-1744.html"><b>Crypto Monthly</b><span>$89</span></a>
-    <a class="go" href="nuevo-1754.html"><b>All Markets Monthly</b><span>$139</span></a>
-    <a class="go" href="nuevo-1999.html"><b>Forex + Gold Lifetime</b><span>$278</span></a>
-    <a class="go" href="nuevo-2001.html"><b>Crypto Lifetime</b><span>$278</span></a>
-    <a class="go" href="nuevo-2003.html"><b>All Markets Lifetime</b><span>$398</span></a>
-  </div>
-  <div class="cmp">Checkout de hoy:
-    <a href="actual-1292.html">Forex M</a><a href="actual-1744.html">Crypto M</a><a href="actual-1754.html">All M</a>
-    <a href="actual-1999.html">Forex L</a><a href="actual-2001.html">Crypto L</a><a href="actual-2003.html">All L</a>
-  </div>
-  <p class="note">Es una <b>maqueta</b>: el HTML real del checkout de hoy con el código nuevo encima, sin Stripe ni PayPal. Upgrade, Back to Monthly y los campos funcionan. Apple Pay, Google Pay y PayPal no salen aquí, y Pay Now no envía nada.</p>
+  <h2>Checkout (maqueta)</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Producto</th><th>Sin express</th><th>iPhone (Apple Pay)</th><th>Android (Google Pay)</th><th>Hoy</th></tr></thead>
+    <tbody>
+      <tr><td>Forex + Gold Monthly $89</td><td><a href="nuevo-1292.html?express=none">abrir</a></td><td><a href="nuevo-1292.html?express=apple">abrir</a></td><td><a href="nuevo-1292.html?express=google">abrir</a></td><td><a href="actual-1292.html">hoy</a></td></tr>
+      <tr><td>Crypto Monthly $89</td><td><a href="nuevo-1744.html?express=none">abrir</a></td><td><a href="nuevo-1744.html?express=apple">abrir</a></td><td><a href="nuevo-1744.html?express=google">abrir</a></td><td><a href="actual-1744.html">hoy</a></td></tr>
+      <tr><td>All Markets Monthly $139</td><td><a href="nuevo-1754.html?express=none">abrir</a></td><td><a href="nuevo-1754.html?express=apple">abrir</a></td><td><a href="nuevo-1754.html?express=google">abrir</a></td><td><a href="actual-1754.html">hoy</a></td></tr>
+      <tr><td>Forex + Gold Lifetime $278</td><td><a href="nuevo-1999.html?express=none">abrir</a></td><td><a href="nuevo-1999.html?express=apple">abrir</a></td><td><a href="nuevo-1999.html?express=google">abrir</a></td><td><a href="actual-1999.html">hoy</a></td></tr>
+      <tr><td>Crypto Lifetime $278</td><td><a href="nuevo-2001.html?express=none">abrir</a></td><td><a href="nuevo-2001.html?express=apple">abrir</a></td><td><a href="nuevo-2001.html?express=google">abrir</a></td><td><a href="actual-2001.html">hoy</a></td></tr>
+      <tr><td>All Markets Lifetime $398</td><td><a href="nuevo-2003.html?express=none">abrir</a></td><td><a href="nuevo-2003.html?express=apple">abrir</a></td><td><a href="nuevo-2003.html?express=google">abrir</a></td><td><a href="actual-2003.html">hoy</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Es una <b>maqueta</b>: el HTML real del checkout de hoy con el código nuevo encima, sin Stripe, PayPal ni pedidos. Los botones de Apple Pay y Google Pay son <b>simulados</b> (mismo alto, ancho y posición que los de Stripe) y se cambian con la píldora «Review» de abajo a la izquierda, que no forma parte del diseño. «late load» simula que Stripe los pinta tarde. El contador emula el de Elementor (10 minutos).</p>
 
   <details>
     <summary>Qué cambia y qué está verificado</summary>
     <ul>
-      <li><b>Planes</b>: botón Get bajo cada precio y abajo, con el brillo del botón Lifetime. Debajo, «Cancel anytime» o «One payment. No renewals.» y «VIP access on Telegram». El botón fijo de abajo muestra el precio. Switch to Lifetime confirma el importe sin saltar. Lifetime a $278/$398.</li>
-      <li><b>Checkout</b>: «Pay Now» como hoy. Importes sin USD. Trustpilot pegado al resumen. Tres ventajas cortas. Upgrade «Lifetime: $278 one-time». «Back to Monthly» en los tres Lifetime. Sin la línea de renovación repetida. Sin hueco cuando no hay pago rápido. Menos aire antes de Payment.</li>
-      <li><span class="ok">Integración real</span> (el código nuevo inyectado solo en mi navegador sobre el checkout público, carrito anónimo): los seis productos, una línea por carrito. Upgrade y vuelta en el mismo mercado conservando nombre, email y país. Doble clic: un solo cambio. Cambio de país, cupón inválido, PayPal (sale su botón oficial) y cripto. Sin errores nuevos.</li>
-      <li><b>Apple Pay / Google Pay</b>: <span class="ok">comprobado con Stripe real</span> en Chromium (Google Pay): los botones salen y siguen tras cambiar de país, aplicar un cupón, hacer el upgrade y volver a Monthly, sin duplicarse. <span class="ok">Prueba controlada</span> (simulada): si Stripe no pinta ningún botón, el bloque se esconde sin dejar hueco, y vuelve si los botones llegan tarde. <span class="nt">NOT TESTED</span>: Apple Pay en Safari o iPhone y Google Pay en un Android de verdad.</li>
-      <li><span class="nt">Pendiente</span>: el pago completo, el 3DS y la entrega del acceso (no hay sandbox), y abrirlo dentro de Telegram de verdad.</li>
-      <li><b>Fallos que ya estaban</b>: el píxel propio (<code>track.wolfxsignals.com</code>) no conecta y sus eventos se pierden; GA4 y Meta sí llegan. El aviso de PayPal en consola no impide que salga su botón.</li>
-      <li><b>Subir</b>: widget HTML de /plans-lp/ ← <code>plans-lp/wolfx-plans-lp-v2.html</code>; snippet «Checkout» de Elementor (página #2298) ← <code>CHECKOUT-AUDIT/checkout-snippet-elementor.txt</code>. <b>Deshacer</b>: pegar la versión de <code>2d49955</code>.</li>
+      <li><b>Upgrade</b>: franja oscura con borde dorado, etiqueta «Switch to Lifetime» y casilla real: «Lifetime access: $278» (o $398) y «One payment. No renewals.». Al marcarla cambia el plan del pedido sin cobrar; si falla, se desmarca y avisa. En Lifetime no sale; queda «Back to Monthly».</li>
+      <li><b>Resumen</b>: dos ventajas (frecuencia y «1:1 onboarding», o «Copytrading Service» en Lifetime) y «See all benefits» con el resto, sin perder ninguna.</li>
+      <li><b>Planes</b>: «Zero risk strategy» pasa a «100% automated trading. No manual execution.». En Lifetime, la referencia mensual sale como «Monthly: $89» sin tachar.</li>
+      <li><span class="nt">Pendiente</span>: Apple Pay en iPhone, Google Pay en Android, Telegram real y pago completo (no hay sandbox).</li>
+      <li><b>Subir</b>: widget HTML de /plans-lp/ ← <code>plans-lp/wolfx-plans-lp-v2.html</code>; snippet «Checkout» (#2298) ← <code>CHECKOUT-AUDIT/checkout-snippet-elementor.txt</code>. <b>Deshacer</b>: <code>CHECKOUT-AUDIT/rollback-vivo-2026-10-12/</code>, copia exacta de lo vivo.</li>
     </ul>
   </details>
 </div>
