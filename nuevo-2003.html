@@ -2429,6 +2429,19 @@ body.wx-express-vacio .wc-stripe-banner-checkout{display:none !important}
   .woocommerce-billing-fields__field-wrapper{padding-bottom:6px;margin-bottom:8px}
   .woocommerce .woocommerce-checkout #payment{margin-top:10px !important}
 }
+/* [2026-10-12] PC: el campo Country/Region va flotado a la izquierda y el
+   bloque de los campos no lo contenia, asi que "Payment" arrancaba a su
+   derecha (visto por el auditor a 1363 px; pasaba tambien antes). El bloque
+   de campos contiene ya sus flotados y el pago empieza debajo. No toca
+   Stripe ni el orden del formulario. */
+.woocommerce-billing-fields__field-wrapper{display:flow-root}
+.woocommerce .woocommerce-checkout #payment{clear:both}
+/* Al quedar debajo, el hueco hasta "Payment" son los margenes de los dos
+   bloques sumados: en PC se recortan para que el pago siga compacto. */
+@media (min-width:768px){
+  .woocommerce-billing-fields__field-wrapper{padding-bottom:10px;margin-bottom:8px}
+  .woocommerce .woocommerce-checkout #payment{margin-top:12px !important}
+}
 /* Terminos: que el texto parta dentro de la pantalla, nunca se corte. */
 .woocommerce-terms-and-conditions-wrapper .woocommerce-form__label-for-checkbox{min-width:0;overflow-wrap:anywhere}
 </style>  <!-- Trybe Attribution Pixel (Custom Domain) -->  <!-- End Trybe Attribution Pixel --> <style> .e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
