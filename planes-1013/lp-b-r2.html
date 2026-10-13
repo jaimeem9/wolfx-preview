@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX /plans-lp/ A · Debajo</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX /plans-lp/ B · Dentro de la tarjeta</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 :root{
   --bg:#f4f5f7;
@@ -47,7 +47,7 @@ html{overflow-x:hidden}
 .wolfx-lp .bill{display:flex;align-items:center;justify-content:center;gap:14px;margin:22px 0 6px}
 .wolfx-lp .bill .bl{font-size:15px;font-weight:700;color:#5f6676;transition:.15s;cursor:pointer;user-select:none}
 .wolfx-lp .bill .bl.on{color:var(--ink)}
-.wolfx-lp .bswitch{width:60px;height:32px;outline-offset:2px;box-shadow:0 0 0 6px transparent;border:0;padding:0;border-radius:40px;background:#d3d7df;position:relative;cursor:pointer;transition:.2s;flex-shrink:0}
+.wolfx-lp .bswitch{width:60px;height:32px;border:0;padding:0;border-radius:40px;background:#d3d7df;position:relative;cursor:pointer;transition:.2s;flex-shrink:0}
 .wolfx-lp .bswitch::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s cubic-bezier(.2,.7,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .wolfx-lp.life .bswitch{background:var(--gold-pill)}
 .wolfx-lp.life .bswitch::after{transform:translateX(28px)}
@@ -451,12 +451,14 @@ html{overflow-x:hidden}
 .wolfx-lp.v-b .mcta-top{box-shadow:0 0 0 1px rgba(255,255,255,.10),0 10px 30px rgba(232,200,96,.35)}
 .wolfx-lp.v-b .bt-note{color:rgba(255,255,255,.75)}
 .wolfx-lp.v-b .bt-note .bt-m,.wolfx-lp.v-b .bt-note .bt-l{color:#fff}
-.wolfx-lp.v-b .bt-note .bt-sep{background:rgba(255,255,255,.3)}
+.wolfx-lp.v-b .bt-note{flex-direction:column;gap:2px}
+.wolfx-lp.v-b .bt-note .bt-sep{display:none}
+.wolfx-lp.v-b .mhead::before{-webkit-mask-image:linear-gradient(#000 45%,transparent 80%);mask-image:linear-gradient(#000 45%,transparent 80%)}
 /* C: tira blanca con la condicion a la izquierda y el boton a la derecha */
 .wolfx-lp.v-c .buytop{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px 10px 10px 16px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 2px rgba(20,22,40,.04),0 6px 18px rgba(20,22,40,.06)}
 .wolfx-lp.v-c .bt-note{order:-1;flex:1;min-width:0;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;margin:0;text-align:left}
 .wolfx-lp.v-c .bt-note .bt-sep,.wolfx-lp.v-c .bt-note span:last-child{display:none}
-.wolfx-lp.v-c .bt-note{font-size:13.5px}
+.wolfx-lp.v-c .bt-note{font-size:13px;min-width:96px}
 .wolfx-lp.v-c .mcta-top{width:auto;flex:0 0 auto;padding:14px 15px;font-size:14px;white-space:nowrap}
 @media(min-width:992px){.wolfx-lp.v-c .buytop{flex-direction:column;align-items:stretch;padding:12px}.wolfx-lp.v-c .mcta-top{max-width:none;width:100%}.wolfx-lp.v-c .bt-note{order:1;align-items:center;text-align:center}}
 </style>
@@ -466,7 +468,7 @@ html{overflow-x:hidden}
   <div class="tb-title">Trusted by 100,000+ Members<span class="sep sep-1">|</span><br class="tb-brm">4.7 on Google Ratings &#11088;<span class="sep sep-2">|</span> 900+ Verified Reviews</div>
 </div>
 
-<div class="wolfx-lp v-a" id="wolfxLp">
+<div class="wolfx-lp v-b" id="wolfxLp">
 <script>
 /* Vista por defecto: Monthly para todo el mundo. El A/B test (Lifetime-primero vs
    Monthly-primero) se cerro el 2026-08-10: Monthly gano en clics al CTA y en ventas.
@@ -525,8 +527,8 @@ html{overflow-x:hidden}
         </div>
         <div class="msub">Premium signals for forex and gold traders.</div>
         <div class="mchips"><span>Forex</span><span>Gold</span><span>8&#8211;15 signals/week</span></div>
-      </div>
       <div class="buytop"><a class="mcta mcta-top" id="ctaTop-fg" href="https://wolfxsignals.com/?add-to-cart=1292&quantity=1">Get Forex + Gold VIP</a><div class="bt-note"><span class="bt-m">Cancel anytime</span><span class="bt-l">One payment. No renewals.</span><span class="bt-sep" aria-hidden="true"></span><span>Instant Telegram access</span></div></div>
+      </div>
       <div class="mflabel">Top Features</div>
       <div class="flist">
       <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span><span class="fbody"><span class="ft">8-15 Forex &amp; Gold VIP signals</span><span class="fd">High-quality trade ideas every week, delivered live on Telegram.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
@@ -567,8 +569,8 @@ html{overflow-x:hidden}
         </div>
         <div class="msub">Essential crypto insights with real-time alerts.</div>
         <div class="mchips"><span>Crypto</span><span>BTC &amp; altcoins</span><span>8&#8211;15 signals/week</span></div>
-      </div>
       <div class="buytop"><a class="mcta mcta-top" id="ctaTop-crypto" href="https://wolfxsignals.com/?add-to-cart=1744&quantity=1">Get Crypto VIP</a><div class="bt-note"><span class="bt-m">Cancel anytime</span><span class="bt-l">One payment. No renewals.</span><span class="bt-sep" aria-hidden="true"></span><span>Instant Telegram access</span></div></div>
+      </div>
       <div class="mflabel">Top Features</div>
       <div class="flist">
       <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span><span class="fbody"><span class="ft">8-15 Crypto VIP signals</span><span class="fd">High-quality trade ideas every week, delivered live on Telegram.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
@@ -610,8 +612,8 @@ html{overflow-x:hidden}
         </div>
         <div class="msub">Full access to all markets.</div>
         <div class="mchips"><span>Forex</span><span>Gold</span><span>Crypto</span><span>16&#8211;30 signals/week</span></div>
-      </div>
       <div class="buytop"><a class="mcta mcta-top" id="ctaTop-all" href="https://wolfxsignals.com/?add-to-cart=1754&quantity=1">Get Forex + Gold / Crypto VIP</a><div class="bt-note"><span class="bt-m">Cancel anytime</span><span class="bt-l">One payment. No renewals.</span><span class="bt-sep" aria-hidden="true"></span><span>Instant Telegram access</span></div></div>
+      </div>
       <div class="mflabel">Top Features</div>
       <div class="flist">
       <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span><span class="fbody"><span class="ft">16-30 All Markets VIP signals</span><span class="fd">High-quality trade ideas every week, delivered live on Telegram.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
@@ -1117,4 +1119,4 @@ html{overflow-x:hidden}
   setBilling(LIFE);
 </script>
 
-<div class="pv"><b>Preview /plans-lp/</b><a href="lp-a-r1.html" class=on>A</a><a href="lp-b-r1.html">B</a><a href="lp-c-r1.html">C</a><a href="web-a-r1.html">/plans/</a><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
+<div class="pv"><b>Preview /plans-lp/</b><a href="lp-a-r2.html">A</a><a href="lp-b-r2.html" class=on>B</a><a href="lp-c-r2.html">C</a><a href="web-b-r2.html">/plans/</a><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
