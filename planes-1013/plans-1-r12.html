@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · r11</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · 1 · Nota grande</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 :root{
   --bg:#f4f5f7;
@@ -685,10 +685,45 @@ html{overflow-x:hidden}
 /* abierta: la lista entera en la pagina, sin scroll propio ni sombra */
 .wolfx-lp .tp-band .tp-wrap.open .tp-grid{max-height:none;overflow:visible}
 .wolfx-lp .tp-band .tp-wrap.open .tp-fade{display:none}
+
+/* ---- [2026-10-13] OCTAVA PASADA: cabecera de Trustpilot (t-1, t-2, t-3) ---- */
+.wolfx-lp .tp-head .tp-brand,.wolfx-lp .tp-head .tp-big{display:none}
+.wolfx-lp .tp-head .tp-main{display:flex;flex-direction:column;align-items:center;gap:11.5px}
+/* 1 · Nota grande */
+.wolfx-lp.t-1 .tp-head{flex-direction:row;justify-content:center;align-items:center;gap:20px;width:fit-content;max-width:100%;margin:0 auto;padding:18px 24px;border-radius:20px;border:1.5px solid transparent;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#00b67a,#a7f3d0 50%,#059669) border-box;box-shadow:0 14px 34px -18px rgba(0,182,122,.55),0 2px 6px rgba(20,22,40,.05)}
+.wolfx-lp.t-1 .tp-big{display:flex;align-items:baseline;gap:4px;padding-right:20px;border-right:1px solid var(--line)}
+.wolfx-lp.t-1 .tp-big b{font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(180deg,#00b67a,#04805a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wolfx-lp.t-1 .tp-big span{font-size:15px;font-weight:700;color:var(--muted)}
+.wolfx-lp.t-1 .tp-main{align-items:flex-start;gap:9px}
+.wolfx-lp.t-1 .tp-rated{display:none}
+.wolfx-lp.t-1 .tp-head .tp-verified{margin-left:0}
+.wolfx-lp.t-1 .tp-big{white-space:nowrap;flex-shrink:0}
+.wolfx-lp.t-1 .tp-line1{flex-wrap:nowrap}
+@media(max-width:480px){.wolfx-lp.t-1 .tp-head{gap:14px;padding:16px 18px}.wolfx-lp.t-1 .tp-big{padding-right:14px}.wolfx-lp.t-1 .tp-big b{font-size:40px}
+  .wolfx-lp.t-1 .tp-word{font-size:17px}.wolfx-lp.t-1 .tp-head .tp-estrellas{--lado:16px}.wolfx-lp.t-1 .tp-line1{gap:7px}}
+/* 2 · Banda menta */
+.wolfx-lp.t-2 .tp-head{position:relative;overflow:hidden;width:fit-content;max-width:100%;margin:0 auto;padding:16px 26px;border-radius:999px;background:linear-gradient(180deg,#ecfdf3 0%,#d1fae5 100%);border:1px solid #a7f3d0;box-shadow:0 12px 30px -16px rgba(22,163,74,.55)}
+.wolfx-lp.t-2 .tp-head::after{content:"";position:absolute;top:0;left:-75%;width:55%;height:100%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:sweepLife 12s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.wolfx-lp.t-2 .tp-head::after{display:none}}
+.wolfx-lp.t-2 .tp-main{gap:8px}
+.wolfx-lp.t-2 .tp-word{color:#065f46}
+.wolfx-lp.t-2 .tp-line2{color:#065f46}
+.wolfx-lp.t-2 .tp-head .tp-verified{background:#fff;border:1px solid #a7f3d0}
+@media(max-width:480px){.wolfx-lp.t-2 .tp-head{border-radius:22px;padding:16px 20px}}
+/* 3 · Sello Trustpilot */
+.wolfx-lp.t-3 .tp-head{gap:12px}
+.wolfx-lp.t-3 .tp-brand{display:inline-flex;align-items:center;gap:7px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:-.6px;color:#191919}
+.wolfx-lp.t-3 .tp-brand svg{width:24px;height:24px;color:#00b67a}
+.wolfx-lp.t-3 .tp-line1{position:relative}
+.wolfx-lp.t-3 .tp-line1::before,.wolfx-lp.t-3 .tp-line1::after{content:"";width:34px;height:1px;background:linear-gradient(90deg,transparent,#c9ced8)}
+.wolfx-lp.t-3 .tp-line1::after{background:linear-gradient(90deg,#c9ced8,transparent)}
+.wolfx-lp.t-3 .tp-head .tp-estrellas{--lado:24px}
+.wolfx-lp.t-3 .tp-word{font-size:24px}
 </style>
 
 
-<div class="wolfx-lp v-a h-y2 r-claro p-0 g-3 l-0" id="wolfxLp">
+<div class="wolfx-lp v-a h-y2 r-claro p-0 g-3 l-0 t-1" id="wolfxLp">
 <script>
 /* Vista por defecto: Monthly para todo el mundo. El A/B test (Lifetime-primero vs
    Monthly-primero) se cerro el 2026-08-10: Monthly gano en clics al CTA y en ventas.
@@ -722,7 +757,7 @@ html{overflow-x:hidden}
     </div>
     <span class="sh-chip">
       <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/></svg></span>
-      <span class="t"><b>Academy + Copytrading Service</b> included</span>
+      <span class="t"><b>Copytrading Service + Academy</b> included</span>
     </span>
   </div>
 
@@ -868,8 +903,12 @@ html{overflow-x:hidden}
   <!-- TRUSTPILOT -->
   <div class="section tp-first tp-band">
     <div class="tp-head">
-      <div class="tp-line1"><span class="tp-word">Excellent</span><span class="estrellas n5 tp-estrellas" role="img" aria-label="5 out of 5 stars"></span></div>
-      <div class="tp-line2">Rated <b>4.8</b> / 5 <span class="tp-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Verified company</span></div>
+      <div class="tp-brand"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.7514 16.0928L17.5714 15.1247L19.1676 20.0428L13.7514 16.0928ZM24 8.7134H15.7381L13.1867 0.900085L10.6252 8.7134L2.36328 8.70386L9.05335 13.5497L6.49193 21.363L13.182 16.5171L17.3005 13.5497L24 8.7134Z"/></svg><span>Trustpilot</span></div>
+      <div class="tp-big"><b>4.8</b><span>/ 5</span></div>
+      <div class="tp-main">
+        <div class="tp-line1"><span class="tp-word">Excellent</span><span class="estrellas n5 tp-estrellas" role="img" aria-label="5 out of 5 stars"></span></div>
+        <div class="tp-line2"><span class="tp-rated">Rated <b>4.8</b> / 5</span> <span class="tp-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Verified company</span></div>
+      </div>
     </div>
     <div class="tp-wrap" id="tpWrap"><div class="tp-grid">
       <article class="mrc"><div class="mrc-top"><span class="mrc-av" style="background:#1a9d8f;color:#fff">D</span><span class="mrc-id"><span class="mrc-name">David</span><span class="mrc-date" data-days-ago="19"></span></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Amazing Challenge Passing Service</div><p class="mrc-tx">At first, I was skeptical. I honestly didn't think they would be able to pass my funded account challenge in just one day. They proved me wrong. They completed it in literally 7 hours, and I couldn't be happier with the result. From the beginning, they explained the entire process. They also offered a full refund if the challenge wasn't passed, which gave me a lot of confidence. However, I never had to use that guarantee because they delivered exactly what they promised. I would definitely recommend their service.</p></article>
@@ -1131,4 +1170,4 @@ html{overflow-x:hidden}
   setBilling(LIFE);
 </script>
 
-<div class="pv"><b>r11</b><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
+<div class="pv"><b>Trustpilot</b><a href="plans-1-r12.html" class=on>1</a><a href="plans-2-r12.html">2</a><a href="plans-3-r12.html">3</a><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
