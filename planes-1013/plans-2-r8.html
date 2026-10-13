@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · Reseñas oscuras (como TH)</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · 2 · Borde degradado</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 :root{
   --bg:#f4f5f7;
@@ -556,7 +556,7 @@ html{overflow-x:hidden}
 
 /* ---- [2026-10-13] TERCERA PASADA ---- */
 /* 1. Tarjeta de resena copiada de thcopytrading.com/trackrecord (.mrc). Medidas tal cual. */
-.wolfx-lp .mrc{--panel:#0d1420;--linea-viva:#26313f;--tinta:#ffffff;--tinta-suave:#a8b3c4;--tinta-tenue:#7b8698;--sube:#45c97c;--mrc-sombra:inset 0 1px 0 rgba(236,238,240,.043);color:var(--tinta);background:var(--panel);border:1px solid var(--linea-viva);border-radius:14px;padding:17px;display:flex;flex-direction:column;text-align:left;box-shadow:var(--mrc-sombra);font-size:15.5px;line-height:1.55}
+.wolfx-lp .mrc{--panel:#ffffff;--linea-viva:#e4e6ec;--tinta:#14161d;--tinta-suave:#4b5262;--tinta-tenue:#6a7180;--sube:#16a34a;--mrc-sombra:0 1px 2px rgba(20,22,40,.04),0 4px 14px rgba(20,22,40,.05);color:var(--tinta);background:var(--panel);border:1px solid var(--linea-viva);border-radius:14px;padding:17px;display:flex;flex-direction:column;text-align:left;box-shadow:var(--mrc-sombra);font-size:15.5px;line-height:1.55}
 .wolfx-lp .mrc-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:11px}
 .wolfx-lp .mrc-av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;flex:0 0 auto}
 .wolfx-lp .mrc-id{display:flex;flex-direction:column;flex:1 1 0%;min-width:0}
@@ -585,10 +585,37 @@ html{overflow-x:hidden}
   .wolfx-lp.life .savehint{margin-top:18px;margin-bottom:0}
   .wolfx-lp:not(.life) .savehint{padding-top:0;padding-bottom:0;border-width:0;box-shadow:none}
 }
+
+/* ---- [2026-10-13] CUARTA PASADA ---- */
+/* Tarjeta mas baja: subtitulo a todo el ancho, precio Lifetime en dos lineas. */
+@media(max-width:991px){.wolfx-lp .mhead .msub{max-width:none;margin-top:10px}.wolfx-lp .mchips{margin-top:14px}}
+.wolfx-lp.life .mprice .was{margin-top:3px}
+.wolfx-lp.p-1.life .mprice .life{display:none}
+.wolfx-lp.p-1.life .mprice .was::before{content:"Lifetime";margin-right:7px;padding-right:7px;border-right:1px solid rgba(255,255,255,.35)}
+.wolfx-lp.p-2.life .mprice{display:flex;flex-direction:column;align-items:flex-end}
+.wolfx-lp.p-2.life .mprice .amt{display:flex;align-items:baseline;gap:5px}
+.wolfx-lp.p-2.life .mprice .amt::after{content:"lifetime";font-size:13px;font-weight:600;opacity:.85}
+.wolfx-lp.p-2.life .mprice .life{display:none}
+/* Academy + Copytrading: el verde que lo hace premium */
+.wolfx-lp.g-1 .savehint{background:linear-gradient(135deg,#0f5132 0%,#15803d 55%,#22c55e 100%);border:0;box-shadow:0 10px 26px -10px rgba(21,128,61,.55),inset 0 1px 0 rgba(255,255,255,.18)}
+.wolfx-lp.g-1:not(.life) .savehint{box-shadow:none}
+.wolfx-lp.g-1 .sh-chip .t,.wolfx-lp.g-1 .sh-chip .t b{color:#fff}
+.wolfx-lp.g-1 .sh-chip .ic{background:rgba(255,255,255,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.wolfx-lp.g-2 .savehint{border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#16a34a,#86efac 50%,#15803d) border-box;box-shadow:0 8px 22px -12px rgba(22,163,74,.45)}
+.wolfx-lp.g-2:not(.life) .savehint{border-width:0;box-shadow:none}
+.wolfx-lp.g-2 .sh-chip .t{background:linear-gradient(90deg,#0f5132,#16a34a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wolfx-lp.g-2 .sh-chip .t b{color:transparent}
+.wolfx-lp.g-2 .sh-chip .ic{background:linear-gradient(135deg,#15803d,#4ade80)}
+.wolfx-lp.g-3 .savehint{position:relative;overflow:hidden;background:linear-gradient(180deg,#ecfdf3 0%,#d1fae5 100%);border:1px solid #a7f3d0;box-shadow:0 8px 22px -12px rgba(22,163,74,.5)}
+.wolfx-lp.g-3:not(.life) .savehint{border-width:0;box-shadow:none}
+.wolfx-lp.g-3 .savehint::after{content:"";position:absolute;top:0;left:-75%;width:55%;height:100%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:sweepLife 12s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.wolfx-lp.g-3 .savehint::after{display:none}}
+.wolfx-lp.g-3 .sh-chip .t b{color:#065f46}
+.wolfx-lp.g-3 .sh-chip .ic{background:linear-gradient(135deg,#059669,#34d399)}
 </style>
 
 
-<div class="wolfx-lp v-a h-y2 r-oscuro" id="wolfxLp">
+<div class="wolfx-lp v-a h-y2 r-claro p-2 g-2" id="wolfxLp">
 <script>
 /* Vista por defecto: Monthly para todo el mundo. El A/B test (Lifetime-primero vs
    Monthly-primero) se cerro el 2026-08-10: Monthly gano en clics al CTA y en ventas.
@@ -686,8 +713,8 @@ html{overflow-x:hidden}
             <span class="was">Monthly: $89</span>
           </div>
         </div>
-        <div class="msub">Essential crypto insights with real-time alerts.</div>
-        <div class="mchips"><span>Crypto</span><span>BTC &amp; altcoins</span><span>8&#8211;15 signals/week</span></div>
+        <div class="msub">Premium Bitcoin and altcoin futures signals.</div>
+        <div class="mchips"><span>BTC &amp; altcoins</span><span>8&#8211;15 signals/week</span></div>
       </div>
       <div class="buytop"><a class="mcta mcta-top" id="ctaTop-crypto" href="https://wolfxsignals.com/?add-to-cart=1744&quantity=1">Get Crypto VIP</a><div class="bt-note"><span class="bt-m">Cancel anytime</span><span class="bt-l">One payment. No renewals.</span><span class="bt-sep" aria-hidden="true"></span><span>Instant Telegram access</span></div></div>
       <div class="mflabel">Top Features</div>
@@ -1049,4 +1076,4 @@ html{overflow-x:hidden}
   setBilling(LIFE);
 </script>
 
-<div class="pv"><b>r7</b><a href="plans-claro-r7.html">Reseñas claras</a><a href="plans-oscuro-r7.html" class=on>Reseñas oscuras</a><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
+<div class="pv"><b>r8</b><a href="plans-1-r8.html">1</a><a href="plans-2-r8.html" class=on>2</a><a href="plans-3-r8.html">3</a><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
