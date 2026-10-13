@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · r9</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · 3 · Pastilla dorada debajo</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 :root{
   --bg:#f4f5f7;
@@ -636,10 +636,42 @@ html{overflow-x:hidden}
 .wolfx-lp .tp-more{display:flex;justify-content:center;margin-top:-34px;position:relative;z-index:2}
 .wolfx-lp .tp-more button{display:flex;align-items:center;gap:8px;height:48px;padding:13px 16px;border-radius:8px;background:#fff;color:#09090b;border:1px solid var(--line);font:600 14px/20px inherit;font-family:inherit;cursor:pointer;box-shadow:0 1px 2px rgba(20,22,40,.04),0 4px 14px rgba(20,22,40,.06)}
 .wolfx-lp .tp-more button:hover{background:#e4e4e7}
+
+/* ---- [2026-10-13] SEXTA PASADA ---- */
+/* Precio: Monthly como estaba; Lifetime segun la opcion (l-1 pastilla, l-2 pago unico, l-3 precio mensual como etiqueta) */
+.wolfx-lp .mhead .mprice{display:block;text-align:right}
+.wolfx-lp .mhead .mprice .life{display:block;font-size:13px;font-weight:400;opacity:.85;margin-top:2px}
+.wolfx-lp .mhead .mprice .was{text-align:right}
+.wolfx-lp.l-1.life .mhead .mprice .life{display:none}
+.wolfx-lp.l-1.life .mhead .mprice .amt{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.wolfx-lp.l-1.life .mhead .mprice .amt::before{content:"LIFETIME";font-size:10.5px;font-weight:800;letter-spacing:.08em;line-height:1;padding:5px 7px;border-radius:6px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)}
+.wolfx-lp.l-2.life .mhead .mprice .was{display:none}
+.wolfx-lp.l-2.life .mhead .mprice .life{font-weight:700;opacity:.92}
+.wolfx-lp.l-3.life .mhead .mprice .was{display:none}
+.wolfx-lp.l-3.life .mhead .mprice .life{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:1;padding:4px 8px;border-radius:6px;background:linear-gradient(180deg,#e8c860,#c9a227);color:#241a05}
+/* Resenas: la seccion de fbmo.net, en el azul noche de WolfX */
+.wolfx-lp .section.tp-band{--tpbg:#0b111c;margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%);width:100vw;background:var(--tpbg);padding:44px 20px;color:#f8fbff;box-sizing:border-box}
+.wolfx-lp .tp-band > *{max-width:1140px;margin-left:auto;margin-right:auto}
+.wolfx-lp .tp-band .tp-head{font-size:19.2px;gap:11.5px;color:#f8fbff}
+.wolfx-lp .tp-band .tp-head .tp-estrellas{--lado:19px}
+.wolfx-lp .tp-band .tp-line2{font-size:13.44px;gap:4.7px;color:#f8fbff;line-height:1.3}
+.wolfx-lp .tp-band .tp-link{display:inline-block;padding:14px 0;margin:-14px 0;color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:.16em;text-decoration-thickness:.055em}
+.wolfx-lp .tp-band .tp-wrap{margin-top:34px}
+.wolfx-lp .tp-band .tp-grid{max-height:min(560px,70vh);overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#24304a transparent;padding-right:6px}
+.wolfx-lp .tp-band .tp-grid::-webkit-scrollbar{width:6px}
+.wolfx-lp .tp-band .tp-grid::-webkit-scrollbar-thumb{background:#24304a;border-radius:999px}
+@media(max-width:720px){.wolfx-lp .tp-band .tp-grid{max-height:62vh}.wolfx-lp .tp-band .tp-fade{height:120px}}
+.wolfx-lp .tp-band .tp-fade{height:220px;background:linear-gradient(to bottom,rgba(11,17,28,0) 0%,rgba(11,17,28,.72) 55%,#0b111c 100%)}
+.wolfx-lp .tp-band .tp-more{margin-top:-34px}
+.wolfx-lp .tp-band .tp-more a{display:flex;align-items:center;gap:8px;height:48px;box-sizing:border-box;padding:13px 16px;border-radius:8px;background:#fff;color:#09090b;border:1px solid rgba(255,255,255,.063);font-size:14px;font-weight:600;line-height:20px;text-decoration:none}
+.wolfx-lp .tp-band .tp-more a:hover,.wolfx-lp .tp-band .tp-more a:focus-visible{background:#e4e4e7;color:#09090b}
+.wolfx-lp .tp-band .tp-more svg{width:20px;height:20px;flex:none}
+/* las tarjetas, en oscuro como las de fbmo.net y TH */
+.wolfx-lp .tp-band .mrc{--panel:#111a2a;--linea-viva:#22304a;--tinta:#f8fbff;--tinta-suave:#a8b3c4;--tinta-tenue:#8f99aa;--sube:#45c97c;--mrc-sombra:inset 0 1px 0 rgba(236,238,240,.043)}
 </style>
 
 
-<div class="wolfx-lp v-a h-y2 r-claro p-0 g-3" id="wolfxLp">
+<div class="wolfx-lp v-a h-y2 r-claro p-0 g-3 l-3" id="wolfxLp">
 <script>
 /* Vista por defecto: Monthly para todo el mundo. El A/B test (Lifetime-primero vs
    Monthly-primero) se cerro el 2026-08-10: Monthly gano en clics al CTA y en ventas.
@@ -691,7 +723,7 @@ html{overflow-x:hidden}
           <div class="mname">Forex + Gold</div>
           <div class="mprice">
             <span class="amt"><span class="pm">$89</span><span class="pl">$278</span></span>
-            <span class="life"><span class="pm">/month</span><span class="pl">/lifetime</span></span>
+            <span class="life"><span class="pm">Monthly</span><span class="pl">Lifetime access</span></span>
             <span class="was">Monthly: $89</span>
           </div>
         </div>
@@ -733,7 +765,7 @@ html{overflow-x:hidden}
           <div class="mname">Crypto</div>
           <div class="mprice">
             <span class="amt"><span class="pm">$89</span><span class="pl">$278</span></span>
-            <span class="life"><span class="pm">/month</span><span class="pl">/lifetime</span></span>
+            <span class="life"><span class="pm">Monthly</span><span class="pl">Lifetime access</span></span>
             <span class="was">Monthly: $89</span>
           </div>
         </div>
@@ -776,7 +808,7 @@ html{overflow-x:hidden}
           <div class="mname">Forex + Gold / Crypto</div>
           <div class="mprice">
             <span class="amt"><span class="pm">$139</span><span class="pl">$398</span></span>
-            <span class="life"><span class="pm">/month</span><span class="pl">/lifetime</span></span>
+            <span class="life"><span class="pm">Monthly</span><span class="pl">Lifetime access</span></span>
             <span class="was">Monthly: $139</span>
           </div>
         </div>
@@ -817,10 +849,10 @@ html{overflow-x:hidden}
   <div id="ctaSentinel" aria-hidden="true"></div>
 
   <!-- TRUSTPILOT -->
-  <div class="section tp-first">
+  <div class="section tp-first tp-band">
     <div class="tp-head">
       <div class="tp-line1"><span class="tp-word">Excellent</span><span class="estrellas n5 tp-estrellas" role="img" aria-label="5 out of 5 stars"></span></div>
-      <div class="tp-line2">Rated <b>4.8</b> / 5 <span class="tp-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Verified company</span></div>
+      <div class="tp-line2">Rated <b>4.8</b> / 5 on <a class="tp-link" href="https://www.trustpilot.com/review/wolfxsignals.com" target="_blank" rel="noopener">Trustpilot</a></div>
     </div>
     <div class="tp-wrap" id="tpWrap"><div class="tp-grid">
       <article class="mrc"><div class="mrc-top"><span class="mrc-av" style="background:#1a9d8f;color:#fff">D</span><span class="mrc-id"><span class="mrc-name">David</span><span class="mrc-date" data-days-ago="19"></span></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Amazing Challenge Passing Service</div><p class="mrc-tx">At first, I was skeptical. I honestly didn't think they would be able to pass my funded account challenge in just one day. They proved me wrong. They completed it in literally 7 hours, and I couldn't be happier with the result. From the beginning, they explained the entire process. They also offered a full refund if the challenge wasn't passed, which gave me a lot of confidence. However, I never had to use that guarantee because they delivered exactly what they promised. I would definitely recommend their service.</p></article>
@@ -867,7 +899,7 @@ html{overflow-x:hidden}
       <article class="mrc"><div class="mrc-top"><span class="mrc-av" style="background:#efe1d2;color:#7a5326">EW</span><span class="mrc-id"><span class="mrc-name">Ethan W.</span><span class="mrc-date" data-days-ago="4"></span></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Perfect for total beginners</div><p class="mrc-tx">As a beginner I was pretty hesitant about trading, but everything was smooth and easy to understand. Started in the free group then moved to VIP. Highly recommend.</p></article>
       <article class="mrc"><div class="mrc-top"><span class="mrc-av" style="background:#dfe3ef;color:#3a4a72">NH</span><span class="mrc-id"><span class="mrc-name">Nils H.</span><span class="mrc-date" data-days-ago="50"></span></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Way better than I expected</div><p class="mrc-tx">Honestly didn't expect much when I signed up, but it blew past my expectations. Got the lifetime and it's way too good, already $380 up.</p></article>
     </div><span class="tp-fade"></span></div>
-    <div class="tp-more"><button type="button" id="tpMore" onclick="var w=document.getElementById('tpWrap');w.classList.add('open');this.parentNode.style.display='none'">Show more reviews</button></div>
+    <div class="tp-more"><a id="tpMore" href="https://www.trustpilot.com/review/wolfxsignals.com" target="_blank" rel="noopener"><span>Show more reviews</span><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" d="M216 104V40h-64M136 120l80-80M184 140v68a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V80a8 8 0 0 1 8-8h68"/></svg></a></div>
   </div>
 
   <!-- CTA FINAL + REGALO DE BIENVENIDA + CUENTA ATRAS -->
@@ -1082,4 +1114,4 @@ html{overflow-x:hidden}
   setBilling(LIFE);
 </script>
 
-<div class="pv"><b>r9</b><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
+<div class="pv"><b>Precio Lifetime</b><a href="plans-1-r10.html">1</a><a href="plans-2-r10.html">2</a><a href="plans-3-r10.html" class=on>3</a><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
