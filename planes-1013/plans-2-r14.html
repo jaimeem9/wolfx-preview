@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · Mini</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · 2 · Insignia de perfil</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 :root{
   --bg:#f4f5f7;
@@ -749,6 +749,18 @@ html{overflow-x:hidden}
 /* Micro Combo */
 .wolfx-lp .tm-mc .tm-ok{font-size:.88em}
 @media(max-width:400px){.wolfx-lp .tp-band .tp-head.tm-mc{font-size:14px;gap:7px}.wolfx-lp .tm-mc .tm-stars{--lado:16px}}
+
+/* ---- [2026-10-13] DECIMA PASADA: segunda linea de la cabecera, con aspecto de TrustBox ---- */
+.wolfx-lp .tm-hz .tm-sub{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#191919;font-size:14px;gap:10px}
+.wolfx-lp .tm-hz .tm-sub b{font-weight:700;color:#191919}
+.wolfx-lp .tm-hz .tm-sub i{height:16px;background:#dcdce6}
+.wolfx-lp .tm-hz .tl-ok{display:inline-flex;align-items:center;gap:6px;color:#191919;font-weight:500}
+.wolfx-lp .tm-hz .tl-ok svg{width:16px;height:16px;flex:none}
+.wolfx-lp .tm-hz .tl-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px 5px 7px;border-radius:999px;background:#f1f1f6;color:#191919;font-size:13px;font-weight:500}
+.wolfx-lp .tm-hz .tl-badge svg{width:16px;height:16px;flex:none}
+.wolfx-lp .tm-hz .tl-3{gap:8px}
+.wolfx-lp .tm-hz .tl-sq{display:inline-grid;place-items:center;min-width:30px;height:24px;padding:0 6px;background:#00b67a;color:#fff;font-weight:700;font-size:14px;border-radius:2px}
+@media(max-width:400px){.wolfx-lp .tm-hz .tm-sub{font-size:13px;gap:8px}.wolfx-lp .tm-hz .tl-badge{font-size:12px}}
 </style>
 
 
@@ -931,8 +943,8 @@ html{overflow-x:hidden}
 
   <!-- TRUSTPILOT -->
   <div class="section tp-first tp-band">
-    <div class="tp-head tp-micro tm-mini" role="img" aria-label="Excellent, rated 4.8 out of 5">
-      <span class="tm-star"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.7514 16.0928L17.5714 15.1247L19.1676 20.0428L13.7514 16.0928ZM24 8.7134H15.7381L13.1867 0.900085L10.6252 8.7134L2.36328 8.70386L9.05335 13.5497L6.49193 21.363L13.182 16.5171L17.3005 13.5497L24 8.7134Z"/></svg></span><span class="estrellas n5 tm-stars" aria-hidden="true"></span><span class="tm-sub">TrustScore <b>4.8</b><i></i>Verified</span>
+    <div class="tp-head tp-micro tm-hz" role="img" aria-label="Excellent, rated 4.8 out of 5">
+      <span class="tm-row"><span class="tm-word">Excellent</span><span class="estrellas n5 tm-stars" aria-hidden="true"></span></span><span class="tm-sub tl-2"><span>Rated <b>4.8</b> / 5</span><span class="tl-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.3v6.2c0 4.6 3.2 8.6 7.5 10 4.3-1.4 7.5-5.4 7.5-10V5.3z" fill="#191919"/><path d="m8.6 12.1 2.3 2.3 4.6-4.7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified company</span></span>
     </div>
     <div class="tp-wrap" id="tpWrap"><div class="tp-grid">
       <article class="mrc"><div class="mrc-top"><span class="mrc-av" style="background:#1a9d8f;color:#fff">D</span><span class="mrc-id"><span class="mrc-name">David</span><span class="mrc-date" data-days-ago="19"></span></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Amazing Challenge Passing Service</div><p class="mrc-tx">At first, I was skeptical. I honestly didn't think they would be able to pass my funded account challenge in just one day. They proved me wrong. They completed it in literally 7 hours, and I couldn't be happier with the result. From the beginning, they explained the entire process. They also offered a full refund if the challenge wasn't passed, which gave me a lot of confidence. However, I never had to use that guarantee because they delivered exactly what they promised. I would definitely recommend their service.</p></article>
@@ -1194,4 +1206,4 @@ html{overflow-x:hidden}
   setBilling(LIFE);
 </script>
 
-<div class="pv"><b>Reseñas</b><a href="plans-ms-r13.html">Micro Star</a><a href="plans-mini-r13.html" class=on>Mini</a><a href="plans-hz-r13.html">Horizontal</a><a href="plans-mc-r13.html">Micro Combo</a><a href="index.html">índice</a></div><script>addEventListener("load",function(){var h=document.querySelector(".tp-band");if(h)scrollTo(0,h.getBoundingClientRect().top+scrollY-20)});</script><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
+<div class="pv"><b>Línea de abajo</b><a href="plans-1-r14.html">1</a><a href="plans-2-r14.html" class=on>2</a><a href="plans-3-r14.html">3</a><a href="index.html">índice</a></div><script>addEventListener("load",function(){var h=document.querySelector(".tp-band");if(h)scrollTo(0,h.getBoundingClientRect().top+scrollY-20)});</script><script>addEventListener("load",function(){var h=document.querySelector(".tp-band");if(h)scrollTo(0,h.getBoundingClientRect().top+scrollY-20)});</script><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
