@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · 2 · Banda menta</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX planes · Mini</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 :root{
   --bg:#f4f5f7;
@@ -720,10 +720,39 @@ html{overflow-x:hidden}
 .wolfx-lp.t-3 .tp-line1::after{background:linear-gradient(90deg,#c9ced8,transparent)}
 .wolfx-lp.t-3 .tp-head .tp-estrellas{--lado:24px}
 .wolfx-lp.t-3 .tp-word{font-size:24px}
+
+/* ---- [2026-10-13] NOVENA PASADA: cabecera = TrustBox oficial de Trustpilot, sin la marca ---- */
+.wolfx-lp .tp-band .tp-head.tp-micro{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center;gap:10px;width:auto;max-width:100%;margin:0 auto;padding:0;border:0;background:none;box-shadow:none;border-radius:0;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:17px;line-height:1;color:#191919;white-space:nowrap}
+.wolfx-lp .tp-micro::after,.wolfx-lp .tp-micro::before{content:none;display:none}
+.wolfx-lp .tp-micro .tm-word{font-weight:500;letter-spacing:-.2px}
+.wolfx-lp .tp-micro .tm-stars{--lado:21px}
+.wolfx-lp .tp-micro .tm-score b,.wolfx-lp .tp-micro .tm-sub b{font-weight:500}
+.wolfx-lp .tp-micro .tm-ok{display:inline-flex;align-items:center;gap:4px;color:#00b67a;font-weight:500}
+.wolfx-lp .tp-micro .tm-ok svg{width:15px;height:15px}
+.wolfx-lp .tp-micro i{display:inline-block;width:1px;height:14px;background:#c9ced8;font-style:normal}
+@media(max-width:400px){.wolfx-lp .tp-band .tp-head.tp-micro{font-size:15px;gap:8px}.wolfx-lp .tp-micro .tm-stars{--lado:18px}}
+/* Mini */
+.wolfx-lp .tp-band .tp-head.tm-mini{flex-direction:column;gap:9px}
+.wolfx-lp .tm-mini .tm-star{color:#00b67a;line-height:0}
+.wolfx-lp .tm-mini .tm-star svg{width:28px;height:28px}
+.wolfx-lp .tm-mini .tm-stars{--lado:30px}
+.wolfx-lp .tm-mini .tm-sub{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#191919}
+/* Horizontal */
+.wolfx-lp .tp-band .tp-head.tm-hz{flex-direction:column;gap:10px}
+.wolfx-lp .tm-hz .tm-row{display:flex;align-items:center;gap:12px}
+.wolfx-lp .tm-hz .tm-word{font-size:24px;font-weight:700;letter-spacing:-.5px}
+.wolfx-lp .tm-hz .tm-stars{--lado:26px}
+.wolfx-lp .tm-hz .tm-sub{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:#6c6c85}
+.wolfx-lp .tm-hz .tm-sub b{color:#191919}
+@media(max-width:400px){.wolfx-lp .tm-hz .tm-word{font-size:21px}.wolfx-lp .tm-hz .tm-stars{--lado:22px}.wolfx-lp .tm-hz .tm-sub{font-size:13px}}
+/* Micro Combo */
+.wolfx-lp .tm-mc .tm-ok{font-size:.88em}
+@media(max-width:400px){.wolfx-lp .tp-band .tp-head.tm-mc{font-size:14px;gap:7px}.wolfx-lp .tm-mc .tm-stars{--lado:16px}}
 </style>
 
 
-<div class="wolfx-lp v-a h-y2 r-claro p-0 g-3 l-0 t-2" id="wolfxLp">
+<div class="wolfx-lp v-a h-y2 r-claro p-0 g-3 l-0 t-0" id="wolfxLp">
 <script>
 /* Vista por defecto: Monthly para todo el mundo. El A/B test (Lifetime-primero vs
    Monthly-primero) se cerro el 2026-08-10: Monthly gano en clics al CTA y en ventas.
@@ -902,13 +931,8 @@ html{overflow-x:hidden}
 
   <!-- TRUSTPILOT -->
   <div class="section tp-first tp-band">
-    <div class="tp-head">
-      <div class="tp-brand"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.7514 16.0928L17.5714 15.1247L19.1676 20.0428L13.7514 16.0928ZM24 8.7134H15.7381L13.1867 0.900085L10.6252 8.7134L2.36328 8.70386L9.05335 13.5497L6.49193 21.363L13.182 16.5171L17.3005 13.5497L24 8.7134Z"/></svg><span>Trustpilot</span></div>
-      <div class="tp-big"><b>4.8</b><span>/ 5</span></div>
-      <div class="tp-main">
-        <div class="tp-line1"><span class="tp-word">Excellent</span><span class="estrellas n5 tp-estrellas" role="img" aria-label="5 out of 5 stars"></span></div>
-        <div class="tp-line2"><span class="tp-rated">Rated <b>4.8</b> / 5</span> <span class="tp-verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Verified company</span></div>
-      </div>
+    <div class="tp-head tp-micro tm-mini" role="img" aria-label="Excellent, rated 4.8 out of 5">
+      <span class="tm-star"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.7514 16.0928L17.5714 15.1247L19.1676 20.0428L13.7514 16.0928ZM24 8.7134H15.7381L13.1867 0.900085L10.6252 8.7134L2.36328 8.70386L9.05335 13.5497L6.49193 21.363L13.182 16.5171L17.3005 13.5497L24 8.7134Z"/></svg></span><span class="estrellas n5 tm-stars" aria-hidden="true"></span><span class="tm-sub">TrustScore <b>4.8</b><i></i>Verified</span>
     </div>
     <div class="tp-wrap" id="tpWrap"><div class="tp-grid">
       <article class="mrc"><div class="mrc-top"><span class="mrc-av" style="background:#1a9d8f;color:#fff">D</span><span class="mrc-id"><span class="mrc-name">David</span><span class="mrc-date" data-days-ago="19"></span></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Amazing Challenge Passing Service</div><p class="mrc-tx">At first, I was skeptical. I honestly didn't think they would be able to pass my funded account challenge in just one day. They proved me wrong. They completed it in literally 7 hours, and I couldn't be happier with the result. From the beginning, they explained the entire process. They also offered a full refund if the challenge wasn't passed, which gave me a lot of confidence. However, I never had to use that guarantee because they delivered exactly what they promised. I would definitely recommend their service.</p></article>
@@ -1170,4 +1194,4 @@ html{overflow-x:hidden}
   setBilling(LIFE);
 </script>
 
-<div class="pv"><b>Trustpilot</b><a href="plans-1-r12.html">1</a><a href="plans-2-r12.html" class=on>2</a><a href="plans-3-r12.html">3</a><a href="index.html">índice</a></div><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
+<div class="pv"><b>Reseñas</b><a href="plans-ms-r13.html">Micro Star</a><a href="plans-mini-r13.html" class=on>Mini</a><a href="plans-hz-r13.html">Horizontal</a><a href="plans-mc-r13.html">Micro Combo</a><a href="index.html">índice</a></div><script>addEventListener("load",function(){var h=document.querySelector(".tp-band");if(h)scrollTo(0,h.getBoundingClientRect().top+scrollY-20)});</script><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.9);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin-right:2px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
