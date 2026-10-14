@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX bloque final r1</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX bloque final r2</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 :root{
   --bg:#f4f5f7;
@@ -805,20 +805,18 @@ html{overflow-x:hidden}
 .wolfx-lp .tp-band .tp-more button svg{width:20px;height:20px;flex:none}
 .wolfx-lp .tp-band .tp-more button{border-color:#E4E4E7;box-shadow:0 1px 2px rgba(9,9,11,.06),0 6px 18px -6px rgba(9,9,11,.18)}
 
-/* [2026-10-14] bloque final, variante 1: vale de regalo, dos columnas en PC */
-.wolfx-lp .gift.gv1{background:radial-gradient(ellipse 70% 120% at 50% 0%,rgba(232,200,96,.22) 0%,rgba(232,200,96,0) 70%),linear-gradient(160deg,#171c29 0%,#0b0e15 100%);border:1px solid rgba(232,200,96,.28);box-shadow:0 24px 60px -24px rgba(11,14,21,.55),inset 0 1px 0 rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;gap:6px;padding:34px 22px}
-.wolfx-lp .gift.gv1::before,.wolfx-lp .gift.gv1::after{content:"";position:absolute;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:var(--bg)}
-.wolfx-lp .gift.gv1::before{left:-13px;box-shadow:inset -1px 0 0 rgba(232,200,96,.28)}
-.wolfx-lp .gift.gv1::after{right:-13px;box-shadow:inset 1px 0 0 rgba(232,200,96,.28)}
-.wolfx-lp .gift.gv1 .gift-flag svg{width:14px;height:14px}
-.wolfx-lp .gift.gv1 h3{text-wrap:balance;font-size:26px;line-height:1.15;margin:0}
-.wolfx-lp .gift.gv1 p{margin:8px auto 0;max-width:360px}
-.wolfx-lp .gift.gv1 .gv-lab{margin-top:14px;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.wolfx-lp .gift.gv1 .cd{margin:10px 0 18px}
-.wolfx-lp #becomeBtn{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-@media(min-width:900px){.wolfx-lp .gift.gv1{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;gap:36px;padding:40px 48px;max-width:920px}
-.wolfx-lp .gift.gv1 .gv-l{flex:1 1 0;padding-right:36px;border-right:1px dashed rgba(232,200,96,.35)}
-.wolfx-lp .gift.gv1 .gv-l p{margin-left:0}.wolfx-lp .gift.gv1 .gv-r{flex:0 0 auto;text-align:center}.wolfx-lp .gift.gv1 .gv-lab{margin-top:0}}
+/* [2026-10-14] bloque final, variante 2: casi negro con halo dorado (mismo lenguaje que la franja de arriba) */
+.wolfx-lp .gift.gv2{background:radial-gradient(ellipse 60% 90% at 50% 0%,rgba(232,200,96,.30) 0%,rgba(232,200,96,0) 72%),#0d0b14;border:1px solid rgba(232,200,96,.25);box-shadow:inset 0 -1px 0 rgba(232,200,96,.45);padding:38px 22px 34px}
+.wolfx-lp .gift.gv2 .gift-flag svg{width:14px;height:14px}
+.wolfx-lp .gift.gv2 h3{text-wrap:balance;font-size:27px;line-height:1.18;max-width:520px;margin:0 auto}
+.wolfx-lp .gift.gv2 .gold{background:linear-gradient(100deg,#d4a935 0%,#fbe29a 30%,#fff6d6 45%,#fbe29a 60%,#d4a935 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gvShine 6s ease-in-out infinite}
+@keyframes gvShine{0%,55%{background-position:100% 0}100%{background-position:-50% 0}}
+@media(prefers-reduced-motion:reduce){.wolfx-lp .gift.gv2 .gold{animation:none}}
+.wolfx-lp .gift.gv2 p{margin:12px auto 4px;color:rgba(255,255,255,.72);max-width:420px}
+.wolfx-lp .gift.gv2 .cd{margin:20px 0 22px}
+.wolfx-lp .gift.gv2 .cd-u{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border-color:rgba(232,200,96,.30);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.wolfx-lp .gift.gv2 .cd-u b{color:#f6e08f}
+@media(min-width:900px){.wolfx-lp .gift.gv2{padding:48px 32px 44px}.wolfx-lp .gift.gv2 h3{text-wrap:balance;font-size:32px}}
 </style>
 </head>
 <body>
@@ -1056,24 +1054,18 @@ html{overflow-x:hidden}
 
   <!-- CTA FINAL + REGALO DE BIENVENIDA + CUENTA ATRAS -->
   <div class="section">
-    <div class="gift gv1">
-      <div class="gv-l">
-        <span class="gift-flag"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Exclusive welcome gift</span>
-        <h3>Join before the timer ends</h3>
-        <p>and unlock an exclusive gift we have <u class="ul">never given before</u>.</p>
-      </div>
-      <div class="gv-r">
-        <div class="gv-lab">Offer ends in</div>
-        <div class="cd" id="cdBox" role="timer">
+    <div class="gift gv2">
+      <span class="gift-flag"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Exclusive welcome gift</span>
+      <h3>Unlock a gift we have <span class="gold">never given before</span></h3>
+      <p>Join VIP before the timer runs out. Your gift is unlocked the moment you join.</p>
+      <div class="cd" id="cdBox" role="timer">
         <div class="cd-u"><b id="cdH">08</b><span>hours</span></div>
         <i>:</i>
         <div class="cd-u"><b id="cdM">05</b><span>min</span></div>
         <i>:</i>
         <div class="cd-u"><b id="cdS">30</b><span>sec</span></div>
       </div>
-        <a class="become-btn" id="becomeBtn" href="https://wolfxsignals.com/?add-to-cart=1292&quantity=1">Become VIP Now</a>
-        <div class="gift-note">Your gift is unlocked the moment you join</div>
-      </div>
+      <a class="become-btn" id="becomeBtn" href="https://wolfxsignals.com/?add-to-cart=1292&quantity=1">Become VIP Now</a>
     </div>
   </div>
 
@@ -1271,4 +1263,4 @@ html{overflow-x:hidden}
   setBilling(LIFE);
 </script>
 </body>
-<div class="pv"><b>Bloque final</b><a href="bloque-r1-0.html">actual</a><a href="bloque-r1-1.html" class=on>1</a><a href="bloque-r1-2.html">2</a><a href="bloque-r1-3.html">3</a></div><script>addEventListener("load",function(){var h=document.querySelector(".gift");if(h)scrollTo(0,h.getBoundingClientRect().top+scrollY-80)});</script><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.92);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin:0 2px 0 4px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
+<div class="pv"><b>Bloque final</b><a href="bloque-r2-0.html">actual</a><a href="bloque-r2-1.html">1</a><a href="bloque-r2-2.html" class=on>2</a><a href="bloque-r2-3.html">3</a></div><script>addEventListener("load",function(){var h=document.querySelector(".gift");if(h)scrollTo(0,h.getBoundingClientRect().top+scrollY-80)});</script><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.92);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin:0 2px 0 4px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
