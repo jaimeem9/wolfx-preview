@@ -1,0 +1,1375 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex"><title>WolfX tarjeta r35</title><style>body{margin:0;background:#f4f5f7}</style></head><body><style>
+:root{
+  --bg:#f4f5f7;
+  --card:#ffffff;
+  --ink:#14161d;
+  --ink-soft:#3a3f4c;
+  --muted:#6a7180;
+  --line:#e7e9ee;
+  --gold:#c9a227;
+  --gold-2:#e0bd4b;
+  --gold-pill:linear-gradient(180deg,#e8c860 0%,#c9a227 100%);
+  --gold-soft:#fffaef;
+  --green:#16a34a;
+  --navy:#1b2231;
+  --radius:18px;
+  --shadow:0 8px 30px rgba(20,22,40,.08);
+  --shadow-soft:0 2px 10px rgba(20,22,40,.05);
+  --hero:url('data:image/webp;base64,UklGRqAvAABXRUJQVlA4IJQvAACwFQGdASr4AvoBPt1ur1OopiSsIpNJcYAbiWlDuM6L4d2fsgD3hWMJ/oaZs5F2Pb0ye6An9ceh3zc/jdQR88mcfReSV355zf7bvv+bmoL+V/0bfTd+8xH3C/E+cd+b54eIJwb9APxjdFP2D7Bn8//x3XA9JsW/nJ+cKT84Un5wpPzhSfnCk/OFJ+cKT84Us4Jcm1HJnCk/OFJ+cKT84Vuajk2o5M4Un5wpPzhSfnCk/O80zhSfnCk/O/ETseBticDbE4G2JwNsczbE42PPvYgpjwNjF5qvHmfCk/OFJ+cKT84kNfrDX5yftRuR/zQjLOGe6NZv4Z8KT84VuOFJ+cSGvzlnIP83LOTfiy7E4G2JwNsTgbcvG2OZty/Y/RVhr84kKZ7o1XjzPhSfnCk/N0q5LicP0b8r+w1+XvlfJp8m/G5TOFJ+cSAdYm4+jMAOoYONtf7zV+5P2ouopM1iQpn3n2CXJnCiNsrlGPrvafQw6z1Oy8pnYO+kNlOzOwqB4OTV5+Z3+cXHQMhEk7E44OiWYRj03FY5Lx5hKGgDQQFI3uUskug6j/7Xiilc4c7zM/qL9zmoZDyccniufkIBUeEYiwGZmZ83PavFxejmhr9ZrdQHnJ8t4rCq8abfvEKZus7BWcxSpU50PAzZmTJ5Icx+7ove3Kzn4v3AIbdg77DvUfV7j6OUpP8m1LoiZg+TrzRoLkXdXQtfTvLOCG043gpF/1tsKmb8j14Ll2Xu6hCrapTBNjsmh4uwaV2WV8zCsLjsdsHQuw5vHFLxsWxPtLC+iqksIcgjX8FFrlLEWeIFJ1N5vuE5oeByAnr0lo3RR4m8GTWj0IsvQTrSSRmJ7mglAghYqORoObpsH+uTdQsPynpQkp1dZqfbQFQ4LfwpQhdyvko77kIlYY0vqordWT8Axzy4n18xPdytrEot3CBslIaQFHMkATkFde6YI8/DwiAkBaSlZmvkQfTX+PNXl6vX36TFkUexV33Kg8Mff9eDT3XdxdNErVIZzxJ5tYQ56gqarziXUTIl//N2oCbLUUx//OLXB8szH5jl2Yobsn9OMjDFt65AKi/vC2eNTUs1Tw9Yj7KPIbFkgd2/ADQekiNCwuO75w0/cZbimPAs5ZK6NaldA58n1qgQU2pM5BgtTjkYUMu7KRJT4x96y3vutOP+oCp+p5wRSJh8tlS41MLGmL/1TKfrmQvAKfYKlTiQaqPzbjgY0zcb4RrYD4a0+mNBwpM65ZeyzzVnroLflInVw3a70vyfIvA870Om2YiIUvj86Yc59nS6BCTcE2YC1HbBKt0DQZYSR/8jx0O/TdXNHjZA15gnCB/xN8XNlhS6CCPYPr6mrN9J/BkNn7ir20lRHoQQw3sXl7SJT8+Fj9ukX205pvjP4GEMX8bipnNSvSyPgLdQtg4+oD3f/m+DLebD/QQnP8x3gNcc0Dzku3Mx5yJzkI4RS/kKZjc9CtEdwM0UP+QlLTEslbmCw1UNMT2R8DKYTmCTJ5Rah//wxtp6rFKhK/yzamZ6wL5gv3H7z/43GQklNtAcqIb0W/czpUCMi85A38HfWBumAkhxCJKDeU4I5ItqlXAV9BzEVbuorXJEUrJX+iQ3fSpt/w4aNv/5rKhORAk6+R1Mxyl5XFTavZmyUIyC3QOwzQvpsZPYqA39X/y5kliI10lHVgtUfJqqpHCc10PSFK1V36AgEqrZaOEG4TmO0+eQ2x6y62eYI3CcC5yDP28LA6H0eKGvHmfwf1QsjKuwtPgNivqGdZi5mfl8zsQZUDuHNBSOUlH3agvqPJTqhTLZQ91/jwmh+SY7VlkxdZR0jRL9NaYYqYKhHTqQP11Y+EkKc9C7oVJuxnwZt90a8eZ7na94ecOLi9ll7AaePYEj550HBmQdWPQy8o5HTO2VRwTAal/IB1vyMdQZ8VJ7Bt0BKzLafeGICK7UVPtfuN477iYj1uZp5pn/rt0uFrEdgjWLkcoGmMfbDnq+WZhKAq6cSzk/NzrV/98IxVvYnve5mGpOY8gdZIt47S6juyBFsb9dx0OVa0nB0CK0tTwn8UqtYb3mA1NL+HmDlP0dXyDetfUP6ttSWAP9eiIPqhhlcf4m7AMEah6J+cUPU17D/xpE/KBa5Au2cxw38H+3sn5ws35S4wrWpDPbSBRHRKUNSP5eJBz9HH6kuxig9cA/dYUY9VXuflI2oGxlIB6CLKTTCMYMLHA2680zMWAiUnQldTZGV6R++X+zwWqD3ToBw0mcKYE/OT8+GT7KuvhShEmqmJoTBFoc0Xwn1P5y7ZHgyV//p9/GjAZpbzha8yEuz3ANeB0J4s6IscJbxn6bnIdO4O09BTKure/YA3elv503aANBoCZ/DKHoINoBOyJl48z3NCRje2LR6aNYDDx3bX6nNkAs0DdBJjCS1X92M0WK06Q83tyjjgqJxOZu8yrpXzdKu621XaHeY8GJycGKOzX+b1GNbSOsMrkHpSBBXFfXgH7aFGB+pzCF/GEeLdhYr+8TyREVTlmrGw6se5bBw27NZsPFqwdnL6Aluum2N7gY2W6pZlQfnuzBj6ACdkTL0W1tvG5FuFVEZvn/p0rBw8kR/KLGa22C3ckiLn6iOlYI2iCtY0gSeuD2YMcsOFOht2eSOpATR/vS37yocjUHijT9oREHgaiovZJxOk0ppQmhLGEgiMXVTvUUhUuStRTk/PmCMS6Y8s0txfbvu5COSL5YeHth/xktWlnrmhWBB4fu9KJXxQHGe8H4cvOuu7Ts0HwHhqkFq38a3s7xAZYANmGHaQHyLfh/gtenJ+jwyVo6X+Yb58IJNNud0uAAqZ8WVQdJ08V86kf+JeHUW3+GENSBlWwhHGsxhOetucnW2l0IDO+aPaWWLPpnCYgLLkTVAt2iZGMd0PEBuPKXvy5zTFEKY33XxhkFem/3gMticav8BfizU0UaSx0YPD4GhegigtG8bUWLBbZZvMVC4h/BIqAAAP73K5QzNtABerdnkx9WVN9G1UAAADwAI0F4AEqhjlSMlqgAk4ANKYHmy5/gNC2ATjwEz5RfgC8g3cAr+q1K7UAIq42ru+Kv5JapNpO4vPcACz9w3kiba78S9l1a9uyKvpOWNJiThwJQs0A5kvIUEeVHpOpXV1y9EbDDKUUmaHuZKgoNRVWnnLT+eAAA4avRinsYiKk20RHZDbUOWRRJNmwjgEvyRiu1S5+gt6VPu5BWsLi+qXC4FIuV6+ETYOGH4CUgjX0Q3P9tLmpIyB9Ms2wQLU+IEdHuRkZw/NyT5MDJN3kXahP87Vu8+irDp0D1zqjxKKQ+D6iUq2LiADRt5Q+B5rGS5cyXI6CSVhy6lt6L55CnE/oM67hV77NcPjuPXQNI3Uin/iYY3V0UEU3D7Nm8XlH5Mnhth8rFmg7EwthevAzHTFNBzRLELoluIh21EqDfjsOjUE3Po+I2PgZED31leEGThBUV6mhKEw8xMQqG4NArU1Lc8d9oH0BAO2w03kwHcE13KZy/MlAdrn8dghHFsi3TNi8ibWeOZsPQv9e5Dj/RUf65dATJ2L0PaDNa9Qt6TNQLiMCDAxdNUd+wEXgBN7TW/vn1mCnELqm2H+SlowonoBqnY7viFYCuIeA4rnKs3+uYdwMHMQEroNkVystvYsDTOlcx0Ukf4i3oyRCJ/NRtpLI9u57kXzeC5ytpOpqx1sLH1q33HA5fZeOBcpnxMzHYLHYfc5t0p5n7kZmDt/ouXINNUIIxtfrVuoL+c7jGgjy14mlHR8KSctya7qlwylod93wb7+u+vjZpY+AGk/Xs6wVCDoABk5OB2GwPBg4ZKAupr3X0v/hQF7huunRXeb2LYm+ivEIZbiwrsSqUxsD7x10+WwjuBvbMHszAjo0M+bIlPMDggKtwDv/NgtD9FchTQqrEtHHlxNfEcRbKFmrECdzgIbqv+EnNB+RlLpYta0LoLrQkJ6BHm4kNX7XJJ40noz+DXHhoW9h62H2fqAILnQvvx5Sd+w9boaW/AhXtBf39+bcovfPXd2H6ClfEEut1YuJSWyza0OygA+VxRqCfrpgwxB1hI2sEWaskTJupj8eZDuf80DsiA4KQUxh9f9tlOAvJ1JtN7EZqPkymSrUYLNlnPhFOMciKfGv21pxqPI/mCemTQSvtx3zgQztotKiUau9Q+6s9etnq+qClIVZ0vysXvzORBIryzN5FxLtzV5B6xurmhF6DL3LQGh5eI1mxntVFh0wAg3/swTYVx7z+qXswPL963Xe8yQsBgZ6No9y+9EkQ66CM9aw1sAoyuwnzY9HMLYhzHJnDJVURFsWQndTrVfc7Z88KTgsUpwbsbtcF5bfby03OxdXkWO7YAvh1WqKASD5pYIPQ8q69ALpGhiyc09U3GVfnIvZTgMRqxaBcmKHBt0TyDWcsyi9WmsPZ6g6miBQHPKhl+sFEAb0iaoeJABYnQj5fMY/Nh3bgYKkQAYi9tFityABl8q6pUG7cMLhsXjDqTHInrsh6pZIhz2Al2ZEC+rHFS3whUjGjfSMLGaoHVwdOHJgaqdAEIdtufQ2FtqYGk3JlKFMXtga7Zq9agc7mi0UCcnTMoexs4qob1pDmAcHqFtb5X4/WjVR5mwepv/KgTzLEVRkc61lJSEER1+xSA9gu33qJhpgLMNsn7PQtv0oko62vQHwinEFzvcCWzfrAnf2/xLtYfeVcDfxBXDWIVS/JJ7PFabgAnv8SlE8cLdQK++1jQGlVtMepp2fjGyLYm8HXmq/0dVzgzVDjP54JqCZEzxTUXOm7yjC08i9Av0q/mT42ONSN3hbxDqiAyyc79DXNY/FHfF89djTDbnNq37nlBVUBL/lZSswQ5Ifd4qKHERYy3c23QU9SQ9PHaQwDGKb3Gh6FfR5QOslV47kalRoLlT4IF2Bg2wULaG5hifoPc6XKk0gcyPhGcxgP8ysptfafPhR9cJojSSTwG7x0Y0RGx9/Tl7ntbVFEZZqhgXy4AlgPOrDKyUAQ6y0vOlLKykMFVdLNQv1xCB6ygA0ylbIAcEVxQw1BybYtDXnfBehNuSCUeDER43lq/yT+ugSbCCUcGiu5J9S/3yUBL4KZND108Vx8e2EcoSlYUWhcVsr3EpQtAzq3d1uW+yaUIgfsqwBx2IRnt2e3923Pg2wLiaxqXBA2EZILx7ItczLvgIIjY52blPN2Qk8SOi8H77gnMzikwHhNGkbWZ8iUHpqX7Sc/uGJB2gjlBO6hqD51dZYMxmIeq6gMIAWQmrfKNmIN+4kKx/RmEfThJdDAIGevlSA/zaS3sWGKzfg2II6e/Dqp1WK6kkiUoLEA8o5RicfuPkVizkXZP7zbRYUil3SFCeddg50SHnOJN31wKRxnkoM0BSf/ZQHdop/gjo731bjqO38Zdlu1ybdmgxySQPfIUaMomnfpVpbergWqp7WycXyqYRw8TJjGmi9nD9wriJdSrkt+hyy7qyTqUUPuTXHHK/LLCZl5rSp0U/eNzTa306ac1CzX1VhyJksmbbJNcroOCp1GctMp1UXCDlL+peGjbczlXCI1eY9isQA8p1sPMsujGue6ah43xKzQO/q2fI5sO1eSlstyaQyosjXFhxpJeCuQ/8u+9qL5r0G7CJ0fSLtrqra4oap9laEhsBVfnZP5jLk62thARVCVZtFZHbiPok2QR6UNiu5UxCpNrJGNzqKgldqVH2gwJ0Euu78nQAp07DdPuK0LWI1eThZGL+38NW/93M/yzNVH8F6dRv+Z8MozdsTotgPHBe1qu28phsdBzPVpLZFoepha1EPKN9mI1O1kk1QQn+5Wb8xOmXj76E/m21OATpgbnHC08jCAIANe9rJefDHxTOxRlXkte/oxM7WM3WtIIfe6KimMCvZG6dyVnK6Yw1f46BnZ315pU9y5LFIQo7D5mTebYf8SZRCRB97elW7XO6BQwORmBpA+sN9L8RKr+KD9b9XEAyd6fE3QojdqCbm1bVXqMlr0vrSzjmGxqguT/ogw8POVSpvHCVrH5LzUWU8reRZ6/mcd0U4V832LCEfYNYmRbQWdBxCUJz2dipYxaIxO10K6tV5TFgyANEfobqJOn4EBxM9vwsAM3PUxDPh2leB1ygEBUKW9tgAPoka1dWoc33q+CuqDm0RKIXb4Rz0+GBRVZA0MH5ndySRBWdiR9VjvK4yqbKFcd7uc3A0etFGuE1DKIiXltMq6daN0teE3Bs5zWenc2zM0hAg5YzSPHy8Lm9XLJKhorkB3yOvOJkIULYhbogFsDz+QqHzeq8NpGZDMb2yQVh7BLSY+euXg2QTdXXzIzBhhFeYX/d6NS48PdEKr/svLHmtXc7XnKflOjJgRMXqEW7Szv0F0h6Lm0NP7CNPKtyVihxaw7nu3vfeQNrKYSEIX8Yl1nwwhP4BBe2SqJ+hufIaSd0Gz13o8AVPeM+DiRMND8s2KiX0X7zVmS8WzAWKMH2JfD0U+3IEoQ4iRX2G/C2oD1WbDILJP1uKa073RJPcQHQxFZbAAvh7TAwxu4Q6zQkCbCp4Fw+SM7+qMaWKWd+ptx0dgIXGJoBH8WJyP6s8hxzUZzUNVx+esIgIgkJVKhXA4o7TRX5wyE5fOi69rktPRAlI3DUO4W3Ad2tmo6yVwwBpVkrd06bPG0Q8feTjpZ9Hi5KeqIvkOlxRENTrXJ31x/T/kb7zIoXEOEvbFHmwHRSmZIh5Dnc6mz4r8Pf05wpwL1qr+KQUNFaTB/hfZ7KAzYxfngJnjrAmHzP35p3ZEIPz5n/LJ2KVvx0tP8dGrm6SRBGuxafRGG4xEn0pgQH6M7oER9Q+ckVX6cTPvnq2i7G2N7qYCzxF2f7884d4CPVcZ91xVuxrumNqQpBKwpZihmz6mNhiyqRnr0k2gyCQrPsROlDkwYnSV4JeBiIrGzYuuDl7TWSJzuC6alC+rPtmDjZjgN1UfMx9Nt9Sm9LdrVey2WP/EgsY8jEpzvjRLWa93St9m8o6DhhwWreys/pq3eQoyKEefPZvtZKUVwg1lG6q5/i8CbA0baGj7TGiW0X310NRhEZqF6AvPM2IJEPm7s3y/ajqGIXKWEbDVf/mwKeCVY6Iwd8uTPw9/2MSWEtYGAqdafoy/9hzSSk0jbKHPanv077NPG7TNwOQRlMnagj6ArUZMosiOQ8IaoRBPpLbLrucUNUMB+LU04rdpBf74dyHzGyKN9XoE85yj/7xNAmIwZurHxC1nXICYehhp+vx3J2nMgcgA34mOGw9Bwrj2QDGIEPaqoEP/GxUUDOtenydpxE56gjhd8uzvMpaGg4rUr+w5v4VEGm6S9gsfmIA4CpB7u8fC9/IcRJ9g1o58tH5jDVR+ThixVABPMMV+B+pQZGGdnOQgQXYPzJzXYlIMO6iTKsmgc0ExEbZ7sX8T4FqR56LGFNCTui9pur2KzkBBHhkHJnjQgXTFsz8B8gyhtPSQeFKyj44TzvjArbAIqMGltGT4IO9bA8JAhdjz9i7OwpHI7ZM2gfAHcsomQjujbryIlppsu0+Y9OGILQInSxrbymZUUXbk/uoHlJPzf7X73VdU66DtL02OZwgYxuvw+kcp768MGC4qpfIgYghwXnLeYwRya07t5qEjvYwWpu6q6DTkjrJBNt+bajQicWEn0/A1ImJEu9R5ehNtx8wTpwEpKo+fyBsewocU7x/B8TQTUqDIcZyA39CRRyOiwADeQcYlC+Go7SqKIKv8K416CNkLZLwqAJDaNS/7WxwNLCPSoRBhMvMxczur0DT3CtIDboeZlE98VSoF5scldpAy1YLPtucDB8x3n7SFrIrZElLQBNoRq+MZj/rY+U9HntIPtzTxVkySPCJmYj/429vPS4Fkb2CgTzDoeXP5/Z7EnOkYo/Cj/lAyW0Th5yh+9CYTMdZSfxH7fScNTqYVNMzmKHpMgcFOi/fvYoZRICev5XFrPrABpTduvBj1xfQbjoKy06aScDGP6/+lWzyVWxdwMBHsy2dQXLz0/w86Doi4kN51z2O/BAK+Za5w4TsFlU8eUhOhOGF60iQvX1PxMM9Fl9JGvA5ssw8SDewK53EfO9BJ9XAbCNk7vTOZe40puEKWVAz8sqmuxShC9nF4BWTzbU16W4NvVAdo1yuPP7rT8ahSwegrw5B3lcfZfCgqWjJlmnbbOcCpWUP1RUNd/oAwlfzbixVe0fnDi8zsxdwJvbw1vW7lQ+Jho3Im09ayHmPygn4v2grspGKgkqIyVUlNZ2hsvOMgh7w7wW/du4kdd2zlLaSAVdI/X2hTFtzpcHPIc2tfjaaR218l9eFMPjb26STmkUHbwloVkfWR2y9ZSgRGRZIP5ia23YGJ45O1+/36uth4/4dU5P48Ll4xUSBujmRo8xJJoteQnBuAQJECZjAG99Vd1MaRVx7+/18W1PhxUk65i6B7K8YuRXSOR/A7JF8q4O3052whEklNzBNiWmKqyiKfCjZgZrMXOncobZMlgk8Q3W8Cd7HUnOlmV2psDjKghNXKENx9aZkVsZ6y8zq38APEmNk3ixh0P/E6Ug4Wn0+czj4gI2L0rxXcyROqieKSCUP9y73cEoSVFiu1jf86EHNAcdlrEG+sfqlCqcWN9+TDvNNRDAGApSzUJ97d78SlbAaF+HMxt38t1ogBG/Sy4I7kHgbX5aeElzP5Ln7rU/ne7GUAaL8JOe1VIR4SDX/hb6G2qp+UhZTTOT5o5l/QkE1UolobJY9GL+y35rLzTuHUVENaABCho1ccXqpIuW/xTsv/fepadKS0L6buJwyuYpfMYulH+s0fY/LWldGL9wvBwzSM7IUav4NBd7brW9eyfcaW8oRhSCj7QVNFfJeowwRue2HEHRnd2XQI63JjC1EQ2v/gAJR6h1PPh3htbl1W1TSYXtkFLUWzcu+Hr0OLnUyKJUjWfYygt168rsjRzlXTUu5xJv7GuZlGpwW6k+RUvwcWFaHTRIMX5kt4e8faUZ4f1773R3lPrIy1rP3MjXiEZ8u40KcXqn7sXproTRDV5Cs5KM9+XBaCQDnTWciqxEDpAcj96hbBhHUf1o50hbmelUOJQ3SFnTKdigmJZgZ3jBWc/Dxf1NCq1IkJnvtOhMbHtlmVLFBnCebIiUy4AlqTjijg9QIxOgAFwK+6Tfp2RbceMdKL6IDBQbehMAC/p6oAhgULjm5DetmewMnbpF81pOzImPM6pFQk24SCVMa+wFSP1+7kkOl5oH90qTX0TSkwXiW87rqoI3UXFHTUFMk2rMqQhukgXGz2OOzpFLvzC6eZZ73BtghwJ5zRtTspt5Hi6YUe2M9JiGWYfBphbSvmzaE9bZbQlG6Q/rbiCCDKuXxQv8kFBn8pcoDcwp4GxneFR1+TPirWtlEps77JZtrsFD0iupyEnwsj9Mo96/qKA8CoDoekLDVJlaEiHLGPKxOeLSjkYL5NVlo1HVCW/U4zidB7Y8X9pblqDsa4eBxAe7fnF2hEwxhQVcsqntT/lNaQvPPBfWCsXBm0YzaHzPciNV1IDjDqbUhaALFpUT6O07GTydQKBnp2Ia18c7cxfPD4gr1tBN4+ZuOPpM081w5f4TbyfxpTDBeZszePZTCB9i90nWmxPeOFDMXEDq3cQL69PQTzlh8wXS3OymigAMSttCffX3WQiv8G1K2eWCeVNbRlAxntqOA0Z1r2kqGtVflgn1eMlQ1coVhETCZ1L9f9TK7jpCB4INNA2Ma91U28Ig5b/L2EChMxeIRExE4A4IJmlh89/JkcZCuA7n0i6CeQDWASGqqM2U2q/AAS8l1YFVLxzGncOt9oKPgzPG+ryjWj2oDxq/UTgHbr+AuysAY998//WB7fj5qGrCuwie67VDkS2fNqATngF+ppY77DLZ3LJ07E0LIT7ucza46uTrjsLL/GWuEcHZMFxsxM5AtkUKNyiB/UBrFou0Bhs+Fst3khVXRHRGvmpR2aC2aEKAlnhDolliht5myKBk7vpYI8HCYq4QolFx7ZJBIYy/hb/kC8IvvndBBhjQkW1xnRMJ7JHlIH7NQOFuYO3uHHgMpD79UdtISV+dPMW91W3serMfHK97YNyq3mTe2dKn8+BQbsVdeAgiTxDtn9Oa8YdORDOLFigsoLORcQFozEEXtAyt14EsCzTxjco9mwncqR1Z1CkEtVt4O21hQ//0OFd62XWEetG4ejRtS/voei0Gr8ZINaQ6vb167IDzkHz6O2RQXqrBhoxIQw+29EBbEVzvXvJ/Fxo2/w8R81k79sGjweygGCzASoLhLaTKJDIDo3cE5068082ztPU6aH6iGwTmDte6pA/Eehw1Iew+AkGIzydou7oFmSV1lse2Plp16DXRMc11D84ElThexfV5WoVM/oDo/JsnsPz3V1ZOmftf/IL7DECrzPI7BUguF8orIuv4O4q03k5XwH1OWJGMNaS/IoC5I8oZyaKF6ZTQC+V/TOicAfrm8iEQDd9p4g3YOFng9Ct/40zuZiHLnXHxJUWbAkods113qS3QG9LzPux6tLVeuGEEeexyq9y7ucdiYWhKHIxBQlB+bpDjCCJwiltx0ChH6ZmNpadNrE/dUwrqIVcgo/OOUVrGrES+vxuCuOe867C+dYEQS/9CR3f2kpTlmPE1WFIHA7vw/UVrOC987OCbqIqu+WS60jcu5T4SXppj5RtTPOZdZeZzlqTvFqgHsNBJG3RdrGFJK9emYzb6Dz6IFtc4PCBFBmoX+F4bvnyHKYTQGKJ/ME+2bAlpBO6WLA0mxVaLWnEf0BGy1JtggIOAfwoYGkoW1D0gtp2FztiUfuHBu9x4J2WlQUm7HI3Gs4tnKeIfDOLBj6aLFp2hGP+QmsEZrQXN23EW8vnprzy2TNA820qtioFcW9DvqHWSduX7moOMJERvyTvTGopxSVvQgr8asUBs4eNjtZWansXY7AaFVSsxU3Bq8PcPp9MUb5fxL/AWlSDPfbU5M5l67sF7FQe4i6uUDLyoy/Z1H5hmgdvcZ11o6YRHGa4aDtvA+5smiVIcYm3vJ4eclC80sGT4RRnhAl2JeceJem4K9yljrmrclV7fQ4t7muGq1w7CFQYbZOUWAQHEik2UoP8HJ5d2HQAAGB/q9HUTdnkoV1uBZ7suXnocjg11R0qDtY2XnPHH9b3XHtDYWVrkknXYqgi8ir+Hk6bzQYDzfed0VoBfwjsQgJICpkcc8Z/yZF1dKKY/7XFlnYIYMPUL5dBgMrC7ZM7UhAXAA7atufdP+mYj6jZMJ7yD4M/S8EukWOecJ89TOQG+y5OuQBDU6OZioZIx0IJFKNOi34TGmQ4HX9oigThPtjZeDLqB0FnWvNUuTTGNguJwb/YDG/TzNCmkAc7dshC84FTF16AMild4oLdpMg10bmK0WOoe9zqggSqqcYQbVMRL39ivq7/UgKTk0sYqW14mDcHHJbd3QVqNaBehdHH80UnUzCeoKuStnxt6wYAokbgEvnTLX3cPhloBWuy+DGbrurVsIBZdv0I79Ec+gC+41fKoqjuMKiwmm5zMeHN5cz4LWcBWHJgfAEA9rmd6xo10iu6X159m3gMwz11BFkxLnWXQQMkjDmXrp/fyNHR9X/k3K50CTPluRsZvi57ddOHTMi+/Eu0FsqIfBeeAg0KpsJGiX1zaQOYLziceOIQB8egbwhuvZUhiz9sG+TXS35oYuq1BYszPTxBasM+UUQWwZ3jBXlhtYCoxTMV0E9/ERaY5w5TWXW558X2UNlWFqif1F8WQxfs5L1fFs9tgYZaI01ocMxIR1evcm5ci1i6mjbtAP22Ei/5j7vZxyCxHJO/6ZdlRZBecO/6NsB8fvIOe5Pj2H7veGMawbz4nSng0jWwsXJ3cVY6omSjGFqIgf/IjHKcRUp5RGqxFfZ4E3Ok76iV5h7zxEUSK21EESmlgluFHWvrcNzI2Vq+H6Jr3O4tCY3SiXhv/1+PFJeIFuzzCVJzkDVPl379A/OHHRYbgeNCmb4hfArQFS/3hj/wzUvwEGS3Y2/3MiQZt2Tr1+XnVW+AnDb643HcC+FBOI+xe65hRFxja2wENkgIDG2HMw68ANU6vI5x8AamNtE+b2G7EvoGf3JS7666p6CitGl4uf0kUYDDlKdhQFk99nkFTKDO7MAsC63o7U7xLpslkkyrsZygd2AFHNhDWO13u5JytE0enURyfxKkJqKA4fM0mLCOoitTXSw+iPl5Boj14v2bG/Is0A1r0F0uj+iBr5En55Gj2F5RRP+L1kEs49VDu+h4fzkgAznf7IvFnyRdz1bqYPxkxsccJzvPsMQSpwIyC/N6d1EdKnX9PUGeEMeuSX/VrjQusSRI5bgLcu2myr6Rf3uqXXXaUbkDYA7EM7mv832wmYzfBB8Cvk+0u+XzgCFCbYv607R/ZOPIZC+NLZdnjebE7p+aAWU1U5rmq7VhXfWDboNfxh/zX8jdBgdjC72v22ivnuX3we8VNgTd+lXDOUaof2fIySkYLqReVB50Pz5dacueVJdnGkMhVQYnIveqyV4MWOYanuvg4VmRF3UhnfpnRzVWMKXN9GjCTM/3QsTdjEk+CEXxs2Noo2uMxldz/GM1UTkrQnOeaCyiXUh2TYcpgPHvMfwKyeogeIhOBUlc+NSew3kzP4KXMpEF9nSRoWqV/zq51wgHqa0r9gvoRdlTSnHTCe8gZYPYR0a+9Vh5z35HV32kdENDyvbmnnNkiCwrVN5vKwAWzZkCMkxKM5USlfYoJSxuJ8E/VQbTCsU3Yeg2MD+O0/kmq2xYdnFG1H9ip5H0AWdT2DyjrWnN7s/CNVc4xXn18LsReKQDk43o+NjMZouiW62m55laDl2ZQ5VXD7LTXXPYNGAxLV/YrHefVso99f4wtR6osc1lIFzx6SgwXXwrk4L5jpKUrU/hHpgzA61zSC6Ddq/Y2UywX+VhLS3/LShYUdf6R7Y/tkv4r1KzbXsP8wX58fLZvNsE6xkZPqMiodiwcrZIlzO4Cp51pKl5XdFrvU9T1JbV7nJPuK8M7o/8prCNcKwKjK0aBi7Tcg6/AEG2DKdEUK1730PdZUFhIukUJGSsaR5ctBeFPoj1Wxu/K+vQOe0telusQAEP/qjou7QCOot2L1oFRiVtoBkZSSVsslqKVE2bCg/0DJFD5aXnyBGNmoaOm9GbszalJCMhGPBi2sTglKnMT25DjHaJGgZMIjwa7UQHPtMkRPQ4ZgPuojv9UyvFAl4gjzgnERx3shVg0AhHY6QB8NXsFCLzRmm4yUe7gKSr6Hr6/lzMvlltoioOGK6/MttGNcOGRRwhc6svB6iXTtmVPbYbkHp7XObeMTLZvYr9WqY6ucEoN5QyH6gxuni2YO4Q15Q3YfZ9eqSaNA4nVx5hHfafORMULSeK3OJ7DRJey2qGEDZpT0gIvhDkZyxlXn0/FwfzJnSIkHFYVGIDtxrkFUjE5SQaNZoYOwAU9I0UqNx5oHYBvKNlwxQLk0l3vmYnp9XKy+qWoHIqq2y1z1PcMw+Y4acTjO1Ub4MdqpylAhkX99nD3XpSRg8bhmy3uUjEyQbe/8GR3M6Eo8WbLl8UO8lBICtqcDE90ZI9yU4FTEgZGRH8O8JJZoSn9JSmqPW+J8pXCbMXCT2Q2FJGL51ttCjVT/WWh7qCwNFuvaheeouZT94NtS9dMPo+dU0LrzJ/6ccTNz2rJc6+JJ13C1f9vHY8XMotH+KW4mxK5qSHCXpokH/UtB0DXuIx2CEBuezABYwamMfWvgLfGx6Dul+91WNZo/JXnyVh9W84erTcxnGrhrj1tZ21RhngZ0nsTwTD0Pwtr+Vui1kWWFQDgNNcK0oBcTjJVyn5kguBWwKZusiuEhSYa3A697Kk4Xu9iVE4XaUAU9Nz6Lnq32MPJclqKcDpWuFmTnHevaCK+VmJExJKjxK/eBgH72KDFerQXgH4q5Sq9L5URCjcI3ACPc1tDmYrQEUuH6kYB8Yd2W3O4EPS3wpjIFV+1uRvzsMZfuNNJrl58UYDcK9U6FcQgB+DeGEVQuy76C0xP1fb+JHR1IIileJkS7E1oHkOC+GvzyOO2cGfDcyPJYSaE29KG5+1XBqkxIm8XiTVE4s0g8JkLwUMsvGWl+FNkdSe6tBFPOVpL1hfocc0AXsCgR4OHGf/kK8s6JW1GpA1yBbBquYImq/zWruFDYaaGYfUVfyVti9yhMfBYtF3FlrPre3P8xAVCLB2EABb9po40lHqaZ39KemNFY2GfrJ3bFrVP6AN9s6SCecLQU7rsaOPY74DqTnyneqk214wn9bgZ9HXhuqAAH1B1hdkHPx4odadwcK5oTNlwIjAsSvvqruscH9flxDJ8ebcGUVQhgjLZ0cfP81qk+wfbzcNqFWkXx4DYRtDWEvdYygd8RqVU5CsQGS5ePGed+GRC7knondKOmM3NBVcz/vhOg9QZsoaOxjt74p/gQxggxiC8RgFQBIZ56rRzjsin0s4CLqRnwQHGAUR+eGla2wiiKn9jhGunmgyFWUL4KA2HaQgCDoelO5uihwR5uVguvldNVdiPL82/esqxEz6rIQ6NNmBmT2vcCIsEtc3E940g0vXHTMnUvtyQ8ByX0Fep40yV89iLWoleTxyoAsBPWvHNjsefPePHbk3YKQwd3blxW17CwuQ6fhNdoMj4C6Z7u414CfLy/O/RUUVxeqRE6qNBmM2Q4Gk66T6L9/OK3kfBgOzPW7tx5G2oM7MvcnKd3DnWIoAJOLsS5nftKhSum2yzkSgNXMuGd2CtGFbQ24ygAKGbUd/hpq3ABid5r2YqfMiO3spSnb1YEUer8AMLa8bKsVM7+ZkZijfWCdIbY3H3InDeI9JiKp+Mp/7TxyKxq6nB7pkdLrwKOnVmNZQqDQrRPmdrQwMIJbaRZeCDaYotei6dEkaIm6/3H17NDHP+pd0NMr1PmeflHOpBVXSUPx3RQmax6ouS2zmErSbLKusjEUTaJ4NFJHGuLc/AJgAoPRxUMZhs3Ci0TXCAuBFVKd2uTA3G3E+LqexQrYpuYRgeOoWeuYKxiA6RpBtBEyNqkU6I5U2fnlYgpXGWMU/nql3ixndsoq81E59O7JBC236GzCAjTQ8B2lMGpfbL0vgfcVdBRBIr+slmOcxnzvO3i/nW+1kxVYEmWNKieVBveKpoWnUTJPJ+NBf8Z7yzq2qdd/WK8DXMfYTFeWb3EFqKIpmIouuR7Uk+ycmbMh3JJBBTgZxlxa6PhRXyiWfgV1S41h6nDpbxNLB1ZXtGliSHNn6PmuRLTEthj6SQssHIc3/OcckNAxrc7dKeLQqV47dIYDbD45WbWRdYYQtIwAnT1Gy9k8U1HTiYZkdHBujo83B16pGfdB/MBxqvSw3m4tF1CfyPXIOk+F8g9C6gyFwmf+UN9g07kkp2aF6E5Y24XxXYScupuu9WQY9+XwZO7NjxoywGhzpBvVYeoamXJaQigvE5Bvx3mMW/nujf1Cg7RbSZvAzbRGnxAxLmbH6H2oW9AG5QCpWBkypWfwBeWR8ZSGEVGaOdH3veG8HqptUCM4YestWgiX4RVhue0Rmie9/0iCgVITN88hbi138Yozrm94+1bemA+eBj6VKYBjIRyWTlnFdhArzFHTtUzgjFdfSn6H0WXtuymOCj9KDiVTw/tu1GPFiOs2vhvtle0Z0n57Iue+O4Njke2vyJa7Avd+2wSaig0lnjUo8YQZP9WBtQnAOylvHk5tiL1g++H73bV5FlhtSjlhyOO6CgYmU+H245AEoZuZUTTbw/IhklHhYLmOoXohiNLavaIXM3UYzaBp3ON8Gv9K1kry778NPTw2rgu1tcKt/pjn+fUrUvGn7EX0Del/sw34Kq4bs3sGFY8FdMv1MN4B2+VEO9RabhbQjLptjvOPVrlA1fKO7+5rcalC2VQPUpfbNbGBFAkmyu8FCUxwHhH7ZUA1Qw/JDkhVFmk8j7/wwiuD3DoIDuOsr8oW0ghLtS9k0csfnFjD5QfKGO7mOJCzF+xB5J5Y9skZbIjKoEAHVWdI2Pep3c919fuZ3CUvvBH2/wa2zTjO4tYATi6kdWlhAbv2t7oJWPqciIgoHMx2bIO4lo02UJyxoJS2iJaZd4PuE/wWPSyIf71j+h1sIixrkejciGUOLvFjMvx+2rHYyYOnTlwRADLjlNK5Jur9duHs4iEjAfVh/XIz7QoSM2YSw+ZiS8ZlP5QiwnX9eDKzeMTc2Pj4TGNLuZe6DxDmUvj9yC3C1lkmVRQqCYAkV2E30oz1kXnf5Qj7FVL59rZGDPCtXcXUgBHYez19s4Z0lWu7BGSparoAAAA=');
+}
+html,body{margin:0;padding:0;background:#f4f5f7}
+html{overflow-x:hidden}
+/* la landing se sale del contenedor de Elementor y ocupa todo el ancho */
+.wolfx-topbar,.wolfx-lp{margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%)}
+.wolfx-lp *{box-sizing:border-box;margin:0;padding:0}
+.wolfx-lp{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;box-sizing:border-box}
+.wolfx-lp .wrap{max-width:1140px;margin:0 auto;padding:14px 16px 24px}
+.wolfx-lp .head{text-align:center;margin-bottom:16px}
+.wolfx-lp .logo{width:70px;height:auto;margin-bottom:14px}
+.wolfx-lp h1{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--ink);line-height:1.05}
+.wolfx-lp .sub{color:var(--muted);font-size:15px;margin-top:10px}
+/* ---- BARRA FIJA SUPERIOR (identica a /plans-landing-page/) ---- */
+.wolfx-topbar{position:relative;background:#343047;
+  display:flex;align-items:center;justify-content:center;padding:10px 14px;text-align:center}
+.wolfx-topbar .tb-title{font-family:Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;font-weight:500;
+  text-transform:uppercase;line-height:1.2;color:#fff;margin:0}
+.wolfx-topbar .tb-title .sep{padding:.75em}
+.wolfx-topbar .tb-brm{display:none}
+@media(max-width:767px){
+.wolfx-topbar{padding:6px 12px}
+.wolfx-topbar .tb-title{font-size:13px;line-height:18px}
+.wolfx-topbar .tb-title .sep-1{display:none}
+.wolfx-topbar .tb-title .sep-2{padding:0 .35em}
+.wolfx-topbar .tb-brm{display:inline}
+}
+/* ---- BILLING TOGGLE ---- */
+.wolfx-lp .bill{display:flex;align-items:center;justify-content:center;gap:14px;margin:22px 0 6px}
+.wolfx-lp .bill .bl{font-size:15px;font-weight:700;color:#5f6676;transition:.15s;cursor:pointer;user-select:none}
+.wolfx-lp .bill .bl.on{color:var(--ink)}
+.wolfx-lp .bswitch{width:60px;height:32px;border:0;padding:0;border-radius:40px;background:#d3d7df;position:relative;cursor:pointer;transition:.2s;flex-shrink:0}
+.wolfx-lp .bswitch::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s cubic-bezier(.2,.7,.2,1);box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.wolfx-lp.life .bswitch{background:var(--gold-pill)}
+.wolfx-lp.life .bswitch::after{transform:translateX(28px)}
+.wolfx-lp .savehint{display:flex;flex-direction:column;align-items:center;gap:8px;
+  max-height:0;opacity:0;overflow:hidden;margin-bottom:0;transition:max-height .3s ease,opacity .25s ease,margin-bottom .3s ease}
+.wolfx-lp.life .savehint{max-height:140px;opacity:1;margin-bottom:8px}
+.wolfx-lp .savehint .sh-row{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+.wolfx-lp .sh-badge{display:inline-flex;align-items:center;gap:5px;background:#eefaf1;border:1px solid #cdeed8;
+  border-radius:30px;padding:7px 13px;font-size:11.5px;font-weight:700;color:#1a6b3c;white-space:nowrap}
+.wolfx-lp .sh-badge svg{width:12px;height:12px;color:var(--green);flex-shrink:0}
+.wolfx-lp .sh-chip{display:inline-flex;align-items:center;gap:9px;
+  background:linear-gradient(180deg,#f4fcf7 0%,#e8f9ee 100%);border:1px solid #c2e9d1;
+  border-radius:30px;padding:9px 18px 9px 11px;box-shadow:0 4px 14px rgba(22,163,74,.13)}
+.wolfx-lp .sh-chip .ic{width:22px;height:22px;border-radius:50%;
+  background:linear-gradient(180deg,#22b357 0%,#16a34a 100%);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 2px 6px rgba(22,163,74,.35)}
+.wolfx-lp .sh-chip .ic svg{width:12px;height:12px}
+.wolfx-lp .sh-chip .t{font-size:13px;font-weight:600;color:#2f7a4d;line-height:1.25;letter-spacing:.1px}
+.wolfx-lp .sh-chip .t b{font-weight:800;color:#14603a}
+/* price swap */
+.wolfx-lp .pl{display:none}
+.wolfx-lp.life .pm{display:none}
+.wolfx-lp.life .pl{display:inline}
+.wolfx-lp .mprice .was{display:none;font-size:13px;opacity:.75;margin-top:2px}
+.wolfx-lp.life .mprice .was{display:block}
+/* ---- PLAN TABS + CARDS ---- */
+.wolfx-lp .mplans{display:block;max-width:600px;margin:14px auto 0}
+.wolfx-lp .mtabs{display:flex;gap:8px;margin:26px 0 20px;position:relative}
+.wolfx-lp .mtabs button{flex:1 1 0;min-width:0;border:0;cursor:pointer;font-weight:800;font-size:14.5px;padding:14px 6px;border-radius:40px;background:#e9ebf0;color:#6a7180;position:relative;transition:.15s}
+.wolfx-lp .mtabs button.active{background:var(--navy);color:#fff}
+.wolfx-lp .mtabs .best{position:absolute;top:-8px;right:6px;background:var(--gold-pill);color:#241a05;font-size:8px;font-weight:800;letter-spacing:0;text-transform:uppercase;padding:2px 7px;border-radius:9px;white-space:nowrap;overflow:hidden;box-shadow:0 2px 6px rgba(201,162,39,.3);animation:bestPulse 5s ease-in-out infinite}
+.wolfx-lp .mtabs .best::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);animation:bestShine 5s ease-in-out infinite}
+@keyframes bestPulse{0%{box-shadow:0 2px 6px rgba(201,162,39,.3)}20%{box-shadow:0 2px 11px rgba(201,162,39,.55)}40%,100%{box-shadow:0 2px 6px rgba(201,162,39,.3)}}
+@keyframes bestShine{0%{left:-60%}40%{left:130%}100%{left:130%}}
+@media(prefers-reduced-motion:reduce){.wolfx-lp .mtabs .best{animation:none}.wolfx-lp .mtabs .best::after{display:none}}
+.wolfx-lp .mcard{display:none;position:relative}
+.wolfx-lp .mcard.show{display:block}
+.wolfx-lp .mbest{display:none;position:absolute;top:-9px;right:14px;background:var(--gold-pill);color:#241a05;font-size:9px;font-weight:800;letter-spacing:0;text-transform:uppercase;padding:3px 9px;border-radius:10px;white-space:nowrap;overflow:hidden;box-shadow:0 2px 6px rgba(201,162,39,.3);z-index:4;animation:bestPulse 5s ease-in-out infinite}
+.wolfx-lp .mbest::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);animation:bestShine 5s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.wolfx-lp .mbest{animation:none}.wolfx-lp .mbest::after{display:none}}
+.wolfx-lp .mhead{position:relative;overflow:hidden;color:#fff;border-radius:22px;padding:24px 22px;
+  background:radial-gradient(130% 90% at 12% -10%,rgba(255,255,255,.16),transparent 55%),
+    linear-gradient(160deg,#2b3244 0%,#1b2231 46%,#0d1119 100%);transition:background .25s}
+.wolfx-lp.life .mhead{background:radial-gradient(130% 90% at 12% -10%,rgba(255,255,255,.16),transparent 55%),linear-gradient(160deg,#9c7c1e 0%,#6b5314 46%,#241a05 100%)}
+.wolfx-lp .mhead::before{content:"";position:absolute;inset:0;background:var(--hero) center/cover no-repeat;opacity:.15;mix-blend-mode:luminosity;pointer-events:none}
+.wolfx-lp .mhead > *{position:relative;z-index:1}
+.wolfx-lp .mhead .mtop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.wolfx-lp .mhead .mname{font-size:28px;font-weight:800;line-height:1.05}
+.wolfx-lp .mhead .mprice{text-align:right;flex-shrink:0}
+.wolfx-lp .mhead .mprice .amt{font-size:34px;font-weight:800;display:block;line-height:1}
+.wolfx-lp .mhead .mprice .life{font-size:13px;opacity:.85;display:block;margin-top:2px}
+.wolfx-lp .mhead .msub{margin-top:12px;font-size:14px;opacity:.92;max-width:70%}
+.wolfx-lp .mchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.wolfx-lp .mchips span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.30);color:#fff;font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:20px}
+.wolfx-lp .mflabel{margin:24px 0 10px;font-size:12.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#5f6676}
+.wolfx-lp .flist{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px 18px;box-shadow:var(--shadow-soft)}
+.wolfx-lp .frow{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.wolfx-lp .frow:last-child{border-bottom:0}
+.wolfx-lp .frow .fic{width:22px;height:22px;flex-shrink:0;color:var(--ink);margin-top:2px}
+.wolfx-lp .frow .fic svg{width:100%;height:100%}
+.wolfx-lp .frow .fbody{flex:1;min-width:0}
+.wolfx-lp .frow .ft{font-size:15px;font-weight:700;color:var(--ink);display:block}
+.wolfx-lp .frow .fd{font-size:13.5px;color:var(--muted);margin-top:3px;display:block}
+.wolfx-lp .frow .st{flex-shrink:0;display:inline-flex;align-items:center;gap:6px;margin-top:2px}
+.wolfx-lp .frow .st.yes{color:var(--green)}
+.wolfx-lp .frow .st.yes svg{width:21px;height:21px}
+.wolfx-lp .frow .st.lock{color:#c2c7d0}
+.wolfx-lp .frow .st.lock svg{width:15px;height:15px}
+.wolfx-lp .frow .st.lock b{font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:3px 8px;border-radius:20px;text-transform:uppercase;background:#f6ead0;color:#8a6a12}
+/* account management: locked on monthly, unlocked on lifetime */
+.wolfx-lp .frow.acct .fic{color:#c2c7d0}
+.wolfx-lp .frow.acct .ft{color:#7f8694}
+.wolfx-lp .frow.acct .fd{color:#8b92a0}
+.wolfx-lp .frow.acct .st.yes{display:none}
+.wolfx-lp.life .frow.acct .fic{color:var(--ink)}
+.wolfx-lp.life .frow.acct .ft{color:var(--ink)}
+.wolfx-lp.life .frow.acct .fd{color:var(--muted)}
+.wolfx-lp.life .frow.acct .st.lock{display:none}
+.wolfx-lp.life .frow.acct .st.yes{display:inline-flex}
+.wolfx-lp .frow.small{padding:12px 0}
+.wolfx-lp .frow.small .ft{font-size:14px;font-weight:600;color:var(--ink-soft)}
+.wolfx-lp .more{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-soft)}
+.wolfx-lp .more summary{list-style:none;cursor:pointer;padding:15px 18px;font-weight:700;font-size:14.5px;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.wolfx-lp .more summary::-webkit-details-marker{display:none}
+.wolfx-lp .more summary::after{content:"+";font-size:20px;color:var(--gold);font-weight:700}
+.wolfx-lp .more[open] summary::after{content:"\2013"}
+.wolfx-lp .more .flist.inner{border:0;border-radius:0;box-shadow:none;border-top:1px solid var(--line);padding:4px 18px}
+.wolfx-lp .mcta{display:block;width:100%;text-align:center;margin:18px 0 0;background:var(--gold-pill);color:#241a05;font-weight:800;font-size:16.5px;padding:16px;border-radius:40px;text-decoration:none;box-shadow:0 8px 20px rgba(201,162,39,.3);transition:.15s}
+.wolfx-lp .mcta:hover{transform:translateY(-2px)}
+.wolfx-lp .guarantee{display:flex;align-items:center;justify-content:center;gap:8px;margin:14px auto 0;
+  width:fit-content;max-width:100%;padding:8px 15px 8px 9px;border-radius:40px;
+  background:rgba(34,158,217,.07);border:1px solid rgba(34,158,217,.16)}
+.wolfx-lp .guarantee .gic{width:22px;height:22px;border-radius:50%;background:#229ED9;color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(34,158,217,.35)}
+.wolfx-lp .guarantee .gic svg{width:12px;height:12px}
+.wolfx-lp .guarantee .gtx{font-size:12.5px;font-weight:700;letter-spacing:.2px;color:#2a5f7a;line-height:1.2}
+.wolfx-lp .guarantee .gtx b{font-weight:800;color:#17475e}
+
+/* ---- NUDGE DE UPGRADE A LIFETIME + DESPLEGABLE ---- */
+.wolfx-lp .upnudge{display:block;width:100%;margin:14px 0 0;background:var(--gold-soft);border:1.5px dashed var(--gold);color:#8a6a12;
+  font-size:14px;font-weight:800;padding:13px;border-radius:14px;cursor:pointer;text-align:center;transition:.15s;font-family:inherit}
+.wolfx-lp .upnudge:hover{background:#fdf3dc}
+.wolfx-lp.life .upnudge{display:none}
+
+
+.wolfx-lp .frow .fic.emoji{display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1}
+.wolfx-lp .frow.acct .fic.emoji{filter:grayscale(1);opacity:.55}
+.wolfx-lp.life .frow.acct .fic.emoji{filter:none;opacity:1}
+.wolfx-lp .frow.nobb{border-bottom:0;padding-bottom:4px}
+.wolfx-lp .fmore{margin:0;padding:0 0 14px 34px;border-bottom:1px solid var(--line)}
+.wolfx-lp .fmore:last-child{border-bottom:0}
+.wolfx-lp .fmore summary{list-style:none;cursor:pointer;min-height:44px;font-size:12.5px;font-weight:800;color:#8a6a12;display:inline-flex;align-items:center;gap:5px}
+.wolfx-lp .fmore summary::-webkit-details-marker{display:none}
+/* Flecha hacia abajo en vez del "+" (pedido por Jaime el 7-sep-2026).
+   Dibujada con dos bordes en vez de un glifo: un caracter tipo "v" depende
+   de la fuente y en el checkout el tema hereda otra. */
+.wolfx-lp .fmore summary::after{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
+.wolfx-lp .fmore[open] summary::after{transform:translateY(1px) rotate(-135deg)}
+.wolfx-lp .botpanel{margin-top:10px;background:linear-gradient(160deg,#232a3a 0%,#12161f 100%);border-radius:14px;padding:14px 14px 13px;color:#fff}
+.wolfx-lp .bp-badge{display:inline-flex;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:3px 10px;font-size:9.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:10px;color:#fff}
+.wolfx-lp .bp-claim{font-size:13.5px;font-weight:700;line-height:1.35;margin-bottom:11px;color:#fff}
+.wolfx-lp .bp-claim b{color:#e8c860;font-weight:800}
+.wolfx-lp .bp-li{display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;color:rgba(255,255,255,.88)}
+.wolfx-lp .bp-li svg{width:14px;height:14px;color:#4ade80;flex-shrink:0}
+.wolfx-lp .bp-sep{height:1px;background:rgba(255,255,255,.12);margin:11px 0}
+.wolfx-lp .bp-foot{display:flex;flex-direction:column;gap:7px}
+.wolfx-lp .bp-note{font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.4}
+.wolfx-lp .bp-mfb{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:#4ade80}
+.wolfx-lp .bp-mfb svg{width:14px;height:14px;flex-shrink:0}
+
+
+/* ---- FOCO, HOVER Y ACCESIBILIDAD ---- */
+.wolfx-lp a:focus-visible,.wolfx-lp button:focus-visible,.wolfx-lp summary:focus-visible,.sticky-btn:focus-visible{
+  outline:3px solid #8a6a12;outline-offset:3px;border-radius:12px}
+.wolfx-lp .mtabs button:hover:not(.active){background:#dfe2e9}
+.wolfx-lp .faq summary:hover,.wolfx-lp .more summary:hover,.wolfx-lp .fmore summary:hover{color:#6d520a}
+.wolfx-lp .faq summary:hover{color:var(--ink)}
+.sticky-btn:hover{filter:brightness(1.03)}
+.wolfx-lp .bswitch::before{content:"";position:absolute;inset:-8px -6px;border-radius:40px}
+.wolfx-lp .bill .bl:hover{color:var(--ink)}
+@media (prefers-reduced-motion: reduce){
+  .wolfx-lp .tp-track,.wolfx-lp .mem-track{animation:none}
+  .wolfx-lp *,.wolfx-lp *::before,.wolfx-lp *::after{transition-duration:.01ms !important}
+  .wolfx-lp .mcta:hover,.wolfx-lp .become-btn:hover,.wolfx-lp .rcard:hover{transform:none}
+}
+
+
+/* ---- FEEDBACK AL PULSAR ---- */
+.wolfx-lp .mcta,.wolfx-lp .become-btn,.wolfx-lp .upnudge,.wolfx-lp .see-more,.wolfx-lp .mtabs button,.sticky-btn{
+  transition:transform 160ms cubic-bezier(.23,1,.32,1),background-color 160ms ease,box-shadow 160ms ease,color 160ms ease}
+.wolfx-lp .mcta:active,.wolfx-lp .become-btn:active,.wolfx-lp .upnudge:active,.wolfx-lp .see-more:active,.sticky-btn:active{transform:scale(.97)}
+.wolfx-lp .mtabs button:active{transform:scale(.98)}
+@media (hover:hover) and (pointer:fine){
+  .wolfx-lp .mcta:hover,.wolfx-lp .become-btn:hover{transform:translateY(-2px)}
+}
+@media (hover:none){
+  .wolfx-lp .mcta:hover,.wolfx-lp .become-btn:hover{transform:none}
+}
+
+
+/* ---- CUENTA ATRAS DEL BLOQUE FINAL ---- */
+.wolfx-lp .gift .ul{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-decoration-thickness:2px;text-underline-offset:4px;font-weight:700;color:#fff}
+.wolfx-lp .gift-flag{display:inline-flex;align-items:center;gap:7px;background:rgba(232,200,96,.14);
+  border:1px solid rgba(232,200,96,.34);color:#e8c860;font-size:11px;font-weight:800;letter-spacing:1.2px;
+  text-transform:uppercase;padding:6px 14px;border-radius:30px;margin-bottom:16px}
+.wolfx-lp .cd{display:flex;align-items:flex-start;justify-content:center;gap:8px;margin:16px 0 14px}
+.wolfx-lp .cd-u{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:14px;
+  padding:10px 6px 8px;min-width:84px;text-align:center}
+.wolfx-lp .cd-u b{display:block;font-size:36px;font-weight:800;color:#e8c860;line-height:1;letter-spacing:-.5px;
+  font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+.wolfx-lp .cd-u span{display:block;margin-top:6px;font-size:9.5px;font-weight:700;letter-spacing:1.4px;
+  text-transform:uppercase;color:rgba(255,255,255,.5)}
+.wolfx-lp .cd i{font-style:normal;font-size:28px;font-weight:800;color:rgba(255,255,255,.28);line-height:1;margin-top:14px}
+@media(max-width:400px){
+  .wolfx-lp .cd{gap:6px}
+  .wolfx-lp .cd-u{min-width:72px;padding:9px 4px 7px}
+  .wolfx-lp .cd-u b{font-size:30px}
+}
+
+
+/* ---- El tema de WordPress no puede tocar el color de los botones ---- */
+.wolfx-lp .mcta,.wolfx-lp .mcta:link,.wolfx-lp .mcta:visited,.wolfx-lp .mcta:hover,.wolfx-lp .mcta:focus,.wolfx-lp .mcta:active,
+.wolfx-lp .become-btn,.wolfx-lp .become-btn:link,.wolfx-lp .become-btn:visited,.wolfx-lp .become-btn:hover,.wolfx-lp .become-btn:focus,.wolfx-lp .become-btn:active,
+.sticky-btn,.sticky-btn:link,.sticky-btn:visited,.sticky-btn:hover,.sticky-btn:focus,.sticky-btn:active{
+  color:#241a05 !important;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.wolfx-lp .gift .ul{-webkit-tap-highlight-color:transparent}
+
+
+/* [2026-10-13] Un solo boton en los dos modos (Jaime): el oro de Monthly con el destello
+   que antes solo tenia Lifetime. 12 s de ciclo, el 30 % en movimiento; la capa no recibe clics. */
+.wolfx-lp .mcta,.wolfx-lp .become-btn,.sticky-btn{position:relative;overflow:hidden}
+.wolfx-lp .mcta::after,.wolfx-lp .become-btn::after,.sticky-btn::after{
+  content:"";position:absolute;top:0;left:-75%;width:55%;height:100%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);
+  transform:skewX(-20deg);animation:sweepLife 12s ease-in-out infinite}
+@keyframes sweepLife{0%{left:-75%}30%{left:155%}100%{left:155%}}
+@media(prefers-reduced-motion:reduce){.wolfx-lp .mcta::after,.wolfx-lp .become-btn::after,.sticky-btn::after{display:none}}
+
+
+/* ---- LISTA COMPLETA DEL DESPLEGABLE (check a la izquierda) ---- */
+.wolfx-lp .chkrow{display:flex;align-items:center;gap:11px;padding:12px 2px;border-bottom:1px solid var(--line)}
+.wolfx-lp .chkrow:last-child{border-bottom:0}
+.wolfx-lp .chkrow .chk{width:21px;height:21px;border-radius:50%;background:#e6f7ec;color:var(--green);
+  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.wolfx-lp .chkrow .chk svg{width:12px;height:12px}
+.wolfx-lp .chkrow .chktext{font-size:14px;font-weight:600;color:var(--ink-soft);line-height:1.35}
+.wolfx-lp .more .flist.inner{padding:2px 18px}
+
+
+/* ---- MOVIL: descripciones a ancho completo (badge fuera del flujo) ---- */
+@media(max-width:600px){
+  .wolfx-lp .flist > .frow{position:relative}
+  .wolfx-lp .flist > .frow > .st{position:absolute;top:14px;right:0;margin-top:0}
+  .wolfx-lp .flist > .frow > .fbody{padding-right:30px}
+  .wolfx-lp .flist > .frow .fd{padding-right:0;margin-right:-30px}
+  /* filas bloqueadas: el titulo esquiva la pildora LIFETIME, la descripcion no */
+  .wolfx-lp:not(.life) .flist > .frow.acct .ft{padding-right:74px}
+  .wolfx-lp .flist > .frow.acct .fd{margin-right:0}
+}
+
+/* ---- SECTIONS ---- */
+.wolfx-lp .section{margin-top:52px}
+.wolfx-lp h2.sec{text-align:center;font-size:26px;font-weight:800;margin-bottom:8px}
+.wolfx-lp .sec-sub{text-align:center;font-size:14px;color:var(--muted);margin-bottom:24px}
+.wolfx-lp .rhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+/* become cta */
+.wolfx-lp .become-wrap{text-align:center}
+.wolfx-lp .become-btn{display:inline-block;min-width:280px;max-width:100%;text-align:center;background:var(--gold-pill);color:#241a05;font-weight:800;font-size:17px;padding:17px 34px;border-radius:40px;text-decoration:none;box-shadow:0 8px 22px rgba(201,162,39,.32);transition:.15s}
+.wolfx-lp .become-btn:hover{transform:translateY(-2px)}
+/* gift */
+.wolfx-lp .gift{background:linear-gradient(160deg,#1b2231 0%,#0d1119 100%);border-radius:22px;padding:34px 24px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.wolfx-lp .gift .gemoji{font-size:38px;line-height:1;display:block;margin-bottom:12px}
+.wolfx-lp .gift h3{font-size:24px;font-weight:800;letter-spacing:-.5px}
+.wolfx-lp .gift p{font-size:14.5px;opacity:.9;margin:10px auto 20px;max-width:460px}
+.wolfx-lp .gift .become-btn{margin-top:4px}
+.wolfx-lp .gift-note{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.72)}
+/* faqs */
+.wolfx-lp .faqs{max-width:760px;margin:0 auto}
+.wolfx-lp .faq{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:12px;overflow:hidden;box-shadow:var(--shadow-soft)}
+.wolfx-lp .faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.wolfx-lp .faq summary::-webkit-details-marker{display:none}
+.wolfx-lp .faq summary::after{content:"\2304";font-size:20px;color:var(--gold);transition:.2s}
+.wolfx-lp .faq[open] summary::after{transform:rotate(180deg)}
+.wolfx-lp .faq .body{padding:0 20px 18px;font-size:14px;color:var(--muted)}
+.wolfx-lp .faq .body p{margin-bottom:8px}
+.wolfx-lp .faq .body ul{list-style:none;margin:10px 0;padding:0}
+.wolfx-lp .faq .body li{position:relative;padding-left:24px;margin-bottom:7px;line-height:1.5;color:var(--ink-soft)}
+.wolfx-lp .faq .body li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2.5px solid var(--green);border-bottom:2.5px solid var(--green);transform:rotate(-45deg)}
+.wolfx-lp .foot{text-align:center;margin-top:48px;font-size:12px;color:#9aa0ac}
+/* sticky */
+#planTop{scroll-margin-top:16px}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:120;padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(244,245,247,0),rgba(244,245,247,.92) 45%,#f4f5f7);transform:translateY(130%);transition:transform .28s ease;pointer-events:none}
+.sticky-cta.show{transform:translateY(0);pointer-events:auto}
+.sticky-btn{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:800;font-size:16.5px;letter-spacing:normal;text-transform:none;line-height:1.5;display:block;max-width:560px;margin:0 auto;text-align:center;background:var(--gold-pill);color:#241a05;font-weight:800;font-size:16.5px;padding:16px;border-radius:40px;text-decoration:none;box-shadow:0 10px 26px rgba(201,162,39,.42)}
+
+
+@media(max-width:600px){
+.wolfx-lp .mhead .mname{font-size:24px}
+.wolfx-lp .mhead .mprice .amt{font-size:30px}
+}
+/* ---- DESKTOP: misma estructura, 3 columnas ---- */
+@media(min-width:992px){
+  .wolfx-lp .wrap{padding:18px 20px 32px}
+  .wolfx-lp h1{font-size:44px}
+  .wolfx-lp .sub{font-size:17px}
+  .wolfx-lp .section{margin-top:76px}
+  .wolfx-lp h2.sec{font-size:28px}
+  .wolfx-lp .mtabs{display:none}
+  .wolfx-lp .mplans{max-width:1140px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;margin-top:26px}
+  .wolfx-lp .mcard{display:block}
+  .wolfx-lp .mbest{display:inline-block}
+  .wolfx-lp .mhead .msub{max-width:none;min-height:44px}
+  .wolfx-lp .mhead .mname{font-size:26px}
+  .wolfx-lp .guarantee{display:none}
+  .wolfx-lp .mchips{display:none}
+  .wolfx-lp .savehint{flex-direction:row;flex-wrap:nowrap;justify-content:center;gap:7px}
+  .wolfx-lp .mplans{align-items:stretch}
+  .wolfx-lp .mcard{display:flex;flex-direction:column;height:100%}
+  .wolfx-lp .mcard .flist{flex:1}
+  .wolfx-lp .mcard .upnudge{margin-top:18px}
+  .wolfx-lp .mcard .more{margin-top:14px}
+  .wolfx-lp .mcard .mcta{margin-top:14px}
+  .wolfx-lp .mcard .more summary{min-height:52px;font-size:13.5px;gap:12px}
+  .wolfx-lp .gift{max-width:720px;margin:0 auto;padding:40px 32px}
+}
+
+/* ===== Seccion Trustpilot portada tal cual desde wolfx-copytrade-embed-global ===== */
+.wolfx-lp .tp-box{background:#fff;border:1px solid #eceef2;border-radius:16px;padding:22px 30px;box-shadow:0 4px 16px rgba(20,22,40,.06);width:fit-content;max-width:100%;margin:0 auto;text-align:center}
+.wolfx-lp .tp-row1{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+.wolfx-lp .tp-logo{display:inline-flex;align-items:center;gap:9px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:28px;font-weight:700;color:#191919;letter-spacing:-1px}
+.wolfx-lp .tp-logostar{width:30px;height:30px;color:#00b67a}
+.wolfx-lp .tp-sep{width:1px;height:30px;background:#e4e6ea}
+.wolfx-lp .tstars{display:inline-flex;gap:2px}
+.wolfx-lp .tstars i{width:30px;height:30px;background:#00b67a;border-radius:0;display:inline-flex;align-items:center;justify-content:center;overflow:hidden}
+.wolfx-lp .tstars i svg{width:21px;height:21px;color:#fff}
+.wolfx-lp .tstars i.half{background:linear-gradient(90deg,#00b67a 50%,#dbdce1 50%)}
+.wolfx-lp .tstars.big i{width:34px;height:34px;border-radius:0}
+.wolfx-lp .tstars.big i svg{width:24px;height:24px}
+.wolfx-lp .tstars.sm i{width:22px;height:22px;border-radius:0}
+.wolfx-lp .tstars.sm i svg{width:15px;height:15px}
+.wolfx-lp .tp-row2{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px}
+.wolfx-lp .tp-score{font-size:17px;color:#191919}
+.wolfx-lp .tp-score b{font-weight:800}
+.wolfx-lp .tp-verified{display:inline-flex;align-items:center;gap:6px;background:#d6f5e3;color:#0a7a4a;font-size:12px;font-weight:800;letter-spacing:.4px;padding:6px 12px;border-radius:8px}
+.wolfx-lp .tp-verified svg{width:15px;height:15px}
+.wolfx-lp .tp-carousel{position:relative;margin-top:20px;background:#e9f8ee;border:1px solid #cfeed9;border-radius:18px;padding:28px 0;overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.wolfx-lp .tp-track{display:flex;gap:16px;width:max-content;padding:0 16px;animation:marquee 60s linear infinite}
+.wolfx-lp .tp-track.paused{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.wolfx-lp .rcard{flex:0 0 300px;width:300px;height:240px;background:#fff;border:1px solid #e2e8e4;border-radius:14px;padding:18px;
+    box-shadow:0 4px 14px rgba(20,40,25,.06);cursor:pointer;transition:.15s;display:flex;flex-direction:column;overflow:hidden}
+.wolfx-lp .rcard:hover{box-shadow:0 10px 24px rgba(20,40,25,.12);transform:translateY(-2px)}
+.wolfx-lp .rverified{display:inline-flex;align-items:center;gap:4px;color:#00875a;font-size:11.5px;font-weight:700;white-space:nowrap}
+.wolfx-lp .rc-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:11px}
+.wolfx-lp .rc-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.wolfx-lp .rc-id{display:flex;flex-direction:column;flex:1;min-width:0}
+.wolfx-lp .rc-name{font-weight:700;font-size:14px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wolfx-lp .rc-meta{font-size:11.5px;color:var(--muted);margin-top:1px}
+.wolfx-lp .rc-date{font-size:11.5px;color:var(--muted);flex-shrink:0;white-space:nowrap}
+.wolfx-lp .rc-rate{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.wolfx-lp .rc-verified{display:inline-flex;align-items:center;gap:4px;color:#00875a;font-size:11.5px;font-weight:700;white-space:nowrap}
+.wolfx-lp .rc-verified svg{width:13px;height:13px}
+.wolfx-lp .rc-title{font-weight:700;font-size:14.5px;color:var(--ink);margin-bottom:6px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wolfx-lp .rcard{cursor:pointer}
+.wolfx-lp .rc-modal{position:fixed;inset:0;background:rgba(20,22,40,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:2147483000}
+.wolfx-lp .rc-modal.show{display:flex}
+.wolfx-lp .rc-modal-inner{position:relative;background:#fff;border:1px solid #e2e8e4;border-radius:16px;padding:26px 24px 24px;max-width:460px;width:100%;max-height:85vh;overflow:auto;box-shadow:0 24px 64px rgba(0,0,0,.32)}
+.wolfx-lp .rc-modal-x{position:absolute;top:8px;right:12px;border:0;background:transparent;font-size:28px;line-height:1;color:#9aa0ac;cursor:pointer;padding:4px}
+.wolfx-lp .rc-modal-x:hover{color:#4a5160}
+.wolfx-lp .rc-modal-x{position:absolute;top:10px;right:12px;z-index:2}
+.wolfx-lp .rc-modal-card .rc-top{padding-right:30px}
+.wolfx-lp .rc-modal-card .rc-date{font-size:12.5px}
+.wolfx-lp .rc-modal-card .rc-title{font-size:18px;-webkit-line-clamp:unset;display:block;overflow:visible;margin-bottom:8px}
+.wolfx-lp .rc-modal-card .rtext{-webkit-line-clamp:unset;display:block;overflow:visible;font-size:15px;line-height:1.65;color:#1a1a1a}
+.wolfx-lp .rtext p{margin:0}
+.wolfx-lp .rcard .rtext p{display:inline}
+.wolfx-lp .rcard .rtext p+p:before{content:' '}
+.wolfx-lp .rc-modal-card .rtext p{display:block;margin:0 0 12px}
+.wolfx-lp .rc-modal-card .rtext p:last-child{margin-bottom:0}
+.wolfx-lp .rverified svg{width:14px;height:14px}
+.wolfx-lp .rcard .rtext{font-size:13.5px;color:var(--ink-soft);line-height:1.5;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.wolfx-lp .tp-track{align-items:flex-start}
+.wolfx-lp .rcard.focused{box-shadow:inset 0 0 0 2px var(--gold),0 6px 18px rgba(201,162,39,.22);z-index:3}
+.wolfx-lp .tp-track.has-focus .rcard:not(.focused){opacity:.4}
+.wolfx-lp .rcard.focused{transform:scale(1.04);box-shadow:0 0 0 2px var(--gold),0 10px 26px rgba(201,162,39,.28);z-index:3}
+.wolfx-lp .tp-track.has-focus .rcard:not(.focused){opacity:.4}
+.wolfx-lp .sec-over{text-align:center;font-size:12px;font-weight:800;letter-spacing:2px;color:#8a6a12;text-transform:uppercase;margin-bottom:6px}
+.wolfx-lp .sreviews{column-count:2;column-gap:16px;max-width:900px;margin:10px auto 0}
+.wolfx-lp .tpr{break-inside:avoid;-webkit-column-break-inside:avoid;margin-bottom:16px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow-soft)}
+.wolfx-lp .tpr-top{display:flex;align-items:flex-start;gap:12px}
+.wolfx-lp .tpr-av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.wolfx-lp .tpr-id{display:flex;flex-direction:column;flex:1;min-width:0}
+.wolfx-lp .tpr-name{font-weight:700;font-size:15px;color:var(--ink)}
+.wolfx-lp .tpr-meta{font-size:12.5px;color:var(--muted);margin-top:2px}
+.wolfx-lp .tpr-date{font-size:12.5px;color:var(--muted);flex-shrink:0}
+.wolfx-lp .tpr-rate{display:flex;align-items:center;gap:10px;margin:14px 0 10px}
+.wolfx-lp .tpr-stars{display:inline-flex;gap:2px}
+.wolfx-lp .tpr-stars i{width:22px;height:22px;background:#00b67a;border-radius:0;display:inline-flex;align-items:center;justify-content:center}
+.wolfx-lp .tpr-stars i svg{width:15px;height:15px;color:#fff}
+.wolfx-lp .tpr-verified{display:inline-flex;align-items:center;gap:5px;color:#191919;font-size:13px;font-weight:600}
+.wolfx-lp .tpr-verified svg{width:15px;height:15px;color:#00b67a}
+.wolfx-lp .tpr-title{font-weight:700;font-size:15.5px;color:var(--ink);margin-bottom:8px}
+.wolfx-lp .tpr-body p{font-size:14px;color:#1a1a1a;line-height:1.5;margin-bottom:10px}
+.wolfx-lp .tpr-body p:last-child{margin-bottom:0}
+.wolfx-lp .tpr.extra{display:none}
+.wolfx-lp .sreviews.expanded .tpr.extra{display:block}
+.wolfx-lp .see-more{display:block;margin:10px auto 0;background:#fff;border:1.5px solid var(--gold);color:#8a6a12;font-weight:800;font-size:14.5px;padding:13px 28px;border-radius:40px;cursor:pointer;transition:.15s}
+.wolfx-lp .see-more:hover{background:var(--gold-soft)}
+@media(max-width:640px){
+.wolfx-lp .sreviews{column-count:1}
+}
+
+  @media(max-width:600px){
+.wolfx-lp .tp-box{padding:16px 16px}
+.wolfx-lp .tp-row1{flex-wrap:nowrap;gap:9px}
+.wolfx-lp .tp-logo{font-size:20px;gap:6px}
+.wolfx-lp .tp-logostar{width:22px;height:22px}
+.wolfx-lp .tp-sep{height:22px}
+.wolfx-lp .tstars.big i{width:25px;height:25px}
+.wolfx-lp .tstars.big i svg{width:17px;height:17px}
+.wolfx-lp .tp-row2{flex-wrap:nowrap;gap:8px}
+.wolfx-lp .tp-score{font-size:14px;white-space:nowrap}
+.wolfx-lp .tp-verified{font-size:9.5px;padding:5px 7px;white-space:nowrap}
+}
+.wolfx-lp .hero-tp .tstars{gap:3px}
+.wolfx-lp .hero-tp .tstars.big i{width:27px;height:27px;border-radius:0}
+.wolfx-lp .hero-tp .tstars.big i svg{width:20px;height:20px}
+.wolfx-lp .hero-tp .tstars.sm i{width:18px;height:18px}
+
+  @media(max-width:600px){
+.wolfx-lp .hero-tp .tstars.big i{width:20px;height:20px}
+.wolfx-lp .hero-tp .tstars.big i svg{width:14px;height:14px}
+}
+.wolfx-lp .section.tp-first{margin-top:60px}
+@media(min-width:992px){.wolfx-lp .section.tp-first{margin-top:92px}}
+/* ---- [2026-10-13] BOTON BAJO LA TARJETA: comprar sin bajar. Tres variantes (v-a/v-b/v-c en la raiz). ---- */
+.wolfx-lp .buytop{margin-top:14px}
+.wolfx-lp .mcta.mcta-top{margin-top:0}
+.wolfx-lp .bt-note{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:2px 8px;margin-top:9px;font-size:12.5px;line-height:1.35;color:#5f6676;text-align:center}
+.wolfx-lp .bt-note .bt-m,.wolfx-lp .bt-note .bt-l{font-weight:700;color:var(--ink-soft)}
+.wolfx-lp .bt-note .bt-l,.wolfx-lp.life .bt-note .bt-m{display:none}
+.wolfx-lp.life .bt-note .bt-l{display:inline}
+.wolfx-lp .bt-note .bt-sep{width:1px;height:11px;background:#c5c9d2}
+/* B: el boton vive dentro de la tarjeta oscura, con un halo dorado */
+.wolfx-lp.v-b .buytop{margin-top:20px}
+.wolfx-lp.v-b .mcta-top{box-shadow:0 0 0 1px rgba(255,255,255,.10),0 10px 30px rgba(232,200,96,.35)}
+.wolfx-lp.v-b .bt-note{color:rgba(255,255,255,.75)}
+.wolfx-lp.v-b .bt-note .bt-m,.wolfx-lp.v-b .bt-note .bt-l{color:#fff}
+.wolfx-lp.v-b .bt-note{flex-direction:column;gap:2px}
+.wolfx-lp.v-b .bt-note .bt-sep{display:none}
+.wolfx-lp.v-b .mhead::before{-webkit-mask-image:linear-gradient(#000 45%,transparent 80%);mask-image:linear-gradient(#000 45%,transparent 80%)}
+/* C: tira blanca con la condicion a la izquierda y el boton a la derecha */
+.wolfx-lp.v-c .buytop{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px 10px 10px 16px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 1px 2px rgba(20,22,40,.04),0 6px 18px rgba(20,22,40,.06)}
+.wolfx-lp.v-c .bt-note{order:-1;flex:1;min-width:0;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;margin:0;text-align:left}
+.wolfx-lp.v-c .bt-note .bt-sep,.wolfx-lp.v-c .bt-note span:last-child{display:none}
+.wolfx-lp.v-c .bt-note{font-size:13px;min-width:96px}
+.wolfx-lp.v-c .mcta-top{width:auto;flex:0 0 auto;padding:14px 15px;font-size:14px;white-space:nowrap}
+@media(min-width:992px){.wolfx-lp.v-c .buytop{flex-direction:column;align-items:stretch;padding:12px}.wolfx-lp.v-c .mcta-top{max-width:none;width:100%}.wolfx-lp.v-c .bt-note{order:1;align-items:center;text-align:center}}
+
+/* ---- [2026-10-13] SEGUNDA PASADA ---- */
+/* 1. La nota bajo el boton cabe en una linea en cualquier iPhone (360 a 430 px). */
+.wolfx-lp .bt-note{flex-wrap:nowrap;white-space:nowrap;gap:2px 7px;font-size:clamp(11px,3.2vw,12.5px)}
+/* 2. Estrellas de Trustpilot: copiadas de thcopytrading.com/trackrecord (un solo elemento,
+   geometria del SVG oficial: cuadro 96, hueco 8, estrella al 70 % y centrada). */
+.estrellas{
+  /* Geometria sacada del fichero oficial de Trustpilot, no de una captura:
+     cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-5.svg. Sus numeros exactos son
+     cuadro de 96, el siguiente empieza en 104 (hueco 8 = 8,33% del lado), estrella al
+     70% del ancho y centrada exacta (14,4 a cada lado, 16,2 arriba y abajo).
+     Mis cifras de ayer (10,6% de hueco, 60,6% de estrella) salieron de medir una
+     captura y el antialiasing se comia los bordes finos: estaban mal las dos.
+     Las cinco van en UN SOLO SVG escalado, no en un tile que se repite: asi no hay
+     cinco cajas redondeando cada una por su lado y la irregularidad no puede volver. */
+  --lado:14px; --n:5; --col:#00B67A;
+  position:relative;display:inline-block;vertical-align:middle;
+  height:var(--lado);width:calc(var(--lado) * 512 / 96);
+  /* el corte del color cae donde acaba el cuadro n: ((n-1)*104 + 96) / 512 */
+  background:linear-gradient(90deg,
+    var(--col) 0 calc(var(--n) * 20.3125% - 1.5625%),
+    #DCDCE6 calc(var(--n) * 20.3125% - 1.5625%) 100%);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%2096%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22104%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22208%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22312%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22416%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E") no-repeat left center/100% 100%;
+          mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%2096%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22104%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22208%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22312%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3Crect%20x%3D%22416%22%20y%3D%220%22%20width%3D%2296%22%20height%3D%2296%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E") no-repeat left center/100% 100%;
+}
+.estrellas::after{
+  content:"";position:absolute;inset:0;background:#fff;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%2096%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M48%2C64.7%20L62.6%2C61%20L68.7%2C79.8%20L48%2C64.7%20Z%20M81.6%2C40.4%20L55.9%2C40.4%20L48%2C16.2%20L40.1%2C40.4%20L14.4%2C40.4%20L35.2%2C55.4%20L27.3%2C79.6%20L48.1%2C64.6%20L60.9%2C55.4%20L81.6%2C40.4%20L81.6%2C40.4%20L81.6%2C40.4%20L81.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M152%2C64.7%20L166.6%2C61%20L172.7%2C79.8%20L152%2C64.7%20Z%20M185.6%2C40.4%20L159.9%2C40.4%20L152%2C16.2%20L144.1%2C40.4%20L118.4%2C40.4%20L139.2%2C55.4%20L131.3%2C79.6%20L152.1%2C64.6%20L164.9%2C55.4%20L185.6%2C40.4%20L185.6%2C40.4%20L185.6%2C40.4%20L185.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M256%2C64.7%20L270.6%2C61%20L276.7%2C79.8%20L256%2C64.7%20Z%20M289.6%2C40.4%20L263.9%2C40.4%20L256%2C16.2%20L248.1%2C40.4%20L222.4%2C40.4%20L243.2%2C55.4%20L235.3%2C79.6%20L256.1%2C64.6%20L268.9%2C55.4%20L289.6%2C40.4%20L289.6%2C40.4%20L289.6%2C40.4%20L289.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M360%2C64.7%20L374.6%2C61%20L380.7%2C79.8%20L360%2C64.7%20Z%20M393.6%2C40.4%20L367.9%2C40.4%20L360%2C16.2%20L352.1%2C40.4%20L326.4%2C40.4%20L347.2%2C55.4%20L339.3%2C79.6%20L360.1%2C64.6%20L372.9%2C55.4%20L393.6%2C40.4%20L393.6%2C40.4%20L393.6%2C40.4%20L393.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M464%2C64.7%20L478.6%2C61%20L484.7%2C79.8%20L464%2C64.7%20Z%20M497.6%2C40.4%20L471.9%2C40.4%20L464%2C16.2%20L456.1%2C40.4%20L430.4%2C40.4%20L451.2%2C55.4%20L443.3%2C79.6%20L464.1%2C64.6%20L476.9%2C55.4%20L497.6%2C40.4%20L497.6%2C40.4%20L497.6%2C40.4%20L497.6%2C40.4%20Z%22%2F%3E%3C%2Fsvg%3E") no-repeat left center/100% 100%;
+          mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%2096%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M48%2C64.7%20L62.6%2C61%20L68.7%2C79.8%20L48%2C64.7%20Z%20M81.6%2C40.4%20L55.9%2C40.4%20L48%2C16.2%20L40.1%2C40.4%20L14.4%2C40.4%20L35.2%2C55.4%20L27.3%2C79.6%20L48.1%2C64.6%20L60.9%2C55.4%20L81.6%2C40.4%20L81.6%2C40.4%20L81.6%2C40.4%20L81.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M152%2C64.7%20L166.6%2C61%20L172.7%2C79.8%20L152%2C64.7%20Z%20M185.6%2C40.4%20L159.9%2C40.4%20L152%2C16.2%20L144.1%2C40.4%20L118.4%2C40.4%20L139.2%2C55.4%20L131.3%2C79.6%20L152.1%2C64.6%20L164.9%2C55.4%20L185.6%2C40.4%20L185.6%2C40.4%20L185.6%2C40.4%20L185.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M256%2C64.7%20L270.6%2C61%20L276.7%2C79.8%20L256%2C64.7%20Z%20M289.6%2C40.4%20L263.9%2C40.4%20L256%2C16.2%20L248.1%2C40.4%20L222.4%2C40.4%20L243.2%2C55.4%20L235.3%2C79.6%20L256.1%2C64.6%20L268.9%2C55.4%20L289.6%2C40.4%20L289.6%2C40.4%20L289.6%2C40.4%20L289.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M360%2C64.7%20L374.6%2C61%20L380.7%2C79.8%20L360%2C64.7%20Z%20M393.6%2C40.4%20L367.9%2C40.4%20L360%2C16.2%20L352.1%2C40.4%20L326.4%2C40.4%20L347.2%2C55.4%20L339.3%2C79.6%20L360.1%2C64.6%20L372.9%2C55.4%20L393.6%2C40.4%20L393.6%2C40.4%20L393.6%2C40.4%20L393.6%2C40.4%20Z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M464%2C64.7%20L478.6%2C61%20L484.7%2C79.8%20L464%2C64.7%20Z%20M497.6%2C40.4%20L471.9%2C40.4%20L464%2C16.2%20L456.1%2C40.4%20L430.4%2C40.4%20L451.2%2C55.4%20L443.3%2C79.6%20L464.1%2C64.6%20L476.9%2C55.4%20L497.6%2C40.4%20L497.6%2C40.4%20L497.6%2C40.4%20L497.6%2C40.4%20Z%22%2F%3E%3C%2Fsvg%3E") no-repeat left center/100% 100%;
+}
+.estrellas.n1{--n:1;--col:#FF3722}
+.estrellas.n2{--n:2;--col:#FF8622}
+.estrellas.n3{--n:3;--col:#FFCE00}
+.estrellas.n4{--n:4;--col:#73CF11}
+.estrellas.n5{--n:5;--col:#00B67A}
+.estrellas.grande{--lado:19px}
+/* sin soporte de mascara se veria un rectangulo de color en vez de las estrellas: mejor
+   que no se vea nada. Hoy es el 98% de los navegadores, pero el respaldo cuesta 3 lineas */
+@supports not ((-webkit-mask-image: url(a)) or (mask-image: url(a))){
+  .estrellas{display:none}
+}
+.tp-estrellas{--lado:19px}
+
+.wolfx-lp .rc-rate .estrellas,.wolfx-lp .tpr-stars .estrellas{margin:0}
+/* Tamano: la forma es la de TH (la del SVG oficial), pero 14/19 px se ven pequenos en WolfX
+   (Jaime, 13-10). Se vuelve a los cuadros que ya tenia la pagina: 22 px en resenas, 25 en el sello. */
+.wolfx-lp .rc-rate .estrellas,.wolfx-lp .tpr-stars .estrellas{--lado:22px}
+.wolfx-lp .tp-estrellas{--lado:25px}
+.wolfx-lp .tpr-stars{display:flex;align-items:center}
+/* 3. Trustpilot equidistante: el mismo aire encima de la caja que entre la caja y las resenas. */
+.wolfx-lp .section.tp-first{margin-top:28px}
+.wolfx-lp .tp-carousel{margin-top:28px}
+@media(min-width:992px){.wolfx-lp .section.tp-first{margin-top:40px}.wolfx-lp .tp-carousel{margin-top:40px}}
+/* 4. Bloque de Lifetime («Pay once», «No renewals», Academy + Copytrading). */
+.wolfx-lp .sh-chip .t{white-space:nowrap}
+/* x: mismo lenguaje verde, mas compacto: las tres piezas a la misma altura */
+.wolfx-lp.h-x .sh-badge{height:30px;padding:0 12px;font-size:12px}
+.wolfx-lp.h-x .sh-chip{height:34px;padding:0 14px 0 6px;gap:8px;box-shadow:0 2px 8px rgba(22,163,74,.10)}
+.wolfx-lp.h-x .sh-chip .ic{width:22px;height:22px}
+.wolfx-lp.h-x .sh-chip .t{font-size:clamp(11.5px,3.3vw,13px)}
+/* y: una sola tarjeta blanca; arriba las dos condiciones, abajo lo que incluye */
+.wolfx-lp.h-y .savehint{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:0 1px 2px rgba(20,22,40,.04),0 4px 14px rgba(20,22,40,.05);width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;gap:8px}
+.wolfx-lp.h-y .sh-row{gap:16px}
+.wolfx-lp.h-y .sh-badge{background:none;border:0;padding:0;font-size:12.5px;color:#14603a}
+.wolfx-lp.h-y .sh-chip{background:none;border:0;box-shadow:none;padding:8px 0 0;border-top:1px solid var(--line);border-radius:0;gap:7px}
+.wolfx-lp.h-y .sh-chip .ic{width:18px;height:18px;box-shadow:none}
+.wolfx-lp.h-y .sh-chip .ic svg{width:10px;height:10px}
+.wolfx-lp.h-y .sh-chip .t{font-size:clamp(11.5px,3.3vw,13px)}
+/* y2: la tarjeta de Y sin repetir las condiciones (ya van bajo el boton): solo lo que incluye */
+.wolfx-lp.h-y2 .savehint{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 16px;box-shadow:0 1px 2px rgba(20,22,40,.04),0 4px 14px rgba(20,22,40,.05);width:fit-content;max-width:100%;margin-left:auto;margin-right:auto}
+.wolfx-lp.h-y2 .sh-row{display:none}
+.wolfx-lp.h-y2 .sh-chip{background:none;border:0;box-shadow:none;padding:0;border-radius:0;gap:8px}
+.wolfx-lp.h-y2 .sh-chip .ic{width:20px;height:20px;box-shadow:none}
+.wolfx-lp.h-y2 .sh-chip .ic svg{width:11px;height:11px}
+.wolfx-lp.h-y2 .sh-chip .t{font-size:clamp(12px,3.4vw,13.5px)}
+/* z: el oro de Lifetime en vez del verde, igual que el interruptor y la tarjeta */
+.wolfx-lp.h-z .sh-badge{background:#fff;border-color:#e4e6ec;color:var(--ink-soft);height:30px;padding:0 12px;font-size:12px}
+.wolfx-lp.h-z .sh-badge svg{color:#b8901d}
+.wolfx-lp.h-z .sh-chip{background:linear-gradient(180deg,#fffaef 0%,#fbf0d2 100%);border-color:#ead79a;box-shadow:0 2px 10px rgba(201,162,39,.16);height:34px;padding:0 14px 0 6px;gap:8px}
+.wolfx-lp.h-z .sh-chip .ic{background:linear-gradient(180deg,#e8c860 0%,#c9a227 100%);color:#241a05;box-shadow:0 2px 6px rgba(201,162,39,.35)}
+.wolfx-lp.h-z .sh-chip .t{color:#6d520a;font-size:clamp(11.5px,3.3vw,13px)}
+.wolfx-lp.h-z .sh-chip .t b{color:#4a3706}
+
+/* ---- [2026-10-13] TERCERA PASADA ---- */
+/* 1. Tarjeta de resena copiada de thcopytrading.com/trackrecord (.mrc). Medidas tal cual. */
+.wolfx-lp .mrc{--panel:#ffffff;--linea-viva:#e4e6ec;--tinta:#14161d;--tinta-suave:#4b5262;--tinta-tenue:#6a7180;--sube:#16a34a;--mrc-sombra:0 1px 2px rgba(20,22,40,.04),0 4px 14px rgba(20,22,40,.05);color:var(--tinta);background:var(--panel);border:1px solid var(--linea-viva);border-radius:14px;padding:17px;display:flex;flex-direction:column;text-align:left;box-shadow:var(--mrc-sombra);font-size:15.5px;line-height:1.55}
+.wolfx-lp .mrc-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:11px}
+.wolfx-lp .mrc-av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;flex:0 0 auto}
+.wolfx-lp .mrc-id{display:flex;flex-direction:column;flex:1 1 0%;min-width:0}
+.wolfx-lp .mrc-name{font-weight:700;font-size:14px;line-height:1.25;overflow-wrap:anywhere;color:var(--tinta)}
+.wolfx-lp .mrc-date{font-size:11.5px;color:var(--tinta-tenue);margin-top:1px;font-variant-numeric:tabular-nums}
+.wolfx-lp .mrc-rate{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.wolfx-lp .mrc-rate .estrellas{--lado:14px;margin:0}
+.wolfx-lp .mrc-vf{display:inline-flex;align-items:center;gap:4px;color:var(--sube);font-size:11.5px;font-weight:700;white-space:nowrap}
+.wolfx-lp .mrc-vf svg{width:13px;height:13px}
+.wolfx-lp .mrc-tt{font-weight:700;font-size:14.5px;margin-bottom:6px;line-height:1.25;color:var(--tinta)}
+.wolfx-lp .mrc-tx{font-size:13.5px;color:var(--tinta-suave);line-height:1.55;margin:0}
+@media(max-width:720px){.wolfx-lp .mrc-tx{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}}
+/* en el carrusel la tarjeta conserva su ancho; en la lista, su separacion */
+.wolfx-lp .mrc.rcard{height:auto;min-height:0}
+.wolfx-lp .mrc.rcard .mrc-tx{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.wolfx-lp .sreviews .mrc{break-inside:avoid;-webkit-column-break-inside:avoid;margin-bottom:14px}
+/* 14 px = el gap de la rejilla de TH (.mos-grid); aqui es columna, asi que va como margen */
+.wolfx-lp .sreviews .mrc.extra{display:none}
+.wolfx-lp .sreviews.expanded .mrc.extra{display:flex}
+.wolfx-lp .rc-modal-card .mrc-tx{-webkit-line-clamp:unset;display:block;overflow:visible;font-size:15px}
+/* 3. Ritmo de arriba: interruptor, bloque de Lifetime y pestanas con el mismo aire. */
+@media(max-width:991px){
+  .wolfx-lp .bill{margin-bottom:0}
+  .wolfx-lp .mplans{margin-top:0}
+  .wolfx-lp .mtabs{margin-top:18px}
+  .wolfx-lp.life .savehint{margin-top:18px;margin-bottom:0}
+  .wolfx-lp:not(.life) .savehint{padding-top:0;padding-bottom:0;border-width:0;box-shadow:none}
+}
+
+/* ---- [2026-10-13] CUARTA PASADA ---- */
+/* Tarjeta mas baja: subtitulo a todo el ancho, precio Lifetime en dos lineas. */
+@media(max-width:991px){.wolfx-lp .mhead .msub{max-width:none;margin-top:10px}.wolfx-lp .mchips{margin-top:14px}}
+.wolfx-lp.life .mprice .was{margin-top:3px}
+.wolfx-lp.p-1.life .mprice .life{display:none}
+.wolfx-lp.p-1.life .mprice .was::before{content:"Lifetime";margin-right:7px;padding-right:7px;border-right:1px solid rgba(255,255,255,.35)}
+.wolfx-lp.p-2.life .mprice{display:flex;flex-direction:column;align-items:flex-end}
+.wolfx-lp.p-2.life .mprice .amt{display:flex;align-items:baseline;gap:5px}
+.wolfx-lp.p-2.life .mprice .amt::after{content:"lifetime";font-size:13px;font-weight:600;opacity:.85}
+.wolfx-lp.p-2.life .mprice .life{display:none}
+/* Academy + Copytrading: el verde que lo hace premium */
+.wolfx-lp.g-1 .savehint{background:linear-gradient(135deg,#0f5132 0%,#15803d 55%,#22c55e 100%);border:0;box-shadow:0 10px 26px -10px rgba(21,128,61,.55),inset 0 1px 0 rgba(255,255,255,.18)}
+.wolfx-lp.g-1:not(.life) .savehint{box-shadow:none}
+.wolfx-lp.g-1 .sh-chip .t,.wolfx-lp.g-1 .sh-chip .t b{color:#fff}
+.wolfx-lp.g-1 .sh-chip .ic{background:rgba(255,255,255,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.wolfx-lp.g-2 .savehint{border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#16a34a,#86efac 50%,#15803d) border-box;box-shadow:0 8px 22px -12px rgba(22,163,74,.45)}
+.wolfx-lp.g-2:not(.life) .savehint{border-width:0;box-shadow:none}
+.wolfx-lp.g-2 .sh-chip .t{background:linear-gradient(90deg,#0f5132,#16a34a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wolfx-lp.g-2 .sh-chip .t b{color:transparent}
+.wolfx-lp.g-2 .sh-chip .ic{background:linear-gradient(135deg,#15803d,#4ade80)}
+.wolfx-lp.g-3 .savehint{position:relative;overflow:hidden;background:linear-gradient(180deg,#ecfdf3 0%,#d1fae5 100%);border:1px solid #a7f3d0;box-shadow:0 8px 22px -12px rgba(22,163,74,.5)}
+.wolfx-lp.g-3:not(.life) .savehint{border-width:0;box-shadow:none}
+.wolfx-lp.g-3 .savehint::after{content:"";position:absolute;top:0;left:-75%;width:55%;height:100%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:sweepLife 12s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.wolfx-lp.g-3 .savehint::after{display:none}}
+.wolfx-lp.g-3 .sh-chip .t b{color:#065f46}
+.wolfx-lp.g-3 .sh-chip .ic{background:linear-gradient(135deg,#059669,#34d399)}
+
+/* ---- [2026-10-13] QUINTA PASADA ---- */
+/* Precio con su periodo pegado: «$278/lifetime», «$89/month». */
+.wolfx-lp .mhead .mprice{display:grid;grid-template-columns:auto auto;justify-content:end;align-items:baseline;column-gap:2px}
+.wolfx-lp .mhead .mprice .life{display:block;margin:0;font-size:14px;font-weight:700;opacity:.9}
+.wolfx-lp .mhead .mprice .was{grid-column:1 / -1;text-align:right}
+/* Cabecera de Trustpilot (la de TH y fbmo.net) */
+.wolfx-lp .tp-head{display:flex;flex-direction:column;align-items:center;gap:.6em;text-align:center;font-size:clamp(1.2rem,3.4vw,1.32rem);color:var(--ink)}
+.wolfx-lp .tp-line1{display:flex;align-items:center;gap:.55em;flex-wrap:wrap;justify-content:center;font-size:1em}
+.wolfx-lp .tp-word{font-size:1em;font-weight:800;letter-spacing:-.03em;line-height:1}
+.wolfx-lp .tp-head .tp-estrellas{--lado:21px}
+.wolfx-lp .tp-line2{display:inline-flex;align-items:center;gap:.45em;flex-wrap:wrap;justify-content:center;font-size:.70em;line-height:1.3;color:var(--ink)}
+.wolfx-lp .tp-line2 b{font-weight:800}
+.wolfx-lp .tp-head .tp-verified{margin-left:4px}
+/* Rejilla de resenas (fbmo.net): columnas de altura libre, las ultimas filas se apagan */
+.wolfx-lp .tp-wrap{position:relative;margin-top:28px}
+.wolfx-lp .tp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:16px;align-items:start;max-height:min(560px,70vh);overflow:hidden}
+.wolfx-lp .tp-fade{position:absolute;inset:auto 0 0 0;height:220px;pointer-events:none;background:linear-gradient(to bottom,rgba(244,245,247,0) 0%,rgba(244,245,247,.72) 55%,#f4f5f7 100%)}
+@media(max-width:720px){.wolfx-lp .tp-grid{max-height:62vh}.wolfx-lp .tp-fade{height:120px}}
+.wolfx-lp .tp-wrap.open .tp-grid{max-height:none}
+.wolfx-lp .tp-wrap.open .tp-fade{display:none}
+.wolfx-lp .tp-more{display:flex;justify-content:center;margin-top:-34px;position:relative;z-index:2}
+.wolfx-lp .tp-more button{display:flex;align-items:center;gap:8px;height:48px;padding:13px 16px;border-radius:8px;background:#fff;color:#09090b;border:1px solid var(--line);font:600 14px/20px inherit;font-family:inherit;cursor:pointer;box-shadow:0 1px 2px rgba(20,22,40,.04),0 4px 14px rgba(20,22,40,.06)}
+.wolfx-lp .tp-more button:hover{background:#e4e4e7}
+
+/* ---- [2026-10-13] SEXTA PASADA ---- */
+/* Precio: Monthly como estaba; Lifetime segun la opcion (l-1 pastilla, l-2 pago unico, l-3 precio mensual como etiqueta) */
+.wolfx-lp .mhead .mprice{display:block;text-align:right}
+.wolfx-lp .mhead .mprice .life{display:block;font-size:13px;font-weight:400;opacity:.85;margin-top:2px}
+.wolfx-lp .mhead .mprice .was{text-align:right}
+.wolfx-lp.l-1.life .mhead .mprice .life{display:none}
+.wolfx-lp.l-1.life .mhead .mprice .amt{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.wolfx-lp.l-1.life .mhead .mprice .amt::before{content:"LIFETIME";font-size:10.5px;font-weight:800;letter-spacing:.08em;line-height:1;padding:5px 7px;border-radius:6px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35)}
+.wolfx-lp.l-2.life .mhead .mprice .was{display:none}
+.wolfx-lp.l-2.life .mhead .mprice .life{font-weight:700;opacity:.92}
+.wolfx-lp.l-3.life .mhead .mprice .was{display:none}
+.wolfx-lp.l-3.life .mhead .mprice .life{display:inline-block;margin-top:6px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;opacity:1;padding:4px 8px;border-radius:6px;background:linear-gradient(180deg,#e8c860,#c9a227);color:#241a05}
+/* Resenas: la seccion de fbmo.net, en el azul noche de WolfX */
+.wolfx-lp .section.tp-band{--tpbg:#0b111c;margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%);width:100vw;background:var(--tpbg);padding:44px 20px;color:#f8fbff;box-sizing:border-box}
+.wolfx-lp .tp-band > *{max-width:1140px;margin-left:auto;margin-right:auto}
+.wolfx-lp .tp-band .tp-head{font-size:19.2px;gap:11.5px;color:#f8fbff}
+.wolfx-lp .tp-band .tp-head .tp-estrellas{--lado:19px}
+.wolfx-lp .tp-band .tp-line2{font-size:13.44px;gap:4.7px;color:#f8fbff;line-height:1.3}
+.wolfx-lp .tp-band .tp-link{display:inline-block;padding:14px 0;margin:-14px 0;color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:.16em;text-decoration-thickness:.055em}
+.wolfx-lp .tp-band .tp-wrap{margin-top:34px}
+.wolfx-lp .tp-band .tp-grid{max-height:min(560px,70vh);overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#24304a transparent;padding-right:6px}
+.wolfx-lp .tp-band .tp-grid::-webkit-scrollbar{width:6px}
+.wolfx-lp .tp-band .tp-grid::-webkit-scrollbar-thumb{background:#24304a;border-radius:999px}
+@media(max-width:720px){.wolfx-lp .tp-band .tp-grid{max-height:62vh}.wolfx-lp .tp-band .tp-fade{height:120px}}
+.wolfx-lp .tp-band .tp-fade{height:220px;background:linear-gradient(to bottom,rgba(11,17,28,0) 0%,rgba(11,17,28,.72) 55%,#0b111c 100%)}
+.wolfx-lp .tp-band .tp-more{margin-top:-34px}
+.wolfx-lp .tp-band .tp-more a{display:flex;align-items:center;gap:8px;height:48px;box-sizing:border-box;padding:13px 16px;border-radius:8px;background:#fff;color:#09090b;border:1px solid rgba(255,255,255,.063);font-size:14px;font-weight:600;line-height:20px;text-decoration:none}
+.wolfx-lp .tp-band .tp-more a:hover,.wolfx-lp .tp-band .tp-more a:focus-visible{background:#e4e4e7;color:#09090b}
+.wolfx-lp .tp-band .tp-more svg{width:20px;height:20px;flex:none}
+/* las tarjetas, en oscuro como las de fbmo.net y TH */
+.wolfx-lp .tp-band .mrc{--panel:#111a2a;--linea-viva:#22304a;--tinta:#f8fbff;--tinta-suave:#a8b3c4;--tinta-tenue:#8f99aa;--sube:#45c97c;--mrc-sombra:inset 0 1px 0 rgba(236,238,240,.043)}
+
+/* ---- [2026-10-13] SEPTIMA PASADA ---- */
+/* Precio Lifetime como en vivo: cifra, «Lifetime» y el mensual tachado */
+.wolfx-lp.life .mhead .mprice .was{text-decoration:line-through;opacity:.75}
+/* Resenas sobre banda clara: blanca, con una linea arriba y abajo para marcar el cambio de seccion */
+.wolfx-lp .section.tp-band{--tpbg:#ffffff;background:var(--tpbg);color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wolfx-lp .tp-band .tp-head,.wolfx-lp .tp-band .tp-line2{color:var(--ink)}
+.wolfx-lp .tp-band .tp-fade{background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.72) 55%,#ffffff 100%)}
+.wolfx-lp .tp-band .tp-grid{scrollbar-color:#d7dbe3 transparent}
+.wolfx-lp .tp-band .tp-grid::-webkit-scrollbar-thumb{background:#d7dbe3}
+.wolfx-lp .tp-band .mrc{--panel:#f7f8fa;--linea-viva:#e4e6ec;--tinta:#14161d;--tinta-suave:#4b5262;--tinta-tenue:#6a7180;--sube:#16a34a;--mrc-sombra:none}
+.wolfx-lp .tp-band .tp-more button{display:flex;align-items:center;gap:8px;height:48px;box-sizing:border-box;padding:13px 16px;border-radius:8px;background:#14161d;color:#fff;border:0;font:inherit;font-size:14px;font-weight:600;line-height:20px;cursor:pointer}
+.wolfx-lp .tp-band .tp-more button:hover,.wolfx-lp .tp-band .tp-more button:focus-visible{background:#2a2e3a}
+.wolfx-lp .tp-band .tp-more svg{width:20px;height:20px;flex:none}
+/* abierta: la lista entera en la pagina, sin scroll propio ni sombra */
+.wolfx-lp .tp-band .tp-wrap.open .tp-grid{max-height:none;overflow:visible}
+.wolfx-lp .tp-band .tp-wrap.open .tp-fade{display:none}
+
+/* ---- [2026-10-13] OCTAVA PASADA: cabecera de Trustpilot (t-1, t-2, t-3) ---- */
+.wolfx-lp .tp-head .tp-brand,.wolfx-lp .tp-head .tp-big{display:none}
+.wolfx-lp .tp-head .tp-main{display:flex;flex-direction:column;align-items:center;gap:11.5px}
+/* 1 - Nota grande */
+.wolfx-lp.t-1 .tp-head{flex-direction:row;justify-content:center;align-items:center;gap:20px;width:fit-content;max-width:100%;margin:0 auto;padding:18px 24px;border-radius:20px;border:1.5px solid transparent;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#00b67a,#a7f3d0 50%,#059669) border-box;box-shadow:0 14px 34px -18px rgba(0,182,122,.55),0 2px 6px rgba(20,22,40,.05)}
+.wolfx-lp.t-1 .tp-big{display:flex;align-items:baseline;gap:4px;padding-right:20px;border-right:1px solid var(--line)}
+.wolfx-lp.t-1 .tp-big b{font-size:46px;font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(180deg,#00b67a,#04805a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wolfx-lp.t-1 .tp-big span{font-size:15px;font-weight:700;color:var(--muted)}
+.wolfx-lp.t-1 .tp-main{align-items:flex-start;gap:9px}
+.wolfx-lp.t-1 .tp-rated{display:none}
+.wolfx-lp.t-1 .tp-head .tp-verified{margin-left:0}
+.wolfx-lp.t-1 .tp-big{white-space:nowrap;flex-shrink:0}
+.wolfx-lp.t-1 .tp-line1{flex-wrap:nowrap}
+@media(max-width:480px){.wolfx-lp.t-1 .tp-head{gap:14px;padding:16px 18px}.wolfx-lp.t-1 .tp-big{padding-right:14px}.wolfx-lp.t-1 .tp-big b{font-size:40px}
+  .wolfx-lp.t-1 .tp-word{font-size:17px}.wolfx-lp.t-1 .tp-head .tp-estrellas{--lado:16px}.wolfx-lp.t-1 .tp-line1{gap:7px}}
+/* 2 - Banda menta */
+.wolfx-lp.t-2 .tp-head{position:relative;overflow:hidden;width:fit-content;max-width:100%;margin:0 auto;padding:16px 26px;border-radius:999px;background:linear-gradient(180deg,#ecfdf3 0%,#d1fae5 100%);border:1px solid #a7f3d0;box-shadow:0 12px 30px -16px rgba(22,163,74,.55)}
+.wolfx-lp.t-2 .tp-head::after{content:"";position:absolute;top:0;left:-75%;width:55%;height:100%;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:sweepLife 12s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.wolfx-lp.t-2 .tp-head::after{display:none}}
+.wolfx-lp.t-2 .tp-main{gap:8px}
+.wolfx-lp.t-2 .tp-word{color:#065f46}
+.wolfx-lp.t-2 .tp-line2{color:#065f46}
+.wolfx-lp.t-2 .tp-head .tp-verified{background:#fff;border:1px solid #a7f3d0}
+@media(max-width:480px){.wolfx-lp.t-2 .tp-head{border-radius:22px;padding:16px 20px}}
+/* 3 - Sello Trustpilot */
+.wolfx-lp.t-3 .tp-head{gap:12px}
+.wolfx-lp.t-3 .tp-brand{display:inline-flex;align-items:center;gap:7px;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:-.6px;color:#191919}
+.wolfx-lp.t-3 .tp-brand svg{width:24px;height:24px;color:#00b67a}
+.wolfx-lp.t-3 .tp-line1{position:relative}
+.wolfx-lp.t-3 .tp-line1::before,.wolfx-lp.t-3 .tp-line1::after{content:"";width:34px;height:1px;background:linear-gradient(90deg,transparent,#c9ced8)}
+.wolfx-lp.t-3 .tp-line1::after{background:linear-gradient(90deg,#c9ced8,transparent)}
+.wolfx-lp.t-3 .tp-head .tp-estrellas{--lado:24px}
+.wolfx-lp.t-3 .tp-word{font-size:24px}
+
+/* ---- [2026-10-13] NOVENA PASADA: cabecera = TrustBox oficial de Trustpilot, sin la marca ---- */
+.wolfx-lp .tp-band .tp-head.tp-micro{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:center;gap:10px;width:auto;max-width:100%;margin:0 auto;padding:0;border:0;background:none;box-shadow:none;border-radius:0;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:17px;line-height:1;color:#191919;white-space:nowrap}
+.wolfx-lp .tp-micro::after,.wolfx-lp .tp-micro::before{content:none;display:none}
+.wolfx-lp .tp-micro .tm-word{font-weight:500;letter-spacing:-.2px}
+.wolfx-lp .tp-micro .tm-stars{--lado:21px}
+.wolfx-lp .tp-micro .tm-score b,.wolfx-lp .tp-micro .tm-sub b{font-weight:500}
+.wolfx-lp .tp-micro .tm-ok{display:inline-flex;align-items:center;gap:4px;color:#00b67a;font-weight:500}
+.wolfx-lp .tp-micro .tm-ok svg{width:15px;height:15px}
+.wolfx-lp .tp-micro i{display:inline-block;width:1px;height:14px;background:#c9ced8;font-style:normal}
+@media(max-width:400px){.wolfx-lp .tp-band .tp-head.tp-micro{font-size:15px;gap:8px}.wolfx-lp .tp-micro .tm-stars{--lado:18px}}
+/* Mini */
+.wolfx-lp .tp-band .tp-head.tm-mini{flex-direction:column;gap:9px}
+.wolfx-lp .tm-mini .tm-star{color:#00b67a;line-height:0}
+.wolfx-lp .tm-mini .tm-star svg{width:28px;height:28px}
+.wolfx-lp .tm-mini .tm-stars{--lado:30px}
+.wolfx-lp .tm-mini .tm-sub{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#191919}
+/* Horizontal */
+.wolfx-lp .tp-band .tp-head.tm-hz{flex-direction:column;gap:10px}
+.wolfx-lp .tm-hz .tm-row{display:flex;align-items:center;gap:12px}
+.wolfx-lp .tm-hz .tm-word{font-size:24px;font-weight:700;letter-spacing:-.5px}
+.wolfx-lp .tm-hz .tm-stars{--lado:26px}
+.wolfx-lp .tm-hz .tm-sub{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:#6c6c85}
+.wolfx-lp .tm-hz .tm-sub b{color:#191919}
+@media(max-width:400px){.wolfx-lp .tm-hz .tm-word{font-size:21px}.wolfx-lp .tm-hz .tm-stars{--lado:22px}.wolfx-lp .tm-hz .tm-sub{font-size:13px}}
+/* Micro Combo */
+.wolfx-lp .tm-mc .tm-ok{font-size:.88em}
+@media(max-width:400px){.wolfx-lp .tp-band .tp-head.tm-mc{font-size:14px;gap:7px}.wolfx-lp .tm-mc .tm-stars{--lado:16px}}
+
+/* ---- [2026-10-13] DECIMA PASADA: segunda linea de la cabecera, con aspecto de TrustBox ---- */
+.wolfx-lp .tm-hz .tm-sub{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#191919;font-size:14px;gap:10px}
+.wolfx-lp .tm-hz .tm-sub b{font-weight:700;color:#191919}
+.wolfx-lp .tm-hz .tm-sub i{height:16px;background:#dcdce6}
+.wolfx-lp .tm-hz .tl-ok{display:inline-flex;align-items:center;gap:6px;color:#191919;font-weight:500}
+.wolfx-lp .tm-hz .tl-ok svg{width:16px;height:16px;flex:none}
+.wolfx-lp .tm-hz .tl-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px 5px 7px;border-radius:999px;background:#f1f1f6;color:#191919;font-size:13px;font-weight:500}
+.wolfx-lp .tm-hz .tl-badge svg{width:16px;height:16px;flex:none}
+.wolfx-lp .tm-hz .tl-3{gap:8px}
+.wolfx-lp .tm-hz .tl-sq{display:inline-grid;place-items:center;min-width:30px;height:24px;padding:0 6px;background:#00b67a;color:#fff;font-weight:700;font-size:14px;border-radius:2px}
+@media(max-width:400px){.wolfx-lp .tm-hz .tm-sub{font-size:13px;gap:8px}.wolfx-lp .tm-hz .tl-badge{font-size:12px}}
+
+/* ---- [2026-10-13] UNDECIMA PASADA: resenas en el orden de /plans/, sin huecos en PC ---- */
+.wolfx-lp .tp-band .tp-grid{display:block}
+.wolfx-lp .tp-cols{display:flex;align-items:flex-start;gap:16px}
+.wolfx-lp .tp-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:16px}
+.wolfx-lp .tp-cols .mrc{margin:0;width:100%;box-sizing:border-box}
+@media(max-width:991px){.wolfx-lp .tp-cols{flex-direction:column;align-items:stretch}.wolfx-lp .tp-col{display:contents}}
+
+/* ---- [2026-10-13] DUODECIMA PASADA ---- */
+@media(min-width:992px){
+  .wolfx-lp .bill{margin-bottom:0}
+  .wolfx-lp .mplans{margin-top:24px}
+  .wolfx-lp.life .savehint{margin:20px auto 0}
+}
+/* en Monthly el bloque de Lifetime esta cerrado: que no ocupe nada (en PC sumaba 20 px de relleno) */
+.wolfx-lp:not(.life) .savehint{padding-top:0;padding-bottom:0;border-width:0;box-shadow:none;margin-top:0;margin-bottom:0}
+.wolfx-topbar .tb-l1,.wolfx-topbar .tb-l2{white-space:nowrap}
+.wolfx-topbar .tb-star{width:1em;height:1em;vertical-align:-.12em;margin-right:.3em}
+@media(max-width:767px){
+  .wolfx-topbar{padding:7px 10px}
+  .wolfx-topbar .tb-title{font-size:clamp(10.5px,3.2vw,13px);line-height:1.45;letter-spacing:.02em}
+  .wolfx-topbar .tb-l1{font-weight:600;letter-spacing:.06em}
+  .wolfx-topbar .tb-l2{font-weight:400;opacity:.88}
+  .wolfx-topbar .tb-title .sep-2{padding:0 .5em;opacity:.5}
+}
+
+/* ---- [2026-10-13] DECIMOTERCERA PASADA: tarjeta de resena como fbmo.net ---- */
+.wolfx-lp .tp-band .mrc{padding:18px;border-radius:14px}
+.wolfx-lp .tp-band .mrc-top{gap:10px;margin-bottom:11px;align-items:flex-start}
+.wolfx-lp .tp-band .mrc-av{width:40px;height:40px;font-size:13px}
+.wolfx-lp .tp-band .mrc-name{font-size:14px;font-weight:700;line-height:1.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wolfx-lp .tp-band .mrc-meta{font-size:11.5px;line-height:1.6;color:var(--tinta-tenue);margin-top:1px}
+.wolfx-lp .tp-band .mrc-date{font-size:11.5px;line-height:1.6;color:var(--tinta-tenue);margin-top:0;flex-shrink:0;white-space:nowrap}
+.wolfx-lp .tp-band .mrc-rate{gap:9px;margin-bottom:9px}
+.wolfx-lp .tp-band .mrc-rate .estrellas{--lado:22px}
+.wolfx-lp .tp-band .mrc-vf{color:#047857;font-size:11.5px;font-weight:700;gap:4px}
+.wolfx-lp .tp-band .mrc-vf svg{width:13px;height:13px}
+.wolfx-lp .tp-band .mrc-tt{font-size:14.5px;font-weight:700;line-height:1.25;margin-bottom:6px}
+.wolfx-lp .tp-band .mrc-tx{font-size:13.5px;line-height:1.5}
+
+/* ---- [2026-10-13] r20: Show more reviews calcado de fbmo.net (#tp-see-more medido en vivo) ---- */
+.wolfx-lp .tp-band .tp-more button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;height:auto;padding:13px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.064);background:#fff;color:#09090B;box-shadow:none;font-family:inherit;font-size:14px;font-weight:600;line-height:20px;transition:background-color .2s;cursor:pointer}
+.wolfx-lp .tp-band .tp-more button:hover,.wolfx-lp .tp-band .tp-more button:focus-visible{background:#E4E4E7;color:#09090B}
+.wolfx-lp .tp-band .tp-more button svg{width:20px;height:20px;flex:none}
+.wolfx-lp .tp-band .tp-more button{border-color:#E4E4E7;box-shadow:0 1px 2px rgba(9,9,11,.06),0 6px 18px -6px rgba(9,9,11,.18)}
+
+/* [2026-10-14] bloque final, variante 2: casi negro con halo dorado (mismo lenguaje que la franja de arriba) */
+.wolfx-lp .gift.gv2{background:radial-gradient(ellipse 60% 90% at 50% 0%,rgba(232,200,96,.30) 0%,rgba(232,200,96,0) 72%),#0d0b14;border:1px solid rgba(232,200,96,.25);box-shadow:inset 0 -1px 0 rgba(232,200,96,.45);padding:38px 22px 34px}
+.wolfx-lp .gift.gv2 .gift-flag svg{width:14px;height:14px}
+.wolfx-lp .gift.gv2 h3{text-wrap:balance;font-size:27px;line-height:1.18;max-width:520px;margin:0 auto}
+.wolfx-lp .gift.gv2 .gold{background:linear-gradient(100deg,#d4a935 0%,#fbe29a 30%,#fff6d6 45%,#fbe29a 60%,#d4a935 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gvShine 6s ease-in-out infinite}
+@keyframes gvShine{0%,55%{background-position:100% 0}100%{background-position:-50% 0}}
+@media(prefers-reduced-motion:reduce){.wolfx-lp .gift.gv2 .gold{animation:none}}
+.wolfx-lp .gift.gv2 p{margin:12px auto 4px;color:rgba(255,255,255,.72);max-width:420px}
+.wolfx-lp .gift.gv2 .cd{margin:20px 0 22px}
+.wolfx-lp .gift.gv2 .gv-lab{margin-top:22px;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.wolfx-lp .gift.gv2 .gv-lab+.cd{margin-top:10px}
+.wolfx-lp .gift.gv2 h3+.cd{margin-top:26px}
+.wolfx-lp .gift.gv2 .gift-note{margin-top:14px}
+.wolfx-lp .gift.gv2 .cd-u{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border-color:rgba(232,200,96,.30);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.wolfx-lp .gift.gv2 .cd-u b{color:#f6e08f}
+@media(min-width:900px){.wolfx-lp .gift.gv2{padding:48px 32px 44px}.wolfx-lp .gift.gv2 h3{text-wrap:balance;font-size:32px}}
+
+/* [2026-10-14] franja TRUSTED BY con el lenguaje de la franja del header (E4) */
+.wolfx-topbar{background:radial-gradient(ellipse 55% 160% at 50% 0%,rgba(232,200,96,.28) 0%,rgba(232,200,96,0) 72%),#100e18;border-bottom:1px solid rgba(255,255,255,.08)}
+.wolfx-topbar .tb-title{color:#eceaf3}
+.wolfx-topbar .tb-l1{background:linear-gradient(180deg,#fbe29a,#d4a935);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---- [2026-10-14] r23 ---- */
+/* sin scroll lateral: el CSS de pagina de /plans-lp/ mete margin:-10px al body (26 px de mas en movil) */
+html body.elementor-page-50354{margin:0!important}
+/* ese margen tapaba el relleno del contenedor (10 px) y del widget (3 px): se quitan para que todo quede a 0 */
+.elementor-50354>.elementor-element,.elementor-50354 .e-con-inner{padding:0!important}
+.elementor-50354 .elementor-widget-container{margin:0!important}
+html,body{overflow-x:clip}
+.wolfx-lp{overflow-x:clip}
+
+/* ---- [2026-10-14] FAQ premium (iteracion d sobre la 1) ---- */
+.wolfx-lp .faqs{position:relative;border-radius:20px;padding:6px 0;border:1px solid transparent;
+  background:linear-gradient(180deg,#fff 0%,#fffdf7 100%) padding-box,linear-gradient(160deg,#ecd58f 0%,#f3ead0 35%,#e9e6dc 65%,#d9b75a 100%) border-box;
+  box-shadow:0 1px 2px rgba(20,22,40,.04),0 22px 48px -28px rgba(120,90,10,.35)}
+.wolfx-lp .faq{background:none;border:0;border-radius:0;box-shadow:none;margin:0;position:relative}
+.wolfx-lp .faq+.faq::before{content:"";position:absolute;top:0;left:20px;right:20px;height:1px;background:linear-gradient(90deg,rgba(201,162,39,0),rgba(201,162,39,.35) 20%,rgba(201,162,39,.35) 80%,rgba(201,162,39,0))}
+.wolfx-lp .faq summary{padding:16px 18px;gap:14px;justify-content:flex-start;align-items:center;font-size:15.5px;font-weight:700;line-height:1.35;color:var(--ink)}
+.wolfx-lp .faq summary .fq-t{flex:1 1 auto}
+.wolfx-lp .faq summary .fq-ic{flex:none;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px}
+.wolfx-lp .faq summary .fq-ic svg{width:19px;height:19px}
+.wolfx-lp .faq summary::after{content:"";flex:none;width:28px;height:28px;border-radius:50%;transition:transform .28s cubic-bezier(.23,1,.32,1),background-color .2s ease}
+.wolfx-lp .faq[open] summary::after{transform:rotate(180deg)}
+.wolfx-lp .faq .body{padding:0 20px 18px 70px;animation:faqIn .28s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.wolfx-lp .faq .body{animation:none}}
+@media(max-width:420px){.wolfx-lp .faq summary{padding:15px 14px;gap:12px;font-size:15px}.wolfx-lp .faq .body{padding:0 16px 16px 16px}}
+.wolfx-lp .faqs{padding:4px 0}
+.wolfx-lp .faq+.faq::before{left:24px;right:24px}
+.wolfx-lp .faq summary{justify-content:space-between;padding:21px 24px;gap:18px;font-size:16px;font-weight:650;letter-spacing:-.005em;line-height:1.4}
+.wolfx-lp .faq summary::after{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a7712' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center/14px no-repeat;box-shadow:inset 0 0 0 1px rgba(201,162,39,.45)}
+.wolfx-lp .faq summary:hover::after{background-color:#fbf3dc}
+.wolfx-lp .faq[open]{background:linear-gradient(180deg,rgba(251,243,220,.55),rgba(251,243,220,0))}
+.wolfx-lp .faq[open] summary::after{background-color:#fbf3dc}
+.wolfx-lp .faq .body{padding:0 24px 22px 24px;line-height:1.6}
+@media(max-width:420px){.wolfx-lp .faq summary{padding:19px 18px;gap:12px;font-size:15px}.wolfx-lp .faq .body{padding:0 18px 20px 18px}.wolfx-lp .faq+.faq::before{left:18px;right:18px}}
+
+/* ---- [2026-10-14] respuestas del FAQ visuales ---- */
+.wolfx-lp .faq .body{color:var(--ink-soft)}
+.wolfx-lp .faq .body b{color:var(--ink);font-weight:700}
+.wolfx-lp .faq .body .fa-lead{margin:0 0 14px;font-size:14.5px;line-height:1.55}
+.wolfx-lp .faq .body .fa-h{margin:16px 0 10px;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#9a7712}
+.wolfx-lp .faq .body .fa-steps{list-style:none;counter-reset:fs;margin:4px 0 0;padding:0;position:relative}
+.wolfx-lp .faq .body .fa-steps li{counter-increment:fs;position:relative;padding:3px 0 16px 42px;margin:0;font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+.wolfx-lp .faq .body .fa-steps li::before{content:counter(fs);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#e8c860,#c9a227);color:#241a05;font-size:13px;font-weight:800;box-shadow:0 4px 10px -4px rgba(160,120,20,.7),inset 0 1px 0 rgba(255,255,255,.5);border:0;transform:none;width:28px;height:28px}
+.wolfx-lp .faq .body .fa-steps li::after{content:"";position:absolute;left:13.5px;top:30px;bottom:2px;width:1px;background:linear-gradient(180deg,rgba(201,162,39,.55),rgba(201,162,39,.12))}
+.wolfx-lp .faq .body .fa-steps li:last-child{padding-bottom:4px}
+.wolfx-lp .faq .body .fa-steps li:last-child::after{display:none}
+.wolfx-lp .faq .body .fa-note{margin:14px 0 0;padding:11px 13px;border-radius:12px;background:#fbf7ea;border:1px solid #f0e3b8;font-size:13.5px;line-height:1.5;color:#5f5a48}
+.wolfx-lp .faq .body .fa-checks{list-style:none;margin:12px 0 0;padding:0}
+.wolfx-lp .faq .body .fa-checks li{margin:0 0 8px}
+.wolfx-lp .faq .body .fa-vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:2px 0 4px}
+.wolfx-lp .faq .body .fa-vs-c{padding:12px 13px;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.wolfx-lp .faq .body .fa-vs-c.on{border:1px solid transparent;background:linear-gradient(180deg,#fffaf0,#fff) padding-box,linear-gradient(160deg,#e8c860,#f3e7c4 60%,#c9a227) border-box;box-shadow:0 10px 22px -16px rgba(150,115,20,.6)}
+.wolfx-lp .faq .body .fa-vs-c p{margin:6px 0 0;font-size:13.5px;line-height:1.5}
+.wolfx-lp .faq .body .fa-vs-c .fa-checks{margin-top:8px}
+.wolfx-lp .faq .body .fa-vs-c .fa-checks li{font-size:13.5px;margin-bottom:5px}
+.wolfx-lp .faq .body .fa-k{display:block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.wolfx-lp .faq .body .fa-vs-c.on .fa-k{color:#8a6a12}
+.wolfx-lp .faq .body .fa-chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.wolfx-lp .faq .body .fa-chips span{padding:5px 9px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--ink)}
+.wolfx-lp .faq .body .fa-chips span.on{border-color:#e6cf86;background:linear-gradient(180deg,#fdf6e1,#f6e6b4);color:#6d520a}
+.wolfx-lp .faq .body .fa-yes{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:14.5px;color:var(--ink-soft)}
+.wolfx-lp .faq .body .fa-badge{flex:none;padding:4px 12px;border-radius:999px;background:linear-gradient(180deg,#e8c860,#c9a227);color:#241a05;font-size:13px;font-weight:800;box-shadow:0 4px 10px -4px rgba(160,120,20,.7)}
+.wolfx-lp .faq .body .fa-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:2px 0 0}
+.wolfx-lp .faq .body .fa-stats>div{position:relative;padding:12px 8px 10px;border-radius:14px;background:#fff;border:1px solid var(--line);text-align:center}
+.wolfx-lp .faq .body .fa-stats>div.on{border:1px solid transparent;background:linear-gradient(180deg,#fffaf0,#fff) padding-box,linear-gradient(160deg,#e8c860,#f3e7c4 60%,#c9a227) border-box;box-shadow:0 10px 22px -16px rgba(150,115,20,.6)}
+.wolfx-lp .faq .body .fa-stats b{display:block;font-size:19px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.wolfx-lp .faq .body .fa-stats>div.on b{color:#8a6a12}
+.wolfx-lp .faq .body .fa-stats span{display:block;margin-top:3px;font-size:12px;font-weight:700;color:var(--ink)}
+.wolfx-lp .faq .body .fa-stats i{display:block;font-style:normal;font-size:11px;color:var(--muted)}
+.wolfx-lp .faq .body .fa-stats em{position:absolute;top:-9px;left:50%;transform:translateX(-50%);white-space:nowrap;padding:2px 8px;border-radius:999px;background:linear-gradient(180deg,#e8c860,#c9a227);color:#241a05;font-style:normal;font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.wolfx-lp .faq .body .fa-row{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.wolfx-lp .faq .body .fa-row span{display:flex;align-items:center;gap:9px;font-size:13.5px;line-height:1.45}
+.wolfx-lp .faq .body .fa-row svg{flex:none;width:17px;height:17px;color:#9a7712}
+@media(max-width:380px){.wolfx-lp .faq .body .fa-vs{grid-template-columns:1fr}.wolfx-lp .faq .body .fa-stats b{font-size:17px}}
+
+/* ---- [2026-10-15] tarjeta 3: el movil de la app a la vista, a la derecha, con halo ---- */
+.wolfx-lp .mhead{background:radial-gradient(70% 90% at 92% 100%,rgba(232,200,96,.30),transparent 62%),linear-gradient(160deg,#2b3244 0%,#1b2231 46%,#0d1119 100%);box-shadow:0 24px 44px -26px rgba(13,17,25,.9),inset 0 1px 0 rgba(255,255,255,.10)}
+.wolfx-lp.life .mhead{background:radial-gradient(70% 90% at 92% 100%,rgba(255,240,190,.35),transparent 62%),linear-gradient(160deg,#9c7c1e 0%,#6b5314 46%,#241a05 100%)}
+.wolfx-lp .mhead::before{opacity:.42;mix-blend-mode:normal;background-position:right -40px center;background-size:auto 150%;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 75%);mask-image:linear-gradient(90deg,transparent 30%,#000 75%)}
+.wolfx-lp .mhead .mname{letter-spacing:-.02em}
+.wolfx-lp .mhead .mname .vip{color:#e8c860}
+.wolfx-lp.life .mhead .mname .vip{color:#fff6da}
+.wolfx-lp .mchips span{background:rgba(13,17,25,.55);border-color:rgba(232,200,96,.38);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.wolfx-lp .mchips span:last-child{border-color:#e8c860;color:#f6e3a1}
+.wolfx-lp.life .mchips span{background:rgba(36,26,5,.45);border-color:rgba(255,240,190,.5)}
+.wolfx-lp.life .mchips span:last-child{color:#fff6da;border-color:#fff6da}
+@media(max-width:991px){.wolfx-lp .mhead .msub{max-width:62%}}
+
+/* ---- [2026-10-17] VIP en Lifetime: placa oscura con letras de oro ---- */
+.wolfx-lp.life .mhead .mname .vip{display:inline-block;vertical-align:.18em;margin-left:2px;font-size:.6em;letter-spacing:.04em;line-height:1;padding:5px 9px 4px;border-radius:8px;background:#1d1505;color:#f1d77a;box-shadow:inset 0 0 0 1px rgba(241,215,122,.45),0 6px 14px -6px rgba(0,0,0,.6)}
+@media(max-width:359px){.wolfx-lp .mhead .mname{font-size:21px}.wolfx-lp.life .mhead .mname .vip{margin-left:0;padding-left:6px;padding-right:6px;letter-spacing:0}.wolfx-lp.life .mhead .mprice .amt{font-size:27px}}
+
+/* ---- [2026-10-17] w2 ---- */
+.wolfx-lp.life .mhead .mname .vip{display:inline;vertical-align:baseline;margin-left:0;font-size:inherit;letter-spacing:normal;line-height:inherit;padding:0;border-radius:0;background:none;box-shadow:none;filter:none;animation:none;-webkit-text-stroke:0}
+.wolfx-lp.life .mhead .mname .vip{background:linear-gradient(180deg,#ffffff 0%,#fff3c4 45%,#f1cf5e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 2px rgba(36,26,5,.45));padding-bottom:3px;background-size:100% 100%}
+.wolfx-lp.life .mhead .mname .vip{box-shadow:inset 0 -2px 0 #f1cf5e}
+
+/* ---- [2026-10-17] xb ---- */
+.wolfx-lp .mhead .msub .nw{white-space:nowrap}
+.wolfx-lp.life .mhead .mname .vip{box-shadow:none;padding-bottom:0}
+.wolfx-lp.life .mhead .mname{background:linear-gradient(180deg,#ffffff 0%,#fff3c4 45%,#f1cf5e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 2px rgba(36,26,5,.45))}
+.wolfx-lp.life .mhead .mname .vip{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:inherit;filter:none}
+
+/* ---- [2026-10-17] y1: titulo de Monthly en un color ---- */
+.wolfx-lp:not(.life) .mhead .mname .vip{color:#fff;background:none}
+</style>
+</head>
+<body>
+<div class="wolfx-topbar" id="wolfxTopbar">
+  <div class="tb-title"><span class="tb-l1">Trusted by 100,000+ Members</span><span class="sep sep-1">|</span><br class="tb-brm"><span class="tb-l2"><svg class="tb-star" viewBox="0 0 24 24" aria-hidden="true"><path fill="#f5c84c" d="M12 2.6l2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.3l-5.8 3.1 1.2-6.5L2.6 9.4l6.5-.8z"/></svg>4.8 on Google Ratings<span class="sep sep-2">|</span>900+ Verified Reviews</span></div>
+</div>
+
+<div class="wolfx-lp v-a h-y2 r-claro p-0 g-3 l-0 t-0" id="wolfxLp">
+<script>
+/* Vista por defecto: Monthly para todo el mundo. El A/B test (Lifetime-primero vs
+   Monthly-primero) se cerro el 2026-08-10: Monthly gano en clics al CTA y en ventas.
+   Se deja de repartir y de usar la cookie wolfx_ab. Preview manual: ?ab=lifetime  */
+(function(){
+  var root=document.currentScript.parentElement;
+  var forced=(location.search.match(/[?&]ab=(lifetime|monthly)/)||[])[1];
+  var v=(forced==='lifetime')?'lifetime':'monthly';
+  window.WOLFX_AB=v;
+  if(v==='lifetime'){root.classList.add('life');}
+})();
+</script>
+<div class="wrap">
+
+  <div class="head">
+    <img class="logo" src="https://wolfxsignals.com/wp-content/uploads/2022/01/log.png" alt="WolfX Signals">
+    <h1>Pick Your Plan</h1>
+  </div>
+
+  <div id="planTop"></div>
+
+  <!-- BILLING TOGGLE -->
+  <div class="bill">
+    <span class="bl on" id="blMonthly" onclick="setBilling(false)">Monthly</span>
+    <button class="bswitch" id="billSwitch" role="switch" aria-checked="false" aria-label="Switch between monthly and lifetime pricing" onclick="setBilling(!LIFE)"></button>
+    <span class="bl" id="blLifetime" onclick="setBilling(true)">Lifetime</span>
+  </div>
+  <div class="savehint" id="saveHint">
+    <div class="sh-row">
+      <span class="sh-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Pay once</span>
+      <span class="sh-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No renewals</span>
+    </div>
+    <span class="sh-chip">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/></svg></span>
+      <span class="t"><b>Copytrading Service + Academy</b> included</span>
+    </span>
+  </div>
+
+  <!-- PLANS -->
+  <div class="mplans">
+    <div class="mtabs">
+      <button data-p="fg" class="active" onclick="mpick('fg')">Forex + Gold</button>
+      <button data-p="crypto" onclick="mpick('crypto')">Crypto</button>
+      <button data-p="all" onclick="mpick('all')">All Markets<span class="best">Best Deal</span></button>
+    </div>
+
+        <div class="mcard show" id="m-fg">
+      <div class="mhead">
+        <div class="mtop">
+          <div class="mname">Forex+Gold <span class="vip">VIP</span></div>
+          <div class="mprice">
+            <span class="amt"><span class="pm">$89</span><span class="pl">$278</span></span>
+            <span class="life"><span class="pm">Monthly</span><span class="pl">Lifetime</span></span>
+            <span class="was">$89/month</span>
+          </div>
+        </div>
+        <div class="msub">Access to our private <span class="nw">Forex+Gold VIP group.</span></div>
+        <div class="mchips"><span>Forex</span><span>Gold</span><span>8&#8211;15 signals/week</span></div>
+      </div>
+      <div class="buytop"><a class="mcta mcta-top" id="ctaTop-fg" href="https://wolfxsignals.com/?add-to-cart=1292&quantity=1">Get Forex + Gold VIP</a><div class="bt-note"><span class="bt-m">Cancel anytime</span><span class="bt-l">One payment. No renewals.</span><span class="bt-sep" aria-hidden="true"></span><span>Instant Telegram access</span></div></div>
+      <div class="mflabel">Top Features</div>
+      <div class="flist">
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span><span class="fbody"><span class="ft">8-15 Forex &amp; Gold VIP signals</span><span class="fd">High-quality trade analysis every week, delivered live on Telegram.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span class="fbody"><span class="ft">Autotrading tools supported</span><span class="fd">Run our VIP signals automatically on MT4/MT5.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M16 14h2"/><path d="M8 3h8"/></svg></span><span class="fbody"><span class="ft">Funded Accounts Service</span><span class="fd">We pass prop firm exams for you, so members with less capital can boost their profits.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow acct nobb"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M9 14h.01M15 14h.01M9.5 17.5h5"/><path d="M2 13v2M22 13v2"/></svg></span><span class="fbody"><span class="ft">Copytrading Service</span><span class="fd">100% automated strategy working for you. Zero risk strategy. No manual trading.</span></span><span class="st lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Lifetime</b></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <details class="fmore"><summary>How the service works</summary><div class="botpanel"><span class="bp-badge">Our best product</span><div class="bp-claim">This is our strategy working for you <b>fully automated</b>. No time and no experience needed.</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No missed trades</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No waiting for signals</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No manual trading</div><div class="bp-sep"></div><div class="bp-foot"><span class="bp-note">Built for traders with no consistent results</span><span class="bp-mfb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg> Verified track record on MyFXBook</span></div></div></details>
+      <div class="frow acct"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span><span class="fbody"><span class="ft">Trading Academy</span><span class="fd">12h of lessons, from setup to risk management.</span></span><span class="st lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Lifetime</b></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      </div>
+      <button type="button" class="upnudge" onclick="setBilling(true)">&#128274; See what Lifetime unlocks &#8594;</button>
+      <details class="more">
+        <summary><span id="sum-fg">Check everything included</span></summary>
+        <div class="flist inner">
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">1:1 onboarding + constant mentoring</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Expert analysis on Forex &amp; Gold</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Live trade alerts on Telegram</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Exclusive Forex &amp; Gold reports</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Entry, SL and TP on every trade</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Risk management guidelines</span></div>
+        </div>
+      </details>
+      <a class="mcta" id="cta-fg" href="https://wolfxsignals.com/?add-to-cart=1292&quantity=1">Get Forex + Gold VIP</a>
+      <div class="guarantee">
+        <span class="gic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 13 2.3 11.6c-1-.3-1-1 .2-1.5l18.1-7c.8-.3 1.5.2 1.3 1.2z"/></svg></span>
+        <span class="gtx"><b>Instant</b> Telegram access after payment</span>
+      </div>
+    </div>
+
+    <div class="mcard" id="m-crypto">
+      <div class="mhead">
+        <div class="mtop">
+          <div class="mname">Crypto <span class="vip">VIP</span></div>
+          <div class="mprice">
+            <span class="amt"><span class="pm">$89</span><span class="pl">$278</span></span>
+            <span class="life"><span class="pm">Monthly</span><span class="pl">Lifetime</span></span>
+            <span class="was">$89/month</span>
+          </div>
+        </div>
+        <div class="msub">Access to our private <span class="nw">Crypto VIP group.</span></div>
+        <div class="mchips"><span>BTC &amp; altcoins</span><span>8&#8211;15 signals/week</span></div>
+      </div>
+      <div class="buytop"><a class="mcta mcta-top" id="ctaTop-crypto" href="https://wolfxsignals.com/?add-to-cart=1744&quantity=1">Get Crypto VIP</a><div class="bt-note"><span class="bt-m">Cancel anytime</span><span class="bt-l">One payment. No renewals.</span><span class="bt-sep" aria-hidden="true"></span><span>Instant Telegram access</span></div></div>
+      <div class="mflabel">Top Features</div>
+      <div class="flist">
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span><span class="fbody"><span class="ft">8-15 Crypto VIP signals</span><span class="fd">High-quality trade analysis every week, delivered live on Telegram.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span class="fbody"><span class="ft">Autotrading tools supported</span><span class="fd">Run our VIP signals automatically on Cornix.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M16 14h2"/><path d="M8 3h8"/></svg></span><span class="fbody"><span class="ft">Funded Accounts Service</span><span class="fd">We pass prop firm exams for you, so members with less capital can boost their profits.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow acct nobb"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M9 14h.01M15 14h.01M9.5 17.5h5"/><path d="M2 13v2M22 13v2"/></svg></span><span class="fbody"><span class="ft">Copytrading Service</span><span class="fd">100% automated strategy working for you. Zero risk strategy. No manual trading.</span></span><span class="st lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Lifetime</b></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <details class="fmore"><summary>How the service works</summary><div class="botpanel"><span class="bp-badge">Our best product</span><div class="bp-claim">This is our strategy working for you <b>fully automated</b>. No time and no experience needed.</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No missed trades</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No waiting for signals</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No manual trading</div><div class="bp-sep"></div><div class="bp-foot"><span class="bp-note">Built for traders with no consistent results</span><span class="bp-mfb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg> Verified track record on MyFXBook</span></div></div></details>
+      <div class="frow acct"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span><span class="fbody"><span class="ft">Trading Academy</span><span class="fd">12h of lessons, from setup to risk management.</span></span><span class="st lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Lifetime</b></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      </div>
+      <button type="button" class="upnudge" onclick="setBilling(true)">&#128274; See what Lifetime unlocks &#8594;</button>
+      <details class="more">
+        <summary><span id="sum-crypto">Check everything included</span></summary>
+        <div class="flist inner">
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">1:1 onboarding + constant mentoring</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Expert analysis on Crypto</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Live trade alerts on Telegram</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Exclusive Crypto reports</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Entry, SL and TP on every trade</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Risk management guidelines</span></div>
+        </div>
+      </details>
+      <a class="mcta" id="cta-crypto" href="https://wolfxsignals.com/?add-to-cart=1744&quantity=1">Get Crypto VIP</a>
+      <div class="guarantee">
+        <span class="gic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 13 2.3 11.6c-1-.3-1-1 .2-1.5l18.1-7c.8-.3 1.5.2 1.3 1.2z"/></svg></span>
+        <span class="gtx"><b>Instant</b> Telegram access after payment</span>
+      </div>
+    </div>
+
+    <div class="mcard" id="m-all">
+      <span class="mbest">Best Deal</span>
+      <div class="mhead">
+        <div class="mtop">
+          <div class="mname">All Markets <span class="vip">VIP</span></div>
+          <div class="mprice">
+            <span class="amt"><span class="pm">$139</span><span class="pl">$398</span></span>
+            <span class="life"><span class="pm">Monthly</span><span class="pl">Lifetime</span></span>
+            <span class="was">$139/month</span>
+          </div>
+        </div>
+        <div class="msub">Access to both VIP groups: <span class="nw">Forex+Gold</span> and Crypto.</div>
+        <div class="mchips"><span>Forex</span><span>Gold</span><span>Crypto</span><span>16&#8211;30 signals/week</span></div>
+      </div>
+      <div class="buytop"><a class="mcta mcta-top" id="ctaTop-all" href="https://wolfxsignals.com/?add-to-cart=1754&quantity=1">Get Forex + Gold / Crypto VIP</a><div class="bt-note"><span class="bt-m">Cancel anytime</span><span class="bt-l">One payment. No renewals.</span><span class="bt-sep" aria-hidden="true"></span><span>Instant Telegram access</span></div></div>
+      <div class="mflabel">Top Features</div>
+      <div class="flist">
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></span><span class="fbody"><span class="ft">16-30 All Markets VIP signals</span><span class="fd">High-quality trade analysis every week, delivered live on Telegram.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span class="fbody"><span class="ft">Autotrading tools supported</span><span class="fd">Run our VIP signals automatically, hands-free.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M16 14h2"/><path d="M8 3h8"/></svg></span><span class="fbody"><span class="ft">Funded Accounts Service</span><span class="fd">We pass prop firm exams for you, so members with less capital can boost their profits.</span></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <div class="frow acct nobb"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M9 14h.01M15 14h.01M9.5 17.5h5"/><path d="M2 13v2M22 13v2"/></svg></span><span class="fbody"><span class="ft">Copytrading Service</span><span class="fd">100% automated strategy working for you. Zero risk strategy. No manual trading.</span></span><span class="st lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Lifetime</b></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      <details class="fmore"><summary>How the service works</summary><div class="botpanel"><span class="bp-badge">Our best product</span><div class="bp-claim">This is our strategy working for you <b>fully automated</b>. No time and no experience needed.</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No missed trades</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No waiting for signals</div><div class="bp-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> No manual trading</div><div class="bp-sep"></div><div class="bp-foot"><span class="bp-note">Built for traders with no consistent results</span><span class="bp-mfb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 11 13 15 9"/></svg> Verified track record on MyFXBook</span></div></div></details>
+      <div class="frow acct"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span><span class="fbody"><span class="ft">Trading Academy</span><span class="fd">12h of lessons, from setup to risk management.</span></span><span class="st lock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Lifetime</b></span><span class="st yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+      </div>
+      <button type="button" class="upnudge" onclick="setBilling(true)">&#128274; See what Lifetime unlocks &#8594;</button>
+      <details class="more">
+        <summary><span id="sum-all">Check everything included</span></summary>
+        <div class="flist inner">
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">1:1 onboarding + constant mentoring</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Expert analysis on All Markets</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Live trade alerts on Telegram</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Exclusive All Markets reports</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Entry, SL and TP on every trade</span></div>
+      <div class="chkrow"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="chktext">Risk management guidelines</span></div>
+        </div>
+      </details>
+      <a class="mcta" id="cta-all" href="https://wolfxsignals.com/?add-to-cart=1754&quantity=1">Get Forex + Gold / Crypto VIP</a>
+      <div class="guarantee">
+        <span class="gic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 13 2.3 11.6c-1-.3-1-1 .2-1.5l18.1-7c.8-.3 1.5.2 1.3 1.2z"/></svg></span>
+        <span class="gtx"><b>Instant</b> Telegram access after payment</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="ctaSentinel" aria-hidden="true"></div>
+
+  <!-- TRUSTPILOT -->
+  <div class="section tp-first tp-band">
+    <div class="tp-head tp-micro tm-hz" role="img" aria-label="Excellent, rated 4.8 out of 5">
+      <span class="tm-row"><span class="tm-word">Excellent</span><span class="estrellas n5 tm-stars" aria-hidden="true"></span></span><span class="tm-sub tl-1"><span>TrustScore <b>4.8</b> / 5</span><i></i><span class="tl-ok"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#00b67a"/><path d="M4.6 8.3l2.2 2.2 4.6-4.8" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified company</span></span>
+    </div>
+    <div class="tp-wrap" id="tpWrap"><div class="tp-grid"><div class="tp-cols">
+      <div class="tp-col">
+        <article class="mrc" style="order:0"><div class="mrc-top"><span class="mrc-av" style="background:#d7e9e2;color:#2f6b57">MT</span><span class="mrc-id"><span class="mrc-name">Marcus T.</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="40"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Quality over quantity</div><p class="mrc-tx">Absolutely great job &#128588; No spam or rubbish signals like others do, just pure quality over quantity. Keep it up guys!</p></article>
+        <article class="mrc" style="order:4"><div class="mrc-top"><span class="mrc-av" style="background:#dcece2;color:#2f6b52">OM</span><span class="mrc-id"><span class="mrc-name">Owen M.</span><span class="mrc-meta">CA</span></span><span class="mrc-date" data-days-ago="7"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Real support, real results</div><p class="mrc-tx">You can tell they really care &#128077; Jaime helped me a ton and support always replies fast. The signals get results. Highly recommend!</p></article>
+        <article class="mrc" style="order:8"><div class="mrc-top"><span class="mrc-av" style="background:#e2e6d6;color:#55602e">MR</span><span class="mrc-id"><span class="mrc-name">Marco R.</span><span class="mrc-meta">IT</span></span><span class="mrc-date" data-days-ago="17"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">$500 turned into $1300</div><p class="mrc-tx">Turned my $500 starting balance into $1300 in profit in just a few months &#128640; Still can't quite believe it!</p></article>
+        <article class="mrc" style="order:12"><div class="mrc-top"><span class="mrc-av" style="background:#f6d9b0;color:#7a5a2a">WA</span><span class="mrc-id"><span class="mrc-name">Wallace</span><span class="mrc-meta">GB</span></span><span class="mrc-date" data-days-ago="6"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">I have won 2600$ with a 10,000$ account...</div><p class="mrc-tx">I have won 2600$ with a 10,000$ account in 4 months</p></article>
+        <article class="mrc" style="order:16"><div class="mrc-top"><span class="mrc-av" style="background:#f2edb0;color:#7a742a">GR</span><span class="mrc-id"><span class="mrc-name">Gregory</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="19"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Professional team</div><p class="mrc-tx">Professional team, nice quality</p></article>
+        <article class="mrc" style="order:20"><div class="mrc-top"><span class="mrc-av" style="background:#f2edb0;color:#7a742a">LH</span><span class="mrc-id"><span class="mrc-name">Lewis Hebert</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="23"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Gold signals are the best I've tried</div><p class="mrc-tx">Gold signals are the best I've tried. Top work, great team</p></article>
+        <article class="mrc" style="order:24"><div class="mrc-top"><span class="mrc-av" style="background:#d6f0cf;color:#3a6a3a">ES</span><span class="mrc-id"><span class="mrc-name">Elon Smith Jr</span><span class="mrc-meta">RO</span></span><span class="mrc-date" data-days-ago="37"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Good experience</div><p class="mrc-tx">Good experience. Got it lifetime for free. No regrets.</p></article>
+        <article class="mrc" style="order:28"><div class="mrc-top"><span class="mrc-av" style="background:#cfe3f7;color:#3a5a7a">TS</span><span class="mrc-id"><span class="mrc-name">Tom Sunderland</span><span class="mrc-meta">IE</span></span><span class="mrc-date" data-days-ago="46"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">The best trading group</div><p class="mrc-tx">The best trading group i have tried. Good and professional</p></article>
+      </div>
+      <div class="tp-col">
+        <article class="mrc" style="order:1"><div class="mrc-top"><span class="mrc-av" style="background:#efe1d2;color:#7a5326">LB</span><span class="mrc-id"><span class="mrc-name">L&#233;a B.</span><span class="mrc-meta">FR</span></span><span class="mrc-date" data-days-ago="10"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">I doubled my first deposit</div><p class="mrc-tx">Forex and Gold VIP member for 2 months now, really good team. I started knowing almost nothing and I'm already up around $450 from a $200 start.</p></article>
+        <article class="mrc" style="order:5"><div class="mrc-top"><span class="mrc-av" style="background:#f0dede;color:#8a3a3a">SL</span><span class="mrc-id"><span class="mrc-name">Sophie L.</span><span class="mrc-meta">AU</span></span><span class="mrc-date" data-days-ago="32"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">2 years of pure transparency</div><p class="mrc-tx">I've been with WolfX for about 2 years now and there's real transparency in everything they do. 100% professional service in both forex and crypto.</p></article>
+        <article class="mrc" style="order:9"><div class="mrc-top"><span class="mrc-av" style="background:#efe1d2;color:#7a5326">EW</span><span class="mrc-id"><span class="mrc-name">Ethan W.</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="4"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Perfect for total beginners</div><p class="mrc-tx">As a beginner I was pretty hesitant about trading, but everything was smooth and easy to understand. Started in the free group then moved to VIP. Highly recommend.</p></article>
+        <article class="mrc" style="order:13"><div class="mrc-top"><span class="mrc-av" style="background:#d6f0cf;color:#3a6a3a">LP</span><span class="mrc-id"><span class="mrc-name">Logan Price</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="6"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">They have the account management...</div><p class="mrc-tx">They have the account management service which is perfect for me. I don't have time to trade so it's a good option for low risk and constant profit. 20% up in 3 months, with a 6000 account. Good RR</p></article>
+        <article class="mrc" style="order:17"><div class="mrc-top"><span class="mrc-av" style="background:#f2edb0;color:#7a742a">RE</span><span class="mrc-id"><span class="mrc-name">Reginald</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="20"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Wolfx Fx have the best gold analysis</div><p class="mrc-tx">Wolfx Fx have the best gold analysis. Made 550 pips last month.</p></article>
+        <article class="mrc" style="order:21"><div class="mrc-top"><span class="mrc-av" style="background:#f7d6e8;color:#8a4a6a">WI</span><span class="mrc-id"><span class="mrc-name">William</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="22"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Crypto signals are GOAT</div><p class="mrc-tx">Crypto signals are GOAT</p></article>
+        <article class="mrc" style="order:25"><div class="mrc-top"><span class="mrc-av" style="background:#f2edb0;color:#7a742a">SH</span><span class="mrc-id"><span class="mrc-name">Shamil</span><span class="mrc-meta">PK</span></span><span class="mrc-date" data-days-ago="40"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">10/10 community</div><p class="mrc-tx">10/10 community, a lot of services with value&#128076;&#127998;&#128076;&#127998;</p></article>
+        <article class="mrc" style="order:29"><div class="mrc-top"><span class="mrc-av" style="background:#e6dcf7;color:#5a4a7a">LO</span><span class="mrc-id"><span class="mrc-name">Louis</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="47"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Funded account service is top</div><p class="mrc-tx">Funded account service is top top, I have obtained 100k account and very fast</p></article>
+      </div>
+      <div class="tp-col">
+        <article class="mrc" style="order:2"><div class="mrc-top"><span class="mrc-av" style="background:#dfe3ef;color:#3a4a72">JD</span><span class="mrc-id"><span class="mrc-name">James D.</span><span class="mrc-meta">US</span></span><span class="mrc-date" data-days-ago="21"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">From blowing accounts to steady profits</div><p class="mrc-tx">I want to be honest because I was exactly where a lot of you are right now. Before WolfX I had already blown two small accounts on my own. I was copying random Telegram signals that never explained anything, and I was pretty much ready to quit trading for good. Someone told me to start in the free group. What surprised me is that they actually explain the reasoning behind every setup, so for the first time I understood what I was doing instead of copying blindly. I moved to VIP after a couple of weeks. Three months later my account is up steadily, my risk is finally under control, and support always replies when I have doubts. Jaime even went through one of my trades with me personally. I'm not going to promise you'll get rich overnight because that isn't real. But if you want a serious community that treats you like a person, this is it. Best decision I've made this year.</p></article>
+        <article class="mrc" style="order:6"><div class="mrc-top"><span class="mrc-av" style="background:#e6ded6;color:#5b4a3f">CR</span><span class="mrc-id"><span class="mrc-name">Camille R.</span><span class="mrc-meta">FR</span></span><span class="mrc-date" data-days-ago="13"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">I finally understand the markets</div><p class="mrc-tx">I never thought I'd write a review, but I feel like I owe them one. I'm a full time nurse and I don't have hours to sit and watch charts. That's why I almost didn't join, I assumed trading was only for people glued to a screen all day. With WolfX I just follow the signals when I get a few minutes between shifts. Entry, stop loss and targets are always laid out clearly, so I never feel lost. What really won me over is the account management option. I let them handle part of my capital and I've seen steady, realistic growth without the stress of doing everything myself. Four months on, I'm calmer about money than I've been in years. If you're busy and think you don't have the time, just try the free group first &#128588;</p></article>
+        <article class="mrc" style="order:10"><div class="mrc-top"><span class="mrc-av" style="background:#dfe3ef;color:#3a4a72">NH</span><span class="mrc-id"><span class="mrc-name">Nils H.</span><span class="mrc-meta">DE</span></span><span class="mrc-date" data-days-ago="50"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Way better than I expected</div><p class="mrc-tx">Honestly didn't expect much when I signed up, but it blew past my expectations. Got the lifetime and it's way too good, already $380 up.</p></article>
+        <article class="mrc" style="order:14"><div class="mrc-top"><span class="mrc-av" style="background:#f2edb0;color:#7a742a">KS</span><span class="mrc-id"><span class="mrc-name">Kendall Sanders</span><span class="mrc-meta">GB</span></span><span class="mrc-date" data-days-ago="18"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Acc management included for vips</div><p class="mrc-tx">Acc management included for vips, very very good service, I have forex/gold lifetime sub and very happy. Member since October 25.</p></article>
+        <article class="mrc" style="order:18"><div class="mrc-top"><span class="mrc-av" style="background:#dfe3e8;color:#5a6068">AG</span><span class="mrc-id"><span class="mrc-name">Ajmeer Goolamgoskhan</span><span class="mrc-meta">MU</span></span><span class="mrc-date" data-days-ago="20"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">My experience with Wolf X has been very...</div><p class="mrc-tx">My experience with Wolf X has been very impressive. The AI bot executes trades automatically on my account, and I mainly just monitor the activity. The execution is fast and consistent, and it helped me stay disciplined during my funded account challenge. I was honestly surprised to see how the system handles entries and risk management in real time without emotional decisions. It made the whole process much easier to follow compared to manual trading. Overall, it has been a very interesting and valuable experience, and it gave me more confidence in automated trading systems. Really Big Bravo for this WolfX</p></article>
+        <article class="mrc" style="order:22"><div class="mrc-top"><span class="mrc-av" style="background:#1a9d8f;color:#fff">MT</span><span class="mrc-id"><span class="mrc-name">Matt Thompson</span><span class="mrc-meta">FR</span></span><span class="mrc-date" data-days-ago="26"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Forex and gold signals are top</div><p class="mrc-tx">Forex and gold signals are top &#128285;&#128285;</p></article>
+        <article class="mrc" style="order:26"><div class="mrc-top"><span class="mrc-av" style="background:#f7d6e8;color:#8a4a6a">PA</span><span class="mrc-id"><span class="mrc-name">Patricia</span><span class="mrc-meta">ES</span></span><span class="mrc-date" data-days-ago="41"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Love the support</div><p class="mrc-tx">Love the support. Positive exeprience.</p></article>
+        <article class="mrc" style="order:30"><div class="mrc-top"><span class="mrc-av" style="background:#1a9d8f;color:#fff">PE</span><span class="mrc-id"><span class="mrc-name">Peter</span><span class="mrc-meta">DE</span></span><span class="mrc-date" data-days-ago="53"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Love the signals</div><p class="mrc-tx">The gold signals they share are reaaally good. almost every one is a win. I don't know how but i have made money with them. I'm investing more now&#128513;</p></article>
+      </div>
+      <div class="tp-col">
+        <article class="mrc" style="order:3"><div class="mrc-top"><span class="mrc-av" style="background:#e7ddec;color:#5b3f6b">JK</span><span class="mrc-id"><span class="mrc-name">Jonas K.</span><span class="mrc-meta">DE</span></span><span class="mrc-date" data-days-ago="26"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Learning and earning weekly</div><p class="mrc-tx">Got the lifetime plan plus the academy to learn step by step. Honestly so good, I'm learning a lot and closing profits pretty much every week.</p></article>
+        <article class="mrc" style="order:7"><div class="mrc-top"><span class="mrc-av" style="background:#d7e6ef;color:#2f5a72">AP</span><span class="mrc-id"><span class="mrc-name">Andrei P.</span><span class="mrc-meta">RO</span></span><span class="mrc-date" data-days-ago="2"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Constant profits with the account management!</div><p class="mrc-tx">Joined the VIP signals three months ago and I've already seen steady gains. They're easy to follow and support is super responsive. Definitely worth it.</p></article>
+        <article class="mrc" style="order:11"><div class="mrc-top"><span class="mrc-av" style="background:#1a9d8f;color:#fff">D</span><span class="mrc-id"><span class="mrc-name">David</span><span class="mrc-meta">ES</span></span><span class="mrc-date" data-days-ago="19"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Amazing Challenge Passing Service</div><p class="mrc-tx">At first, I was skeptical. I honestly didn't think they would be able to pass my funded account challenge in just one day. They proved me wrong. They completed it in literally 7 hours, and I couldn't be happier with the result. From the beginning, they explained the entire process. They also offered a full refund if the challenge wasn't passed, which gave me a lot of confidence. However, I never had to use that guarantee because they delivered exactly what they promised. I would definitely recommend their service.</p></article>
+        <article class="mrc" style="order:15"><div class="mrc-top"><span class="mrc-av" style="background:#f6d9b0;color:#7a5a2a">AH</span><span class="mrc-id"><span class="mrc-name">Alford Hughes</span><span class="mrc-meta">GB</span></span><span class="mrc-date" data-days-ago="19"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Huge signals</div><p class="mrc-tx">Huge signals, crypto forex and gold signals,</p></article>
+        <article class="mrc" style="order:19"><div class="mrc-top"><span class="mrc-av" style="background:#f6d9b0;color:#7a5a2a">TA</span><span class="mrc-id"><span class="mrc-name">Tom Anderson Jr</span><span class="mrc-meta">SE</span></span><span class="mrc-date" data-days-ago="26"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">The funded account service is very good...</div><p class="mrc-tx">The funded account service is very good and fast. Cole from the support was very helpful and got my funded account passed in live in 5 hours after my purchase Good service, good support&#128077;</p></article>
+        <article class="mrc" style="order:23"><div class="mrc-top"><span class="mrc-av" style="background:#f6d9b0;color:#7a5a2a">JS</span><span class="mrc-id"><span class="mrc-name">Joao Sousa</span><span class="mrc-meta">PT</span></span><span class="mrc-date" data-days-ago="29"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Kind and professional support</div><p class="mrc-tx">David from the support is very very kind with me. I was interested in having a funded accont and the process was live, very professional and all good. What I appreciate is to treat and speak with real people and not just AI bots. Huge thumbs up to Wolfxsignals</p></article>
+        <article class="mrc" style="order:27"><div class="mrc-top"><span class="mrc-av" style="background:#dfe3e8;color:#5a6068">ME</span><span class="mrc-id"><span class="mrc-name">Michael Estey</span><span class="mrc-meta">CA</span></span><span class="mrc-date" data-days-ago="38"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Good experience</div><p class="mrc-tx">Good experience. Got it lifetime for free. No regrets.</p></article>
+        <article class="mrc" style="order:31"><div class="mrc-top"><span class="mrc-av" style="background:#f6d9b0;color:#7a5a2a">MEL</span><span class="mrc-id"><span class="mrc-name">Melissa</span><span class="mrc-meta">SA</span></span><span class="mrc-date" data-days-ago="54"></span></div><div class="mrc-rate"><span class="estrellas n5" role="img" aria-label="5 out of 5 stars"></span><span class="mrc-vf"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 8.4l3 3 6.2-6.6"></path></svg> Verified</span></div><div class="mrc-tt">Love wolfxsignals</div><p class="mrc-tx">Love wolfxsignals, for me the best group for trading i have tried in 2 years.</p></article>
+      </div>
+    </div></div><span class="tp-fade"></span></div>
+    <div class="tp-more"><button type="button" id="tpMore" aria-controls="tpWrap" aria-expanded="false" onclick="document.getElementById('tpWrap').classList.add('open');this.setAttribute('aria-expanded','true');this.parentNode.style.display='none'"><span>Show more reviews</span><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" d="m136 120 80-80m0 64-.01-63.99L152 40m32 100v68a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V80a8 8 0 0 1 8-8h68"/></svg></button></div>
+  </div>
+
+  <!-- CTA FINAL + REGALO DE BIENVENIDA + CUENTA ATRAS -->
+  <div class="section">
+    <div class="gift gv2">
+      <span class="gift-flag"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Exclusive welcome gift</span>
+      <h3>Unlock a gift we have <span class="gold">never given before</span></h3>
+      <div class="gv-lab">Offer ends in</div>
+      <div class="cd" id="cdBox" role="timer">
+        <div class="cd-u"><b id="cdH">08</b><span>hours</span></div>
+        <i>:</i>
+        <div class="cd-u"><b id="cdM">05</b><span>min</span></div>
+        <i>:</i>
+        <div class="cd-u"><b id="cdS">30</b><span>sec</span></div>
+      </div>
+      <a class="become-btn" id="becomeBtn" href="https://wolfxsignals.com/?add-to-cart=1292&quantity=1">Become VIP Now</a>
+      <div class="gift-note">Your gift is unlocked the moment you join</div>
+    </div>
+  </div>
+
+  <!-- FAQs -->
+  <div class="section">
+    <h2 class="sec">FAQs</h2>
+    <div class="faqs">
+      <details class="faq">
+        <summary>How do I join the VIP group?</summary>
+        <div class="body"><ol class="fa-steps"><li><b>Complete the payment</b></li><li><b>Receive an email</b> with your private <b>Telegram Access Link</b></li><li><b>Click the link</b> and get instant access to our private VIP group on Telegram</li></ol><p class="fa-note">Any problem after paying? Contact our Telegram live chat support: a real human agent will assist you.</p></div>
+      </details>
+      <details class="faq"><summary>What is the Copytrading Service?</summary><div class="body"><p class="fa-lead">Our private bot trades your account for you. <b>No experience or time needed.</b></p><ol class="fa-steps"><li><b>Open and fund</b> your own trading account, always in your name</li><li><b>We connect</b> our private bot</li><li><b>The bot executes</b> every trade automatically</li></ol><div class="fa-chips"><span>Funds stay in your account</span><span class="on">Free with Lifetime</span></div></div></details>
+      <details class="faq"><summary>Is it 100% automated?</summary><div class="body"><p class="fa-yes"><span class="fa-badge">Yes</span>with our Copytrading Service</p><ul class="fa-checks"><li>Once connected, our private bot manages everything on its own</li><li>It follows our strategy with our risk management</li><li>No trades to execute, no signals to follow, no charts to watch</li></ul><p class="fa-note">Prefer to stay in control? Follow our VIP Signals manually or automatically with tools like Cornix. The choice is yours.</p></div></details>
+      <details class="faq"><summary>What is the Funded Accounts Service?</summary><div class="body"><p class="fa-lead">Members with less capital can <b>trade bigger</b> and boost their profits.</p><ol class="fa-steps"><li><b>Ask our support team</b>: we walk you through the whole process</li><li><b>We pass the prop firm exams</b> for you</li><li><b>We help you get funded</b></li></ol></div></details>
+      <details class="faq"><summary>Do I need trading experience?</summary><div class="body"><p class="fa-yes"><span class="fa-badge">No</span>every signal comes with entry, stop loss and 3 take profits</p><p class="fa-note">Our <b>Trading Academy</b>, included in Lifetime, teaches you the rest.</p></div></details>
+      <details class="faq"><summary>How many signals, and when?</summary><div class="body"><div class="fa-stats"><div><b>8 to 15</b><span>Forex + Gold</span><i>per week</i></div><div><b>8 to 15</b><span>Crypto</span><i>per week</i></div><div class="on"><em>We recommend</em><b>16 to 30</b><span>All Markets</span><i>per week</i></div></div><p class="fa-note">All Markets combines both, with full diversification across forex, gold and crypto.</p><div class="fa-row"><span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>Sent live on Telegram, when market conditions are best</span><span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></svg>Most activity 10am to 10pm (UTC+1)</span></div></div></details>
+      <details class="faq"><summary>Monthly or Lifetime?</summary><div class="body"><div class="fa-vs"><div class="fa-vs-c"><span class="fa-k">Monthly</span><ul class="fa-checks"><li>Subscription</li><li>Cancel any time</li></ul></div><div class="fa-vs-c on"><span class="fa-k">Lifetime</span><ul class="fa-checks"><li>One-off payment, no renewals</li><li><b>Copytrading Service</b> included</li><li><b>Trading Academy</b> included</li></ul></div></div><p class="fa-note">You can upgrade from monthly to lifetime whenever you want. Just contact our support team.</p></div></details>
+    </div>
+  </div>
+  <div id="faqEnd" aria-hidden="true"></div>
+
+</div>
+</div>
+
+
+<script>
+  var LIFE=(window.WOLFX_AB==='lifetime');
+  var AB=window.WOLFX_AB||'monthly';
+  var PLANS={
+    fg:{label:'Get Forex + Gold VIP', m:'1292', l:'1999'},
+    crypto:{label:'Get Crypto VIP', m:'1744', l:'2001'},
+    all:{label:'Get Forex + Gold / Crypto VIP', m:'1754', l:'2003'}
+  };
+  var CURRENT='fg';
+  function cartUrl(p){var d=PLANS[p]||PLANS.fg;
+    return 'https://wolfxsignals.com/?add-to-cart='+(LIFE?d.l:d.m)+'&quantity=1&ab='+(LIFE?'lt':'mo');}
+  function syncCTAs(){
+    Object.keys(PLANS).forEach(function(p){
+      var el=document.getElementById('cta-'+p);
+      if(el){el.href=cartUrl(p);el.textContent=LIFE?'Become Lifetime Member':PLANS[p].label;}
+      var et=document.getElementById('ctaTop-'+p);
+      if(et){et.href=cartUrl(p);et.textContent=LIFE?'Become Lifetime Member':PLANS[p].label;}
+    });
+    var NAMES={fg:'Forex + Gold',crypto:'Crypto',all:'All Markets'};
+    Object.keys(NAMES).forEach(function(p){
+      var s=document.getElementById('sum-'+p);
+      if(s){s.textContent='Check everything included';}
+    });
+    var pick=(window.innerWidth>=992)?'all':CURRENT;
+    ['becomeBtn','stickyBtn'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el){el.href=cartUrl(pick);el.textContent=LIFE?'Become Lifetime Member':'Become VIP Now';el.classList.toggle('lt',LIFE);}
+    });
+  }
+  function setBilling(v){
+    LIFE=!!v;
+    var root=document.getElementById('wolfxLp');
+    root.classList.toggle('life',LIFE);
+    document.getElementById('blMonthly').classList.toggle('on',!LIFE);
+    document.getElementById('blLifetime').classList.toggle('on',LIFE);
+    document.getElementById('billSwitch').setAttribute('aria-checked',LIFE?'true':'false');
+    syncCTAs();
+  }
+  function mpick(p){
+    CURRENT=p;
+    var tabs=document.querySelectorAll('.mtabs button');
+    for(var i=0;i<tabs.length;i++){tabs[i].classList.toggle('active', tabs[i].getAttribute('data-p')===p);}
+    ['fg','crypto','all'].forEach(function(x){
+      var c=document.getElementById('m-'+x);
+      if(c){c.classList.toggle('show', x===p);}
+    });
+    syncCTAs();
+  }
+  function closeRc(){var m=document.getElementById('rcModal');if(m)m.classList.remove('show');var tr=document.getElementById('tpTrack');if(tr)tr.classList.remove('paused');document.body.style.overflow='';}
+  function focusReview(el){
+    var m=document.getElementById('rcModal');
+    if(!m){
+      m=document.createElement('div');m.id='rcModal';m.className='rc-modal';
+      m.innerHTML='<div class="rc-modal-inner"><button type="button" class="rc-modal-x" aria-label="Close">&#215;</button><div class="rc-modal-card"></div></div>';
+      (el.closest('.wolfx-lp')||document.body).appendChild(m);
+      m.addEventListener('click',function(e){if(e.target===m)closeRc();});
+      m.querySelector('.rc-modal-x').addEventListener('click',closeRc);
+    }
+    m.querySelector('.rc-modal-card').innerHTML=el.innerHTML;
+    m.classList.add('show');
+    var tr=document.getElementById('tpTrack');if(tr)tr.classList.add('paused');
+    document.body.style.overflow='hidden';
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeRc();});
+  // Fechas de reseñas relativas al dia de carga: avanzan solas con el tiempo.
+  (function(){
+    var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    function fmtDate(daysAgo){
+      var d=new Date(Date.now()-daysAgo*86400000);
+      return MONTHS[d.getMonth()].slice(0,3)+' '+d.getDate()+', '+d.getFullYear();
+    }
+    var els=document.querySelectorAll('.rc-date[data-days-ago], .tpr-date[data-days-ago], .mrc-date[data-days-ago]');
+    for(var i=0;i<els.length;i++){els[i].textContent=fmtDate(+els[i].getAttribute('data-days-ago'));}
+  })();
+  (function(){
+    var bar=document.getElementById('stickyCta'), sen=document.getElementById('ctaSentinel'), bb=document.getElementById('becomeBtn');
+    if(!bar||!sen)return;
+    document.body.appendChild(bar);
+    bar.style.zIndex='2147482000';
+    var shown=false;
+    function set(v){if(v===shown)return;shown=v;bar.classList.toggle('show',v);
+      if(v){var sb=document.getElementById('stickyBtn');
+        if(sb){sb.textContent=LIFE?'Become Lifetime Member':'Become VIP Now';sb.classList.toggle('lt',LIFE);}}}
+    function onScroll(){
+      var past=sen.getBoundingClientRect().bottom<0, near=false;
+      var vh=window.innerHeight||document.documentElement.clientHeight;
+      if(bb){var r=bb.getBoundingClientRect(); near=(r.top<vh && r.bottom>0);}
+      var fq=document.getElementById("faqEnd"); if(fq){var fr=fq.getBoundingClientRect(); if(fr.top<vh) near=true;}
+      set(past && !near);
+    }
+    var sbtn=document.getElementById('stickyBtn');
+    if(sbtn){
+      sbtn.addEventListener('click',function(e){
+        if(window.innerWidth>=992){
+          e.preventDefault();
+          var top=document.getElementById('planTop');
+          if(top){var soft=!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches;top.scrollIntoView({behavior:soft?'smooth':'auto',block:'start'});}
+        }
+      });
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll);
+    setTimeout(onScroll,60);
+  })();
+  // --- A/B: eventos al dataLayer de Google Tag Manager ---
+  (function(){
+    window.dataLayer=window.dataLayer||[];
+    window.dataLayer.push({event:'wolfx_ab_view',ab_variant:AB,ab_test:'plans_default_billing'});
+    function track(e){
+      var el=e.target.closest('a.mcta, a.become-btn, a.sticky-btn');
+      if(!el)return;
+      var plan='';
+      if(el.id&&el.id.indexOf('cta-')===0){plan=el.id.slice(4);}
+      else if(el.id&&el.id.indexOf('ctaTop-')===0){plan=el.id.slice(7);}
+      else{plan=(window.innerWidth>=992)?'all':CURRENT;}
+      window.dataLayer.push({
+        event:'wolfx_ab_cta',
+        ab_test:'plans_default_billing',
+        ab_variant:AB,
+        billing_selected:LIFE?'lifetime':'monthly',
+        plan:plan,
+        cta_position:el.id==='stickyBtn'?'sticky':(el.id==='becomeBtn'?'final':(/^ctaTop-/.test(el.id)?'top':'card'))
+      });
+    }
+    document.addEventListener('click',track,true);
+    // el interruptor tambien interesa: dice si la variante convence o la cambian
+    ['blMonthly','blLifetime','billSwitch'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el){el.addEventListener('click',function(){
+        window.dataLayer.push({event:'wolfx_ab_toggle',ab_test:'plans_default_billing',ab_variant:AB,billing_selected:LIFE?'lifetime':'monthly'});
+      });}
+    });
+  })();
+  // --- Cuenta atras del bloque final ---
+  // Reloj UNICO para todos los visitantes: cuenta hasta las 07:00 de Madrid y se reinicia solo.
+  (function(){
+    var H=document.getElementById('cdH'),M=document.getElementById('cdM'),S=document.getElementById('cdS');
+    if(!H)return;
+    function madridSeconds(){
+      // hora actual en Madrid, con cambio de horario incluido
+      try{
+        var f=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Madrid',hour12:false,
+          hour:'2-digit',minute:'2-digit',second:'2-digit'});
+        var p={};f.formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});
+        var h=parseInt(p.hour,10)%24, m=parseInt(p.minute,10), sec=parseInt(p.second,10);
+        return h*3600+m*60+sec;
+      }catch(e){
+        // navegador sin soporte de zonas horarias: Madrid = UTC+2 en verano, UTC+1 en invierno
+        var d=new Date(), off=(d.getUTCMonth()>2&&d.getUTCMonth()<9)?2:1;
+        return ((d.getUTCHours()+off)%24)*3600+d.getUTCMinutes()*60+d.getUTCSeconds();
+      }
+    }
+    function two(n){return n<10?'0'+n:''+n;}
+    function tick(){
+      var left=7*3600-madridSeconds();
+      if(left<=0)left+=86400;
+      H.textContent=two(Math.floor(left/3600));
+      M.textContent=two(Math.floor(left%3600/60));
+      S.textContent=two(left%60);
+    }
+    tick();setInterval(tick,1000);
+  })();
+  window.addEventListener('resize',syncCTAs);
+  setBilling(LIFE);
+</script>
+</body>
+<div class="pv"><b>Monthly</b><a href="tarjeta-r35-1.html" class=on>Blanco</a><a href="tarjeta-r35-2.html">Oro del header</a><a href="tarjeta-r35-3.html">Platino</a></div><script>addEventListener("load",function(){var h=document.querySelector(".mplans");if(h)scrollTo(0,h.getBoundingClientRect().top+scrollY-20)});</script><style>.pv{position:fixed;left:8px;bottom:8px;z-index:2147483600;display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 16px);background:rgba(20,22,29,.92);color:#fff;font:600 12px/1 -apple-system,sans-serif;padding:6px 8px;border-radius:12px}.pv b{font-weight:700;margin:0 2px 0 4px}.pv a{color:#e8c860;text-decoration:none;padding:6px 8px;border-radius:8px;border:1px solid rgba(232,200,96,.35)}.pv a.on{background:#e8c860;color:#241a05}</style></body></html>
