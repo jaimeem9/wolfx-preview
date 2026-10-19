@@ -1,0 +1,60 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Checkout WolfX: propuestas</title>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--ink:#14161d;--muted:#5f6676;--line:#e7e9ee;--gold:#c9a227;--night:#100e18}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.top{background:radial-gradient(ellipse 55% 160% at 50% 0%,rgba(232,200,96,.28),rgba(232,200,96,0) 72%),var(--night);color:#eceaf3;padding:28px 16px 26px;text-align:center}
+.top h1{margin:0 0 6px;font-size:26px;letter-spacing:-.01em}.top p{margin:0;opacity:.8;font-size:14px}
+main{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;margin:0 0 14px}
+h2{font-size:17px;margin:0 0 10px}ul{margin:0;padding-left:18px}li{margin:4px 0}
+.vs{display:grid;grid-template-columns:1fr;gap:10px}
+.v{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+.v b{font-size:16px}.v.rec{border:2px solid var(--gold);background:#fffaef}.v span{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;color:#241a05;background:linear-gradient(180deg,#e8c860,#c9a227);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}td,th{border-top:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600}
+.s{font-weight:700}.ok{color:#16753f}.mid{color:#9a6b00}.no{color:#b42318}.small{color:var(--muted);font-size:13px}
+@media(min-width:700px){.vs{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<div class="top"><h1>Checkout: tres propuestas</h1><p>Medido sobre el checkout en vivo del 19-10, Forex/Gold VIP mensual y Lifetime</p></div>
+<main>
+<section><h2>Las propuestas (móvil y ordenador; abajo cambias de una a otra)</h2>
+<div class="vs">
+<a class="v" href="ahora.html"><b>Ahora</b><span>Lo que hay en vivo, para comparar</span></a>
+<a class="v rec" href="b.html"><b>B · Tarjeta oscura</b><span class="tag">MI ELECCIÓN</span><span>El resumen del pedido es la misma tarjeta oscura de /plans/ (bronce en Lifetime). Las ventajas, plegadas en «What's included (9)». Pago exprés y formulario 85 px más arriba en móvil</span></a>
+<a class="v" href="a.html"><b>A · Pastillas</b><span>Tarjeta blanca como ahora; las tres ventajas pasan a tres pastillas cortas («8–15 signals/week», «1:1 mentoring», «Instant access») y desaparece el «6 more»</span></a>
+<a class="v" href="c.html"><b>C · Todo oscuro</b><span>El checkout entero en oscuro, como fbmo.net, con el oro de WolfX. Ventajas como ahora. Los campos de tarjeta se quedan en blanco a propósito (abajo, por qué)</span></a>
+</div>
+<p class="small">En las tres: la cabecera pasa a ser la franja oscura con brillo dorado de /plans/; el formulario de ordenador ocupa toda su columna (hoy usa 333 px de 694 y «Credit/Debit Card» se parte en dos líneas); y se quita «Returning customer? Click here to login», que saca del checkout. El botón de G Pay de la vista previa es un dibujo: el real lo pinta Stripe.</p></section>
+
+<section><h2>Qué hace bien hoy (se mantiene)</h2><ul>
+<li>Precio claro: tachado, total y «YOU SAVE» juntos.</li>
+<li>Pago exprés por encima del formulario: lo mejor respaldado para móvil.</li>
+<li>Trustpilot en una línea, sin sello gigante.</li>
+<li>Botón «Pay Now» dorado, el mismo de /plans/.</li>
+<li>FAQ que contesta «¿me volveréis a cobrar?» antes de pagar.</li></ul></section>
+
+<section><h2>Qué falla</h2><ul>
+<li><span class="s">Cabecera:</span> franja morada plana que no es la de /plans/ (la que el cliente acaba de ver). Y sus cifras no cuadran: aquí <b>150,000+ members y 4.7</b>, en /plans/ <b>100,000+ y 4.8</b>. Hay que dejar una sola; dime cuál es la buena.</li>
+<li><span class="s">Ventajas:</span> 4 líneas + desplegable empujan el pago exprés y el formulario hacia abajo. No hay ningún estudio que mida si suman en el checkout; lo que sí está medido es que lo largo y denso resta (17 % abandona por checkout «complicado», Baymard).</li>
+<li><span class="s">Ordenador:</span> formulario a media columna y fila de pago partida (arreglado en las tres).</li>
+<li><span class="s">Fuga:</span> el enlace de login saca del checkout.</li></ul></section>
+
+<section><h2>Lo que dicen los estudios (resumen)</h2>
+<table><tr><th>Elemento</th><th>Veredicto</th><th>Base</th></tr>
+<tr><td>Pago exprés arriba</td><td class="ok">Haz</td><td>Stripe: Apple Pay +22,3 % conversión; mostrarlo antes del formulario duplica su uso (cifras de Stripe, sin muestra publicada)</td></tr>
+<tr><td>Campos de tarjeta enmarcados, candado dentro</td><td class="ok">Haz</td><td>Baymard: 19 % abandona por no fiarse de la tarjeta; la confianza se gana en ese recuadro (por eso C lo deja en blanco)</td></tr>
+<tr><td>Pocos campos, sin cuenta obligatoria</td><td class="ok">Haz</td><td>Baymard: 18 % abandona si obliga a crear cuenta; 8 campos bastan</td></tr>
+<tr><td>Total y renovación junto al botón</td><td class="ok">Haz</td><td>Baymard: 12 % abandona por no ver el total</td></tr>
+<tr><td>Lista de ventajas en el resumen</td><td class="mid">Sin evidencia</td><td>Nadie lo ha medido. Prudente: 2-3 cortas o plegadas</td></tr>
+<tr><td>Barra de prueba social arriba</td><td class="mid">Sin evidencia</td><td>Solo opinión de vendors</td></tr>
+<tr><td>Reseñas / Trustpilot</td><td class="mid">Débil</td><td>+7,4 % de una app de Shopify, sin datos</td></tr>
+<tr><td>Contador «price held for 09:50»</td><td class="no">Ojo</td><td>Único test en checkout: −3 a −4 % (5.000-6.000 visitas, sin p-valor). Si se reinicia al recargar, resta confianza. No lo toco sin que lo decidas</td></tr>
+</table>
+<p class="small">Fuentes: Baymard (baymard.com/lists/cart-abandonment-rate y sus guías de checkout), Stripe (stripe.com/blog/testing-the-conversion-impact-of-50-plus-global-payment-methods), Mathur et al. CSCW 2019. Casi todo el «A/B» público de checkout es de vendors: ninguna cifra está reproducida con vuestros datos.</p></section>
+
+<section><h2>Por qué elijo B</h2><ul>
+<li>El cliente llega desde una tarjeta oscura con brillo dorado y paga en la misma tarjeta: continuidad, no otra web.</li>
+<li>Es la que más acerca el pago: G Pay, formulario y «Pay Now» suben unos 85 px en móvil (mensual) y unos 115 px en Lifetime.</li>
+<li>No quita nada: las 9 ventajas siguen a un toque.</li>
+<li>C es la más impactante, pero cambia la web entera y el campo de tarjeta de Stripe no se puede oscurecer desde aquí: quedaría una caja blanca en medio.</li></ul></section>
+</main></body></html>
