@@ -1,0 +1,20 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Precio y oferta</title>
+<style>:root{--bg:#f4f5f7;--ink:#14161d;--mu:#5f6676;--card:#fff;--gold:#9a7a1c}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1015;--ink:#eceaf3;--mu:#a3a8b5;--card:#181a22;--gold:#e8c860}}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif}main{max-width:720px;margin:0 auto;padding:24px 16px 48px}h1{font-size:22px;margin:0 0 6px}h2{font-size:16px;margin:26px 0 8px}p,li{color:var(--mu)}a.v{display:block;background:var(--card);border-radius:14px;padding:13px 16px;margin:0 0 9px;color:var(--ink);text-decoration:none;border:1px solid rgba(127,127,127,.18)}a.v b{color:var(--gold)}a.v span{display:block;color:var(--mu);font-size:13.5px;margin-top:3px}ul{font-size:14px;padding-left:18px}</style></head><body><main>
+<h1>Checkout: precio, oferta y pago</h1>
+<p>Todas las opciones llevan ya los métodos de pago como en fbmo. Cada página tiene su versión Lifetime en la barra de abajo.</p>
+<h2>Métodos de pago como fbmo</h2>
+<ul><li>«Payment» más grande con candado, filas más aireadas y los iconos de tarjeta más grandes.</li><li>Tarjeta en tres campos con su nombre (Card Number, Exp, CVV). En la web real eso lo pinta el plugin de Stripe: hay que cambiar en WooCommerce el formulario de tarjeta al mismo que tiene fbmo («Bootstrap»).</li><li>Cripto con la píldora USDT, BTC y ETH. En el móvil la píldora va sola, porque nombre y píldora no caben juntos en nuestra columna.</li></ul>
+<h2>El precio</h2>
+<p>Lo que dicen los estudios: un precio con menos cifras y menos sílabas se percibe más barato (Coulter, Choi y Monroe, 2012: «$89» frente a «$89.00»). Un precio en letra más pequeña también se percibe más bajo cuando es un solo producto (Coulter y Coulter, 2005). Son pruebas de laboratorio; no hay ningún test publicado en un checkout. Los céntimos solo se quitan cuando son .00: con un cupón ($80.10) se siguen viendo.</p>
+<a class="v" href="p0.html"><b>Ahora</b><span>$109.90 tachado y $89.00.</span></a>
+<a class="v" href="pa.html"><b>A: sin .00</b><span>$109.90 tachado y $89, mismo tamaño. También sin .00 en la oferta ($310 → $189).</span></a>
+<a class="v" href="pb.html"><b>B: sin .00 y más pequeño</b><span>Igual que A con la cifra a 20 px en vez de 28.</span></a>
+<a class="v" href="pc.html"><b>C: sin .00 y /month</b><span>$89 /month (en Lifetime, «one-time»). El cobro mensual queda pegado a la cifra que se paga, no solo en el subtítulo.</span></a>
+<h2>La oferta «Only at checkout»</h2>
+<p>Baymard pone las ofertas agresivas en el checkout entre lo que distrae del pago. Las guías de las plataformas de pago (SamCart, CartFlows) recomiendan una sola oferta, con casilla y dentro del formulario. No hay ningún test publicado que compare una oferta discreta con una llamativa.</p>
+<a class="v" href="o1.html"><b>1: suave</b><span>Tarjeta blanca con borde dorado fino; la etiqueta pequeña, pegada al borde.</span></a>
+<a class="v" href="o2.html"><b>2: en línea</b><span>Sin caja: una fila entre dos rayas, con «ONLY AT CHECKOUT» en pequeño encima del texto.</span></a>
+<a class="v" href="o3.html"><b>3: relleno suave</b><span>Sin borde: fondo crema y la etiqueta pequeña dentro, encima del texto.</span></a>
+<a class="v" href="ahora.html"><b>En vivo ahora</b><span>Para comparar.</span></a>
+<p style="font-size:12.5px">Fuentes: Coulter, Choi y Monroe (2012), Journal of Consumer Psychology 22(3); Coulter y Coulter (2005), JCP 15(1); Baymard Institute, cross-sells en el checkout; guías de SamCart y CartFlows sobre order bumps. Botón G Pay: imagen del real.</p>
+</main></body></html>
