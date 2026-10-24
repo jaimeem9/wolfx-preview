@@ -402,7 +402,7 @@ body.cap .vp{display:flex}
   .plus-base b{font-size:13px}
 }
 /* 360 px: la oferta tiene que caber sin scroll */
-@media (max-width:370px){.r2 .ack{padding:7px 9px}.r2 .atx>span{font-size:12.5px}.price .big{font-size:44px}.offer-h{font-size:18px}.offer{padding-top:12px;padding-bottom:12px}.price{margin-top:6px}}
+@media (max-width:370px){.r2{gap:5px}.r2 .aic{width:26px;height:26px}.r2 .atx b{font-size:13.5px}.r2 .ack{gap:8px}.need{padding:7px 10px;font-size:13.5px}.r2 .ack{padding:6px 9px}.r2 .atx>span{font-size:12.5px}.price .big{font-size:44px}.offer-h{font-size:18px}.offer{padding-top:12px;padding-bottom:12px}.price{margin-top:6px}}
 </style>
 </head>
 <body>
@@ -676,7 +676,7 @@ V.review = function(){
     ? 'My CopyTrading account may be stopped on '+d+'.'+k('copytrading.disconnects_on')
     : 'If I have an active CopyTrading account, it will be stopped.'+k('copytrading.state (sin dato: frase condicional)');
   var rows=[
-    {id:'groups', ic:'bGroup', t:'VIP groups and signals', s:'I will be removed from the VIP groups and stop receiving signals on '+d+', when the period I paid for ends.'},
+    {id:'groups', ic:'bGroup', t:'VIP groups and signals', s:'I will be removed from the VIP groups and stop receiving signals on '+d+', when my paid period ends.'},
     {id:'row2', ic:'bCopy', t:'CopyTrading and Platinum', s:ct2+' Platinum VIP Access is only for VIP members.'},
     {id:'mentor', ic:'bMentor', t:'Support and 1:1 mentoring', s:'I will lose VIP-only support and mentoring. Billing help stays available.'}
   ];
