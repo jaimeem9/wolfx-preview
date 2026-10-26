@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>WolfX cancel flow prototype</title>
+
+<!--
+  Prototipo AISLADO del funnel de cancelacion VIP Monthly (2026-10-23).
+  Sin pasarelas, sin CRM, sin Telegram, sin datos reales: todo sale de FIXTURES.
+  Lo que en produccion manda el backend va marcado con data-k="<clave del contrato>".
+  Tokens copiados de /plans-lp/ en vivo (23-10-2026): --ink, --gold, --gold-pill, --line...
+-->
+<style>
+:root{
+  /* Marca, medidos en /plans-lp/ (bloque .wolfx-lp) */
+  --ink:#14161d; --ink-soft:#3a3f4c; --muted:#5d6472; --line:#e7e9ee;
+  --gold:#c9a227; --gold-2:#e0bd4b; --gold-pill:linear-gradient(180deg,#e8c860 0%,#c9a227 100%);
+  --gold-soft:#fffaef; --green:#15803d; --green-soft:#ecfdf3;
+  /* Añadidos para este flujo: marfil y tinta dorada para texto pequeño (AA sobre blanco) */
+  --ivory:#fbf8f1; --ivory-2:#f5efe0; --line-warm:#ece2c8; --gold-ink:#7a5c00;
+  --red:#b42318; --red-soft:#fef3f2; --amber:#9a6700; --amber-soft:#fff8e6;
+  --card:#ffffff; --radius:18px;
+  --shadow:0 24px 64px rgba(20,22,40,.16),0 2px 8px rgba(20,22,40,.06);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --proto-h:44px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);color:var(--ink);background:var(--ivory);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body.clean{--proto-h:0px}
+button,input,textarea{font:inherit;color:inherit}
+a{color:inherit}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:8px}
+[tabindex="-1"]:focus{outline:none}
+
+/* ---------- Barra del prototipo (no es UI de producto) ---------- */
+.proto{position:fixed;top:0;left:0;right:0;height:var(--proto-h);z-index:60;display:flex;align-items:center;gap:8px;padding:0 12px;background:#20232c;color:#f3f4f6;font-size:13px}
+.proto b{color:#e8c860;font-weight:700;letter-spacing:.04em}
+.proto .sum{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.85}
+.proto button{background:#343846;border:0;border-radius:8px;color:#fff;padding:6px 10px;min-height:32px;cursor:pointer}
+body.clean .proto,body.clean .drawer{display:none}
+.drawer{position:fixed;top:var(--proto-h);right:0;width:min(380px,100%);bottom:0;z-index:61;background:#fff;border-left:1px solid var(--line);box-shadow:-12px 0 40px rgba(0,0,0,.12);overflow:auto;padding:16px 16px 40px;font-size:14px;display:none}
+.drawer.open{display:block}
+.drawer h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+.drawer label{display:block;margin:8px 0 2px;font-weight:600}
+.drawer select{width:100%;min-height:36px;border:1px solid var(--line);border-radius:8px;padding:4px 8px;background:#fff}
+.drawer .jump{display:flex;flex-wrap:wrap;gap:6px}
+.drawer .jump button{border:1px solid var(--line);background:var(--ivory);border-radius:8px;padding:6px 8px;cursor:pointer;font-size:13px}
+.drawer .log{font:12px/1.5 ui-monospace,Menlo,monospace;background:#f6f7f9;border-radius:8px;padding:8px;max-height:220px;overflow:auto;white-space:pre-wrap}
+
+/* ---------- Fondo: My Account (simulado) ---------- */
+.acct{padding:calc(var(--proto-h) + 0px) 0 48px}
+.acct-top{background:#fff;border-bottom:1px solid var(--line)}
+.acct-top .in{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:30px;width:auto;display:block}
+.brand span{font-weight:800;letter-spacing:.12em;font-size:13px;color:var(--gold-ink)}
+.acct main{max-width:1080px;margin:0 auto;padding:28px 20px}
+.acct h1{font-size:26px;letter-spacing:-.02em;margin:0 0 4px}
+.acct .crumbs{color:var(--muted);font-size:14px;margin:0 0 20px}
+.subcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:grid;gap:14px;grid-template-columns:1fr auto;align-items:center;box-shadow:0 2px 10px rgba(20,22,40,.05)}
+.subcard .nm{font-weight:700;font-size:17px}
+.subcard .meta{color:var(--muted);font-size:14px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 10px}
+.pill.ok{background:var(--green-soft);color:var(--green)}
+.pill.off{background:#f2f3f5;color:var(--ink-soft)}
+.linkbtn{background:none;border:0;padding:10px 4px;min-height:44px;color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:15px}
+.banner-f{margin-top:16px;border:1px solid var(--line-warm);background:linear-gradient(90deg,var(--gold-soft),#fff);border-radius:var(--radius);padding:18px 20px;display:grid;gap:12px;grid-template-columns:1fr auto;align-items:center}
+.banner-f p{margin:2px 0 0;color:var(--ink-soft);font-size:14px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:12px;padding:12px 16px;font-size:15px;z-index:70;max-width:calc(100% - 32px)}
+@media (max-width:600px){.subcard,.banner-f{grid-template-columns:1fr}}
+
+/* ---------- Modal (patron Ubersuggest: tarjeta centrada, pie fijo con Keep plan / Continue cancellation) ---------- */
+.scrim{position:fixed;inset:var(--proto-h) 0 0 0;z-index:40;background:rgba(20,22,29,.48);display:none;overflow:auto;padding:20px}
+.scrim.open{display:flex}
+.dlg{position:relative;margin:auto;width:100%;max-width:580px;background:var(--card);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;max-height:calc(100dvh - var(--proto-h) - 40px)}
+.dlg.wide{max-width:620px}
+#view,#view>.fade{display:flex;flex-direction:column;min-height:0;flex:1 1 auto}
+.dlg-head{position:absolute;top:12px;right:12px;z-index:2;display:flex;align-items:center}
+.dlg-scroll{padding-top:24px!important}
+.dlg h2{padding-right:40px}
+.hd-left{display:none}
+.x{width:44px;height:44px;border:0;background:none;border-radius:10px;cursor:pointer;display:grid;place-items:center;color:var(--ink-soft);flex:none}
+.x:hover{background:#f3f4f6}
+.dlg-scroll{overflow:auto;min-height:0;flex:1 1 auto;padding:2px 28px 22px}
+.dlg-foot{flex:none;display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:14px 20px 14px 22px;border-top:1px solid var(--line);background:#fff}
+.dlg-foot .lft{margin-right:auto}
+.lft-link{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 6px;border:0;background:none;color:var(--ink-soft);font-size:15px;text-decoration:none;cursor:pointer;border-radius:8px}
+.lft-link:hover{color:var(--ink)}
+.lft-link,.brand span{white-space:nowrap}
+.lft-link .short{display:none}
+@media (max-width:600px){.hd-left .lft-link .long{display:none}.hd-left .lft-link .short{display:inline}}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);margin:10px 0 6px}
+.dlg h2{font-size:25px;line-height:1.18;letter-spacing:-.02em;margin:4px 0 6px;font-weight:800}
+.lead{color:var(--ink-soft);margin:0 0 16px;font-size:15.5px;line-height:1.45}
+.lead strong{color:var(--ink)}
+
+/* Botones: radio contenido (no pastilla), un primario por pantalla */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;min-height:46px;padding:10px 18px;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;border:0;white-space:nowrap;transition:transform .12s ease,box-shadow .18s ease,background-color .18s ease}
+.btn:active{transform:scale(.985)}
+.btn-gold{background:var(--gold-pill);color:var(--ink);box-shadow:0 6px 16px rgba(201,162,39,.30),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-gold:hover{box-shadow:0 8px 22px rgba(201,162,39,.40),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-big{min-height:56px;font-size:17px;width:100%;border-radius:10px}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-line{background:#fff;color:var(--ink);border:1.5px solid #d6d9e0}
+.btn-line:hover{border-color:var(--ink-soft)}
+.btn[disabled]{cursor:not-allowed;background:#eceef2;color:#6b7280;box-shadow:none;border:0}
+.btn .spin{width:18px;height:18px;border:2.5px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.linkbtn.decline{display:block;margin:4px auto 0}
+.hint{font-size:13px;color:var(--muted);margin:8px 0 0}
+
+@media (max-width:600px){
+  .scrim{padding:12px}
+  .dlg,.dlg.wide{max-height:calc(100dvh - var(--proto-h) - 24px);border-radius:16px}
+  .dlg-head{position:static;display:flex;justify-content:space-between;padding:6px 6px 0 8px;flex:none}
+  .dlg-head .x{margin-left:auto}
+  .dlg-scroll{padding-top:0!important}
+  .hd-left:not(:empty){display:flex}
+  .dlg-scroll{padding:0 16px 14px}
+  .dlg-foot{display:grid;grid-template-columns:auto 1fr;gap:8px;padding:12px 14px}
+  .dlg-foot .lft{display:none}
+  .dlg-foot.one{grid-template-columns:1fr}
+  .dlg-foot .btn{padding:10px 14px;font-size:14.5px;white-space:normal;line-height:1.2;text-align:center;min-width:0}
+  .dlg-foot{grid-template-columns:auto minmax(0,1fr)}
+  .dlg h2{font-size:21px;margin-top:2px}
+  .lead{font-size:14.5px;margin-bottom:12px}
+}
+
+/* Banda de precio futuro: sutil, no tarjeta */
+.band{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;padding:9px 12px;background:var(--ivory);border-radius:10px;font-size:13.5px;color:var(--ink-soft);line-height:1.4}
+.band svg{flex:none;margin-top:1px;color:var(--gold-ink)}
+
+/* Pantalla 1: cuadricula 2x2 como Ubersuggest */
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vcard{border:1px solid var(--line-warm);border-radius:14px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:6px;background:#fff}
+.vcard .lbl{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-ink);line-height:1.2}
+.vcard .lbl svg{flex:none;width:17px;height:17px}
+.vcard p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.4}
+.vcard a{display:inline-flex;align-items:center;min-height:44px;margin:auto 0 -10px;align-self:flex-start;font-size:14px;font-weight:600;color:var(--ink);text-underline-offset:3px}
+@media (max-width:600px){
+  .vgrid{gap:8px}
+  .vcard{padding:11px 11px 10px;gap:4px;border-radius:12px}
+  .vcard .lbl{font-size:11px;letter-spacing:.05em}
+  .vcard p{font-size:13px;line-height:1.35}
+  .vcard a{font-size:13px}
+}
+
+/* ---------- Pantalla 1 (opcion A, 24-10): icono de la pagina de planes + titulo en la misma linea ---------- */
+.bgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.bcard{position:relative;display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:14px;min-width:0;overflow-wrap:anywhere;
+  border:1px solid #efe3c2;background:linear-gradient(180deg,#fffdf6 0%,#fff 60%);
+  box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(122,92,0,.06),0 8px 20px -10px rgba(122,92,0,.22)}
+.bhead{display:flex;align-items:center;gap:10px}
+.bcard h3{margin:0;font-size:15.5px;line-height:1.2;letter-spacing:-.01em}
+.bcard p{margin:0;font-size:13.5px;line-height:1.45;color:var(--ink-soft)}
+.bcard a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;overflow-wrap:normal;width:max-content;max-width:none;margin:-8px 0 -12px;font-size:13.5px;font-weight:600;color:var(--ink);text-underline-offset:3px}
+.pic{flex:none;display:grid;place-items:center;width:24px;height:24px;color:var(--ink)}
+.pic svg{width:22px;height:22px}
+.pic.sm{width:20px;height:20px}
+.pic.sm svg{width:17px;height:17px}
+.du{display:none}
+.v1 .band{margin-top:12px}
+@media (max-width:600px){
+  .bgrid{gap:8px}
+  .bcard{padding:10px;gap:6px;border-radius:12px}
+  .bhead{gap:7px}
+  .bcard h3{font-size:13.5px}
+  .bcard p,.bcard a{font-size:12.5px;line-height:1.38}
+  .bcard a{margin:-10px 0 -12px}
+  .pic{width:20px;height:20px}
+  .pic svg{width:19px;height:19px}
+  .v1 .band{margin-top:8px;padding:6px 10px;font-size:12.5px}
+}
+@media (max-width:370px){.bcard h3{font-size:12.5px}.bhead{gap:6px}}
+
+/* Pantalla 2: motivos en tarjeta con icono, radio nativo oculto pero accesible */
+fieldset{border:0;margin:0;padding:0}
+legend{padding:0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{position:relative;display:flex;align-items:center;gap:12px;min-height:58px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;background:#fff;transition:border-color .15s,background-color .15s}
+.opt:hover{border-color:#cfd3db}
+.opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.opt .tile{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;flex:none;background:var(--gold-soft);color:var(--gold-ink);transition:background-color .15s}
+.opt b{font-size:15.5px;font-weight:650;line-height:1.25}
+.opt:has(input:checked){border-color:var(--gold);background:var(--gold-soft)}
+.opt:has(input:checked) .tile{background:var(--gold-pill);color:var(--ink)}
+.opt:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+.help{margin:10px 2px 0;font-size:14px;color:var(--ink-soft);min-height:21px}
+.help a{font-weight:600;color:var(--ink);text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}
+.field{margin-top:12px}
+.field label{display:block;font-weight:600;font-size:14.5px;margin-bottom:6px}
+.field label span{font-weight:400;color:var(--muted)}
+textarea{width:100%;height:68px;min-height:52px;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;resize:vertical;font-size:16px;line-height:1.4}
+textarea:focus-visible{border-color:var(--ink);outline:3px solid var(--ink);outline-offset:2px}
+#sub:not(:empty){margin-top:14px}
+.subq legend,.subq>label{display:block;font-weight:700;font-size:15px;margin:0 0 8px;padding:0}
+.subs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sub{display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:center;min-height:46px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;font-size:14.5px;line-height:1.3;background:#fff}
+.sub input{appearance:none;-webkit-appearance:none;width:20px;height:20px;margin:0;border:2px solid #9aa0ab;border-radius:50%;display:grid;place-items:center;background:#fff;cursor:pointer}
+.sub input:checked{border-color:var(--gold)}
+.sub input:checked::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.sub input:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.sub:has(input:checked){border-color:var(--gold);background:var(--gold-soft)}
+.subq.field{position:relative;margin-top:0}
+.subq textarea{height:64px;resize:none}
+.count{position:absolute;right:10px;bottom:8px;font-size:12px;color:var(--muted)}
+#sub .help{margin-top:8px;min-height:0}
+@media (max-width:600px){
+  .opts{grid-template-columns:1fr 1fr;gap:8px}
+  .opt{min-height:54px;padding:8px 10px;gap:9px}
+  .opt b{font-size:14px;line-height:1.2}
+  #sub:not(:empty){margin-top:10px}
+  .subq legend,.subq>label{font-size:14px;margin-bottom:6px}
+  .subs{grid-template-columns:1fr;gap:6px}
+  .sub{min-height:44px;padding:6px 10px;font-size:13.5px;gap:9px}
+  .subq textarea{height:60px}
+  #sub .help{margin:0 0 -8px}
+  .opt{min-height:50px}
+  .opt .tile{width:30px;height:30px;border-radius:8px}
+  .opt .tile svg{width:18px;height:18px}
+  .help{font-size:13.5px}
+}
+
+/* Pantalla 3: confirmar las tres, como Ubersuggest (Continue bloqueado hasta marcarlas) */
+.warn-h{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.warn-h .wi{width:40px;height:40px;display:grid;place-items:center;color:#b54708;margin-top:2px}
+.acks{display:grid;gap:2px;margin-left:54px}
+.ack{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:9px 0;cursor:pointer;font-size:15.5px;line-height:1.45;color:var(--ink)}
+.ack input,.consent input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:0;border:2px solid #8f96a3;border-radius:7px;background:#fff;display:grid;place-items:center;cursor:pointer}
+.ack input{margin-top:1px;border-radius:6px}
+.ack input:checked{background:var(--gold);border-color:var(--gold)}
+.ack input:checked::after{content:"";width:6px;height:11px;border:solid var(--ink);border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.consent input:checked{background:var(--ink);border-color:var(--ink)}
+.consent input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.ack input:focus-visible,.consent input:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.need{display:flex;align-items:center;gap:8px;margin:8px 0 0;padding:9px 12px;border-radius:10px;background:var(--amber-soft);border:1px solid #f0d58a;color:#6b4e00;font-size:14.5px;font-weight:700}
+.need svg{flex:none;color:#9a6700}
+@media (max-width:600px){
+  .warn-h{grid-template-columns:30px 1fr;gap:10px}
+  .warn-h .wi{width:30px;height:30px;margin-top:0}
+  .warn-h .wi svg{width:26px;height:26px}
+  .acks{margin-left:0}
+  .ack{font-size:14.5px;line-height:1.4;padding:8px 0}
+}
+
+/* Pantalla 4: oferta tipo Ubersuggest. El CTA del $99 es el unico con degradado y brillo */
+.offer{border:1px solid var(--line-warm);border-radius:18px;padding:20px 22px;background:linear-gradient(180deg,var(--gold-soft) 0%,#fff 46%)}
+.offer-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.offer-h{margin:0;font-size:24px;line-height:1.15;font-weight:800;letter-spacing:-.02em}
+.ttl-top{margin:0 0 12px!important}
+.timer{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--line-warm);border-radius:999px;padding:4px 11px;white-space:nowrap}
+.timer.low{color:var(--red);border-color:#f3c4bf}
+.prod{font-size:15px;font-weight:700;color:var(--gold-ink);margin:2px 0 0}
+.price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:10px 0 2px}
+.price .big{font-size:60px;line-height:1;font-weight:800;letter-spacing:-.035em}
+.price s{color:var(--muted);font-size:20px}
+.save{font-size:13px;font-weight:800;color:var(--gold-ink);background:#fff3cf;border-radius:999px;padding:3px 10px}
+.once{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 14px}
+.feat{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:6px}
+.feat li{display:grid;grid-template-columns:18px 1fr;gap:9px;font-size:14.5px;line-height:1.4;color:var(--ink-soft)}
+.feat svg{color:var(--green);margin-top:2px}
+.fine{font-size:12.5px;color:var(--muted);margin:10px 2px 0;line-height:1.4}
+.swap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 10px;font-size:14px}
+.swap b{font-weight:700}
+.swap .from{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:#b8bcc6}
+.swap .arr{display:grid;place-items:center;color:var(--muted)}
+.swap .arr svg{width:16px;height:16px}
+.consent{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line-warm);background:#fff;font-size:14px;line-height:1.4;color:var(--ink);cursor:pointer;margin:0 0 12px}
+.consent:has(input:checked){border-color:var(--ink)}
+.expired{border:1px dashed #cfd3db;border-radius:12px;padding:12px;text-align:center;color:var(--ink-soft);font-size:15px;margin:0}
+@media (max-width:600px){
+  .offer{padding:14px 16px;border-radius:14px}
+  .offer-top{margin-bottom:2px}
+  .offer-h{font-size:20px}
+  .ttl-top{margin-bottom:8px!important}
+  .timer{font-size:12.5px;padding:3px 9px}
+
+  .prod{font-size:14px}
+  .price{margin:8px 0 0;gap:10px}
+  .price .big{font-size:50px}
+  .price s{font-size:17px}
+  .once{font-size:11.5px;margin-bottom:10px}
+  .feat{margin-top:10px;gap:4px}
+  .feat li{font-size:13.5px;line-height:1.35}
+  .fine{font-size:12px;margin-top:8px}
+  .btn-big{min-height:52px;font-size:16.5px}
+  .swap{display:none}
+  .consent{padding:10px 12px;font-size:13px;gap:10px;margin-bottom:10px}
+}
+
+/* Pie: el avance va en dorado plano para no competir con el CTA del $99 */
+.dlg-foot .btn-gold{background:var(--gold);box-shadow:none}
+.dlg-foot .btn-gold:hover{background:#b8931f;box-shadow:none}
+.dlg-foot .btn-gold[disabled]{background:#eceef2}
+
+/* Pantalla 5: comparativa */
+.done-strip{display:flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;background:var(--green-soft);color:#14532d;font-size:13.5px;margin:2px 0 12px;line-height:1.35}
+.done-strip svg{flex:none;color:var(--green)}
+/* En escritorio la X del dialogo flota arriba a la derecha: la franja le deja sitio */
+@media (min-width:601px){.done-strip{margin-right:40px}}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 12px}
+.col{border-radius:14px;padding:14px;border:1px solid var(--line)}
+.col.pt{border:1.5px solid var(--gold);background:linear-gradient(180deg,var(--gold-soft),#fff 60%)}
+.col h3{margin:0 0 8px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.col.pt h3{color:var(--gold-ink)}
+.col.std h3{color:var(--muted)}
+.col ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.col li{display:grid;grid-template-columns:17px 1fr;gap:7px;font-size:14px;line-height:1.35}
+.col li svg{margin-top:1px}
+.ok-i{color:var(--green)} .no-i{color:var(--red)} .neu-i{color:#9aa0ab}
+@media (max-width:600px){
+  .cmp{gap:6px;margin:6px 0 10px}
+  .col{padding:10px 9px;border-radius:12px}
+  .col ul{gap:5px}
+  .col li{font-size:12.5px;grid-template-columns:15px 1fr;gap:5px;line-height:1.3}
+  .col li svg{width:15px;height:15px}
+  .done-strip{font-size:12.5px;padding:7px 10px;margin-bottom:8px}
+}
+
+/* Estados finales */
+.res{text-align:center;padding-top:6px}
+.res .big-ic{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:8px auto 14px}
+.big-ic.ok{background:var(--green-soft);color:var(--green)}
+.big-ic.wait{background:var(--amber-soft);color:var(--amber)}
+.big-ic.err{background:var(--red-soft);color:var(--red)}
+.big-ic.info{background:var(--ivory-2);color:var(--gold-ink)}
+.res .lead{margin-bottom:16px}
+.facts{text-align:left;margin:0 0 4px;padding:6px 16px;border-radius:14px;background:var(--ivory)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line-warm);font-size:14.5px}
+.facts div:last-child{border-bottom:0}
+.facts dt{color:var(--ink-soft)}
+.facts dd{margin:0;font-weight:700;text-align:right}
+.loading{display:grid;place-items:center;gap:14px;padding:48px 0 40px;text-align:center;color:var(--ink-soft)}
+.loading .spin{width:36px;height:36px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .9s linear infinite}
+
+/* Simulador de checkout: NO es diseño, va rayado a proposito */
+.sim{border:2px dashed #9aa0ab;border-radius:16px;padding:18px;background:repeating-linear-gradient(135deg,#fafafa 0 12px,#f2f3f5 12px 24px)}
+.sim h3{margin:0 0 6px;font-size:15px}
+.sim p{margin:0 0 12px;font-size:14px;color:var(--ink-soft)}
+.sim .btns{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+@media (max-width:600px){.sim{padding:12px}.sim p{font-size:13px;margin-bottom:8px}.sim .btns{gap:6px}.sim button{font-size:13px;padding:6px 8px}}
+.sim button{min-height:44px;border-radius:10px;border:1px solid #cfd3db;background:#fff;cursor:pointer;text-align:left;padding:8px 12px;font-size:14px}
+.blocked{border:2px dashed var(--red);border-radius:16px;padding:18px;background:var(--red-soft);color:#7a1a12;font-size:14.5px}
+.blocked b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+
+/* Notas de contrato para Roberto (solo con «Notes» activado) */
+.k,.trial .k,.swap .k,.facts .k{display:none!important}
+body.notes .k{display:inline-block!important;font:600 10.5px/1.4 ui-monospace,Menlo,monospace;color:#6b4e00;background:#fff3cf;border:1px solid #e8c860;border-radius:6px;padding:0 5px;margin:0 4px;vertical-align:middle;letter-spacing:0;text-transform:none}
+
+/* Modo captura: solo la etiqueta del viewport; el dialogo tiene que caber sin scroll */
+body.cap{--proto-h:22px}
+body.cap .vp{display:flex}
+.vp{display:none;position:fixed;top:0;left:0;right:0;height:22px;align-items:center;justify-content:center;z-index:90;font:600 11px/1 -apple-system,sans-serif;background:#2b2e38;color:#fff;letter-spacing:.02em;pointer-events:none}
+.fade{animation:fade .18s ease-out}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none}.btn,.opt{transition:none}.spin,.loading .spin{animation-duration:2.4s}}
+/* Pantalla 1, opcion 2: "VIP signals + everything below" */
+.plus{display:flex;align-items:center;gap:8px;margin:-4px 0 12px;font-size:14px}
+.plus-base{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 5px;border-radius:999px;background:var(--gold-soft);border:1px solid #efe3c2}
+.plus-base b{font-size:14px}
+.plus-op{font-weight:800;color:var(--gold-ink);font-size:18px}
+.plus-more{color:var(--ink-soft);font-weight:600}
+
+/* Pantalla 3: tarjeta = casilla + titulo y descripcion, sin iconos. r1 casilla a la izquierda, r2 a la derecha */
+.acks{gap:8px}
+.acks .ack{grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;transition:border-color .15s,background-color .15s}
+.acks .ack:has(input:checked){border-color:var(--gold);background:var(--gold-soft)}
+.r2 .ack{grid-template-columns:1fr 24px}
+.r2 .ack input{order:3}
+.atx b{display:block;font-size:15.5px;line-height:1.3}
+.atx>span{display:block;font-size:14px;line-height:1.4;color:var(--ink-soft);margin-top:2px}
+u.stop{font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:3px}
+/* Pantalla 1, titulo: "signals" destacado. em1 marcador, em2 subrayado recto (elegido 25-10), em3 etiqueta */
+.em{white-space:nowrap}
+.em1{background:linear-gradient(180deg,transparent 60%,rgba(232,200,96,.6) 60%,rgba(232,200,96,.6) 92%,transparent 92%);padding:0 2px}
+.em2{position:relative;display:inline-block}
+.em2::after{content:"";position:absolute;left:0;right:0;bottom:-.08em;height:.12em;min-height:3px;border-radius:2px;background:var(--gold)}
+.em3{display:inline-block;padding:0 .28em .04em;border-radius:.22em;background:var(--ink);color:#f1d27a;transform:rotate(-1.5deg)}
+/* Oferta: el CTA de $99 respira y lleva un destello cada pocos segundos */
+.btn-cta{position:relative;overflow:hidden;isolation:isolate;box-shadow:0 8px 22px rgba(201,162,39,.45),0 0 0 3px rgba(232,200,96,.25),inset 0 1px 0 rgba(255,255,255,.5);animation:ctaNudge 3.2s ease-in-out infinite}
+.btn-cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:ctaShine 3.2s ease-in-out infinite}
+.btn-cta[disabled]{animation:none}.btn-cta[disabled]::after{display:none}
+@keyframes ctaNudge{0%,62%,100%{transform:translateY(0) scale(1)}70%{transform:translateY(-2px) scale(1.02)}78%{transform:translateY(0) scale(1)}84%{transform:translateY(-1px) scale(1.01)}90%{transform:none}}
+@keyframes ctaShine{0%,55%{left:-60%}80%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.btn-cta,.btn-cta::after{animation:none}.btn-cta::after{display:none}}
+@media (max-width:600px){
+  .acks .ack{gap:9px}
+  .atx b{font-size:14.5px}
+  .atx>span{font-size:13px;line-height:1.35}
+  .acks{gap:6px}
+  .acks .ack{padding:9px 10px}
+  .plus{margin:-2px 0 8px;font-size:13px}
+  .plus-base b{font-size:13px}
+}
+/* 360 px: la oferta tiene que caber sin scroll */
+@media (max-width:370px){.acks{gap:5px}.atx b{font-size:13.5px}.acks .ack{gap:8px}.need{padding:7px 10px;font-size:13.5px}.acks .ack{padding:6px 9px}.atx>span{font-size:12.5px}.price .big{font-size:44px}.offer-h{font-size:18px}.offer{padding-top:12px;padding-bottom:12px}.price{margin-top:6px}}
+@media (max-width:370px){.bcard a{font-size:12px}}
+</style>
+</head>
+<body>
+
+<div class="proto" role="region" aria-label="Prototype controls">
+  <b>PROTOTYPE</b><span class="sum" id="sum"></span>
+  <button type="button" id="notesBtn" aria-pressed="false">Notes</button>
+  <button type="button" id="drawerBtn" aria-expanded="false" aria-controls="drawer">Scenario</button>
+</div>
+<aside class="drawer" id="drawer" aria-label="Scenario">
+  <h3>Fixture (ficticio)</h3>
+<label for="c-plan">Plan</label>
+  <select id="c-plan"><option value="fg">Forex &amp; Gold VIP Monthly</option><option value="crypto">Crypto VIP Monthly</option><option value="am">All Markets VIP Monthly</option></select>
+  <label for="c-status">Subscription status</label>
+  <select id="c-status"><option value="active">Active, paid (eligible)</option><option value="on_hold">On Hold (out of scope)</option><option value="pending">Pending payment (out of scope)</option><option value="pending_cancel">Pending cancel (out of scope)</option><option value="other">Lifetime / Platinum / other (out of scope)</option></select>
+  <label for="c-disc">Discount</label>
+  <select id="c-disc"><option value="0">No discount</option><option value="1">Discounted price</option></select>
+  <label for="c-ct">CopyTrading</label>
+  <select id="c-ct"><option value="not_included">Not included (Monthly default)</option><option value="connected_vip">Connected, depends on VIP</option><option value="connected_own">Connected, independent of VIP</option><option value="unknown">Unknown (no backend flag)</option></select>
+  <label for="c-extras">$99 offer = standard Lifetime extras</label>
+  <select id="c-extras"><option value="unknown">Not confirmed (hide)</option><option value="yes">Confirmed (show)</option></select>
+  <label for="c-ref">Reference price / % from backend</label>
+  <select id="c-ref"><option value="1">Verified (show)</option><option value="0">Not verified (hide)</option></select>
+  <label for="c-acks">Review rows</label>
+  <select id="c-acks"><option value="1">Required: tick all three (default)</option><option value="0">Optional ticks</option></select>
+  <label for="c-pt">Platinum trial</label>
+  <select id="c-pt"><option value="eligible">Eligible (no Platinum, no trial before)</option><option value="had_trial">Had a trial before</option><option value="has_platinum">Already has Platinum</option></select>
+  <label for="c-cancel">Cancellation API</label>
+  <select id="c-cancel"><option value="ok">Succeeds</option><option value="error">Fails</option></select>
+  <label for="c-timer">Offer timer (server)</label>
+  <select id="c-timer"><option value="fresh">New: 15:00</option><option value="low">Under 1 min left</option><option value="expired">Expired</option></select>
+  <h3>Go to screen</h3>
+  <div class="jump" id="jump"></div>
+  <h3>Events fired</h3>
+  <div class="log" id="log" aria-live="off"></div>
+</aside>
+
+<div class="acct" id="acct">
+  <div class="acct-top"><div class="in">
+    <span class="brand"><img alt="" src="data:image/webp;base64,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"><span>WOLFX SIGNALS</span></span>
+  </div></div>
+  <main>
+    <h1>My Account</h1>
+    <p class="crumbs">Dashboard / Subscriptions</p>
+    <div id="acctBody"></div>
+  </main>
+</div>
+
+<div class="scrim" id="scrim">
+  <div class="dlg" id="dlg" role="dialog" aria-modal="true" aria-labelledby="dlgTitle">
+    <div class="dlg-head">
+      <span class="hd-left" id="hdLeft"></span>
+
+      <button type="button" class="x" id="closeBtn" aria-label="Close and keep my subscription"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div id="view" aria-live="polite"></div>
+  </div>
+</div>
+
+<script>
+/* ===================== FIXTURES (ficticios, nunca datos reales) =====================
+   Precios: los de /plans-lp/ en vivo el 23-10-2026 (89/139 al mes, 278 lifetime) y los de
+   Platinum medidos el 13-09 (Forex 89/mes, Crypto 69/mes). En produccion TODO llega del backend. */
+var TODAY = new Date('2026-10-23T12:00:00Z');
+var PLANS = {
+  fg:{monthly:'Forex & Gold VIP Monthly', market:'Forex & Gold VIP', price:'$89', disc:'$71.20',
+      lifetime:'Forex & Gold VIP Lifetime', ref:'$278', pct:'64%',
+      pt:{map:'ok', name:'Forex Platinum VIP', price:'$89', extra:'Extra Gold, Silver and Oil'}},
+  crypto:{monthly:'Crypto VIP Monthly', market:'Crypto VIP', price:'$89', disc:'$71.20',
+      lifetime:'Crypto VIP Lifetime', ref:'$278', pct:'64%',
+      pt:{map:'blocked', cand:'Crypto Platinum VIP ($69/month): product 2571 or the old 52372', name:'Crypto Platinum VIP', price:'$69', extra:null}},
+  am:{monthly:'All Markets VIP Monthly', market:'All Markets VIP', price:'$139', disc:'$111.20',
+      lifetime:'Forex & Gold VIP Lifetime', ref:'$278', pct:'64%',
+      pt:{map:'blocked'}}
+};
+var PAID_THROUGH = '2026-11-14', TRIAL_END = '2026-11-22';
+/* Upsell tras comprar el Lifetime $99 (Jaime 26-10): Crypto Lifetime por otros $99 a quien no tenga Crypto. En produccion llega del backend */
+var CRYPTO_UP = {price:'$99', ref:PLANS.crypto.ref, pct:PLANS.crypto.pct, product:PLANS.crypto.lifetime};
+var TG = 'https://t.me/wolfx_exclusive?text=';
+var DRAFT = {
+  poor:"Hi, I'm thinking of cancelling my VIP. Could you review my experience with the signals?",
+  time:"Hi, I don't have much time to trade. Can you help me set up automation for the VIP signals?",
+  other:"Hi, I have a question about my VIP membership before I cancel.",
+  review:"Hi, I'd like a personal review of my portfolio and setup."
+};
+/* Submotivos: cada opcion mide una cosa distinta. Poor = la calidad de las senales; No time = la
+   disponibilidad del cliente (la ayuda de automatizar va en el enlace, no como opcion). */
+var SUBS = {
+  poor:{q:'What was your main issue?', o:[
+    ['lost_money','The signals lost money overall'],
+    ['results_mismatch','My results were worse than the published ones'],
+    ['risk_reward','The risk reward ratio is not good'],
+    ['few_signals','Too few signals to make a profit']]},
+  time:{q:'What makes trading difficult?', o:[
+    ['manual','I can\'t trade your signals manually'],
+    ['schedule','Signals arrive at times I can\'t trade'],
+    ['break','I\'m taking a break from trading']]}
+};
+var REASONS = [
+  {id:'poor', t:'Poor trading results', s:'Results did not meet my expectations.', help:'Review my experience with support'},
+  {id:'time', t:'No time to trade', s:'I cannot follow the signals regularly.', help:'Help me set up automation'},
+  {id:'price', t:'Too expensive', s:'The price is outside my budget.', help:null},
+  {id:'other', t:'Other reason', s:'Another reason not listed here.', help:null}
+];
+
+/* ===================== ESTADO ===================== */
+var q = new URLSearchParams(location.search);
+var S = {
+  plan:q.get('plan')||'fg', status:q.get('status')||'active', disc:q.get('disc')==='1',
+  ct:q.get('ct')||'not_included', extras:q.get('extras')||'unknown', ref:q.get('ref')!=='0',
+  reqAcks:q.get('acks')!=='0', pt:q.get('pt')||'eligible', cancel:q.get('cancel')||'ok',
+  timer:q.get('t')||'fresh', l1:q.get('l')||'3', h1:q.get('h')||'2', r3:q.get('r')||'1', reason:q.get('reason')||null, sub:q.get('sub')||null, why:q.get('why')||'',  done:false, acks:(q.get('ackall')==='1'?{groups:1,row2:1,mentor:1}:{}), amAck:q.get('amack')==='1',
+  consent:q.get('consent')==='1', screen:q.get('s')||'account', busy:q.get('busy')==='1', hist:[], acct:q.get('acct')||'monthly'
+};
+if (q.get('clean')==='1') document.body.classList.add('clean');
+if (q.get('cap')==='1'){ document.body.classList.add('cap'); var vp=document.createElement('div'); vp.className='vp'; vp.textContent='viewport '+innerWidth+'x'+innerHeight+'  s='+(q.get('s')||'account'); document.body.appendChild(vp); }
+if (q.get('notes')==='1') document.body.classList.add('notes');
+
+function P(){ return PLANS[S.plan]; }
+function fmt(iso){ var d=new Date(iso+'T12:00:00Z'); return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}); }
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function k(key){ return '<span class="k">'+key+'</span>'; }
+var logEl = document.getElementById('log');
+function ev(name, data){
+  var line = name + (data ? ' ' + JSON.stringify(data) : '');
+  logEl.textContent = line + '\n' + logEl.textContent;
+}
+
+/* Temporizador: lo controla el servidor. Aqui se simula guardando expires_at la PRIMERA vez
+   que se ve la oferta (sessionStorage), asi que recargar no lo reinicia. */
+var MEM={};
+function offerExpiresAt(){
+  var key='wx_offer_expires_'+S.plan, v=MEM[key]||null;
+  try{ v = sessionStorage.getItem(key) || v; }catch(e){}
+  if (!v){
+    v = String(Date.now() + 15*60*1000); MEM[key]=v;
+    try{ sessionStorage.setItem(key, v); }catch(e){}
+    ev('offer_viewed',{offer:'lifetime_99', expires_at:new Date(+v).toISOString()});
+  }
+  return +v;
+}
+function remaining(){
+  if (S.timer==='expired') return 0;
+  if (S.timer==='low') return 47*1000;
+  return Math.max(0, offerExpiresAt() - Date.now());
+}
+function mmss(ms){ var s=Math.ceil(ms/1000), m=Math.floor(s/60); s=s%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }
+
+/* ===================== ICONOS (linea, 1.75) ===================== */
+var I = {
+  copy:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15"/><path d="M4 20v-5h5"/></svg>',
+  funded:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+  mentor:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg>',
+  target:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>',
+  info:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg>',
+  clock:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  check:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  cross:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg>',
+  dot:'<svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5" fill="currentColor"/></svg>',
+  arrow:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  headset:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v5H5a1 1 0 0 1-1-1z"/><path d="M20 14h-3v5h2a1 1 0 0 0 1-1z"/><path d="M17 19c0 1.5-2 2-4 2"/></svg>',
+  back:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+  warn:'<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9L2.4 17.6A2 2 0 0 0 4.1 20.6h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4.5M12 17v.01"/></svg>',
+  chart:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M7 16v-4M12 16V8M17 16v-7"/></svg>',
+  clock2:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
+  coins:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.8 9.2c-.5-.8-1.5-1.2-2.8-1.2-1.6 0-2.8.8-2.8 2s1.2 1.7 2.8 2 2.8.8 2.8 2-1.2 2-2.8 2c-1.3 0-2.3-.4-2.8-1.2M12 6.5V8M12 16v1.5"/></svg>',
+  dots:'<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/></svg>',
+  bCopy:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="du" x="8" y="7.5" width="13" height="12.5" rx="2.5" fill="currentColor" stroke="none"/><path d="M5.5 16.5H5A2 2 0 0 1 3 14.5V6a2 2 0 0 1 2-2h8.5a2 2 0 0 1 2 2v.5"/><rect x="8" y="7.5" width="13" height="12.5" rx="2.5"/><path d="M10.8 16.6l2.6-2.8 1.9 1.5 3-3.6"/></svg>',
+  bFund:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="du" d="M7.5 3.5h9v5.5a4.5 4.5 0 0 1-9 0z" fill="currentColor" stroke="none"/><path d="M7.5 3.5h9v5.5a4.5 4.5 0 0 1-9 0z"/><path d="M7.5 5.5H5a2.8 2.8 0 0 0 3 3.8M16.5 5.5H19a2.8 2.8 0 0 1-3 3.8"/><path d="M12 13.5v3M8.5 20.5h7l-.9-4h-5.2z"/></svg>',
+  bMentor:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle class="du" cx="9" cy="8" r="3.2" fill="currentColor" stroke="none"/><circle cx="9" cy="8" r="3.2"/><path d="M3.2 19.5a5.8 5.8 0 0 1 11.6 0"/><path d="M15.6 4.9a3.2 3.2 0 0 1 0 6.2M17.4 13.9a5.8 5.8 0 0 1 3.4 5.6"/></svg>',
+  pRobot:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M9 14h.01M15 14h.01M9.5 17.5h5"/><path d="M2 13v2M22 13v2"/></svg>',
+  pWallet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M16 14h2"/><path d="M8 3h8"/></svg>',
+  pUsers:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  pSend:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>',
+  pCrown:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.56 3.27a.5.5 0 0 1 .88 0l2.95 5.6a1 1 0 0 0 1.52.29l4.27-3.66a.5.5 0 0 1 .82.52l-2.83 10.24a1 1 0 0 1-.96.74H5.8a1 1 0 0 1-.96-.74L2.01 6.02a.5.5 0 0 1 .82-.52l4.27 3.66a1 1 0 0 0 1.52-.29z"/><path d="M5 21h14"/></svg>',
+  bGem:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="du" d="M7 4h10l4 5-9 11L3 9z" fill="currentColor" stroke="none"/><path d="M7 4h10l4 5-9 11L3 9z"/><path d="M3 9h18M9.6 4L8.2 9 12 20l3.8-11-1.4-5"/></svg>',
+  bGroup:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11.2l6.6 2.4L12 20.5l3.2-4.6L20 19z"/><path d="M9.6 13.6L21 4"/></svg>',
+  bSignal:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/></svg>',
+  okBig:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  waitBig:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  errBig:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 7v6M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg>',
+  infoBig:'<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg>'
+};
+function band(){ return '<p class="band">'+I.info+'<span>Future membership prices may be higher if you rejoin.'+k('band.future_price (texto fijo; cambia solo con subida documentada)')+'</span></p>'; }
+function tg(text, label){ return '<a href="'+TG+encodeURIComponent(text)+'" target="_blank" rel="noopener" data-ev="help_link_clicked">'+label+' →</a>'; }
+
+/* Estructura de cada pantalla (patron Ubersuggest): contenido + pie fijo.
+   left: 'support' | 'back' | ''. En movil el enlace de la izquierda sube a la cabecera. */
+var LEFT = {
+  support:'<a class="lft-link" href="'+TG+encodeURIComponent(DRAFT.other)+'" target="_blank" rel="noopener" data-ev="support_clicked">'+I.headset+'<span class="long">Contact support</span><span class="short">Support</span></a>',
+  back:'<button type="button" class="lft-link" data-act="back">'+I.back+'<span>Back</span></button>'
+};
+function page(body, foot, left){
+  return '<div class="dlg-scroll">'+body+'</div>'+
+    (foot||left ? '<div class="dlg-foot'+(foot && foot.split('<button').length===2?' one':'')+'">'+(left?'<span class="lft">'+LEFT[left]+'</span>':'')+(foot||'')+'</div>' : '');
+}
+function keepBtn(){ return '<button type="button" class="btn btn-line" data-act="keep">Keep plan</button>'; }
+function nextBtn(attrs, label){ return '<button type="button" class="btn btn-gold" id="next" '+attrs+'>'+(label||'Continue cancellation')+'</button>'; }
+
+/* ===================== PANTALLAS ===================== */
+var V = {};
+
+/* Pantalla 1: opcion A (elegida por Jaime 24-10) */
+V.value = function(){
+  var p=P(), ct;
+  if (S.ct==='connected_vip') ct='Connected. Runs while your VIP is active.';
+  else if (S.ct==='connected_own') ct='Connected under its own service.';
+  else ct='Our best service: our bot trades for you, no work needed.';
+  var B=[
+    {ic:'pRobot', t:'CopyTrading', d:ct+k('copytrading.state='+S.ct)},
+    {ic:'pWallet', t:'Funded accounts', d:'We get you a funded account in under 8 hours.'},
+    {ic:'pUsers', t:'1:1 mentoring', d:'Talk to our team about your setup.', a:tg(DRAFT.review,'Book a review now')},
+    {ic:'pCrown', t:'Platinum VIP Access', d:'Our most exclusive groups. Only accessible for VIP members.'}
+  ];
+  var cards=B.map(function(x){
+    return '<div class="bcard"><div class="bhead"><span class="pic">'+I[x.ic]+'</span><h3>'+x.t+'</h3></div><p>'+x.d+'</p>'+(x.a||'')+'</div>';
+  }).join('');
+  var ren='Your <strong>'+p.monthly+'</strong>'+k('plan.name')+' renews on <strong class="num">'+fmt(PAID_THROUGH)+'</strong>'+k('plan.next_renewal')+'.';
+  var top;
+  if (S.l1==='2') top='<h2 id="dlgTitle" tabindex="-1">Don\'t lose your VIP access</h2><p class="lead">'+ren+'</p>'+
+    '<div class="plus"><span class="plus-base"><span class="pic sm">'+I.pSend+'</span><b>VIP signals</b></span><span class="plus-op" aria-hidden="true">+</span><span class="plus-more">everything below</span></div>';
+  else if (S.l1==='3') top='<h2 id="dlgTitle" tabindex="-1">Your VIP is more than <span class="em em'+S.h1+'">signals</span></h2><p class="lead">'+ren+' Here is what else you would lose:</p>';
+  else top='<h2 id="dlgTitle" tabindex="-1">Don\'t lose your VIP access</h2><p class="lead">'+ren+' Beyond the signals, it also gives you:</p>';
+  return page('<div class="v1">'+top+'<div class="bgrid">'+cards+'</div>'+band()+'</div>',
+  keepBtn()+nextBtn('data-act="go" data-to="reason" data-ev="value_continue"'), 'support');
+};
+
+var RIC = {poor:'chart', time:'clock2', price:'coins', other:'dots'};
+V.reason = function(){
+  var opts = REASONS.map(function(r){
+    return '<label class="opt"><input type="radio" name="reason" value="'+r.id+'"'+(S.reason===r.id?' checked':'')+'><span class="tile">'+I[RIC[r.id]]+'</span><b>'+r.t+'</b></label>';
+  }).join('');
+  return page(
+  '<h2 id="dlgTitle" tabindex="-1">Why are you cancelling?</h2>'+
+  '<p class="lead">Choose the main reason to continue.</p>'+
+  '<fieldset><legend class="sr">Main reason</legend><div class="opts">'+opts+'</div></fieldset>'+
+  '<div id="sub" aria-live="polite">'+subBlock()+'</div>'+
+  '<p class="sr" id="needR">'+needText()+'</p>',
+  keepBtn()+nextBtn('data-act="reasonNext"'+(reasonDone()?'':' disabled aria-describedby="needR"')), 'support');
+};
+/* Continue cancellation: price basta con el motivo; poor/time piden submotivo; other pide texto */
+function reasonDone(){
+  if (!S.reason) return false;
+  if (S.reason==='price') return true;
+  if (S.reason==='other') return S.why.trim().length>0;
+  return !!S.sub;
+}
+function needText(){
+  if (!S.reason) return 'Choose a reason to continue.';
+  if (S.reason==='price') return '';
+  if (S.reason==='other') return 'Tell us why to continue.';
+  return 'Choose an answer to continue.';
+}
+function subBlock(){
+  var r=S.reason;
+  if (r==='poor' || r==='time'){
+    var d=SUBS[r];
+    return '<fieldset class="subq"><legend>'+d.q+'</legend><div class="subs">'+d.o.map(function(o){
+      return '<label class="sub"><input type="radio" name="sub" value="'+o[0]+'"'+(S.sub===o[0]?' checked':'')+'><span>'+o[1]+'</span></label>';
+    }).join('')+'</div></fieldset>'+
+    '<p class="help">'+tg(DRAFT[r], REASONS.filter(function(x){return x.id===r;})[0].help)+k('opens Telegram draft, never sends')+'</p>';
+  }
+  if (r==='other') return '<div class="subq field"><label for="why">Could you tell us why?</label>'+
+    '<textarea id="why" maxlength="300" rows="2" aria-describedby="whyCount">'+esc(S.why)+'</textarea>'+
+    '<span class="count num" id="whyCount">'+S.why.length+'/300</span></div>';
+  return '';
+}
+function updReasonNext(){
+  var nb=view.querySelector('[data-act="reasonNext"]'); if(!nb) return;
+  var ok=reasonDone(); nb.disabled=!ok;
+  if (ok) nb.removeAttribute('aria-describedby'); else nb.setAttribute('aria-describedby','needR');
+  var n=document.getElementById('needR'); if(n) n.textContent=needText();
+}
+
+V.review = function(){
+  var d='<span class="num">'+fmt(PAID_THROUGH)+'</span>'+k('plan.paid_through');
+  var ct2 = S.ct==='connected_vip'
+    ? 'My CopyTrading account may be <u class="stop">stopped</u> on '+d+'.'+k('copytrading.disconnects_on')
+    : 'If I have an active CopyTrading account, it will be <u class="stop">stopped</u>.'+k('copytrading.state (sin dato: frase condicional)');
+  var rows=[
+    {id:'groups', ic:'bGroup', t:'VIP groups and signals', s:'I will be removed from the VIP groups and stop receiving signals on '+d+', when my paid period ends.'},
+    {id:'row2', ic:'bCopy', t:'CopyTrading and Platinum', s:ct2+' Platinum VIP Access is only for VIP members.'},
+    {id:'mentor', ic:'bMentor', t:'Support and 1:1 mentoring', s:'I will lose VIP-only support and mentoring. Billing help stays available.'}
+  ];
+  var all = rows.every(function(r){return S.acks[r.id];});
+  var block = S.reqAcks && !all;
+  return page(
+  '<div class="warn-h"><span class="wi">'+I.warn+'</span><div>'+
+   '<h2 id="dlgTitle" tabindex="-1">You\'re about to cancel your plan</h2>'+
+   '<p class="lead" style="margin-bottom:6px">Confirm you understand what you\'ll lose access to.</p></div></div>'+
+  '<div class="acks r'+S.r3+'" role="group" aria-label="Confirm the three points">'+rows.map(function(r){
+    return '<label class="ack"><input type="checkbox" data-ack="'+r.id+'"'+(S.acks[r.id]?' checked':'')+'><span class="atx"><b>'+r.t+'</b><span>'+r.s+'</span></span></label>';
+  }).join('')+(block?'<p class="need" id="needA">'+I.info+'<span>Tick all three to continue.</span></p>':'')+'</div>',
+  keepBtn()+nextBtn('data-act="go" data-to="offer" data-ev="review_continue"'+(block?' disabled aria-describedby="needA"':'')), 'back');
+};
+
+V.offer = function(){
+  var p=P(), ms=remaining(), expired=ms<=0, am=S.plan==='am';
+  var feats=[
+    'Lifetime access to your '+(am?'Forex & Gold VIP':p.market)+' group',
+    'No more monthly charges',
+    '1:1 onboarding and mentoring stay included'
+  ];
+  if (S.extras==='yes') feats.push('Copytrading Service and Trading Academy, as in our Lifetime plan');
+  var ctaOff = expired || (am && !S.amAck) || S.busy;
+  var h = ''+
+  '<h2 id="dlgTitle" tabindex="-1" class="ttl-top">Before you cancel</h2>'+
+  '<div class="offer">'+
+   '<div class="offer-top"><h3 class="offer-h">Lifetime special offer</h3>'+
+     (expired?'':'<span class="timer num'+(ms<60000?' low':'')+'" role="timer">'+I.clock+'Ends in <span id="tmr">'+mmss(ms)+'</span>'+k('offer.expires_at (server)')+'</span>')+
+   '</div>'+
+   '<p class="prod">'+p.lifetime+k('offer.product_name')+'</p>'+
+   '<div class="price num"><span class="big">$99</span>'+
+     (S.ref?'<s aria-label="Regular price '+p.ref+'">'+p.ref+'</s><span class="save">Save '+p.pct+'</span>'+k('offer.reference_price + pct'):'')+
+   '</div>'+
+   '<p class="once">One-time payment, no monthly fees</p>';
+  if (am) h += ''+
+   '<p class="swap" aria-label="Plan change: All Markets Monthly to Forex and Gold Lifetime"><b class="from">All Markets Monthly</b><span class="arr">'+I.arrow+'</span><b>Forex &amp; Gold Lifetime</b></p>'+
+   '<label class="consent"><input type="checkbox" id="amAck"'+(S.amAck?' checked':'')+'><span>I understand this replaces All Markets, and my Crypto VIP access ends <strong>on '+fmt(PAID_THROUGH)+'</strong>'+k('am_change.crypto_access_ends_on (regla real)')+'.</span></label>';
+  if (expired) h += '<p class="expired" role="status">This offer has expired. You can still keep your plan or continue cancelling.</p>';
+  else h += '<button class="btn btn-gold btn-big btn-cta" data-act="buy"'+(ctaOff?' disabled':'')+(am&&!S.amAck?' aria-describedby="needAm"':'')+'>'+(S.busy?'<span class="spin" aria-hidden="true"></span>Opening secure checkout…':'Get Lifetime Access for $99')+'</button>'+
+    (am&&!S.amAck?'<p class="sr" id="needAm">Tick the box above to continue.</p>':'');
+  h += '<ul class="feat">'+feats.map(function(f){return '<li>'+I.check+'<span>'+f+'</span></li>';}).join('')+'</ul>'+k('offer.benefits[]')+
+  '</div>'+
+  (am?'':'<p class="fine">Your Monthly plan is replaced only after the payment is confirmed.</p>');
+  return page(h, keepBtn()+nextBtn('data-act="decline"'), 'back');
+};
+
+V.checkout = function(){
+  return page(
+  '<h2 id="dlgTitle" tabindex="-1">Existing checkout</h2>'+
+  '<div class="sim"><h3>Prototype simulator, not a design</h3>'+
+  '<p>Here the normal WolfX checkout opens, unchanged, for <strong>'+P().lifetime+'</strong> at $99. Saved payment method preselected when there is one; 3D Secure when the bank asks. The server rejects the order if the offer has expired.</p>'+
+  '<div class="btns">'+
+   '<button data-sim="paid">Payment confirmed</button>'+
+   '<button data-sim="3ds">3D Secure, then confirmed</button>'+
+   '<button data-sim="failed">Payment failed (card declined / 3DS failed)</button>'+
+   '<button data-sim="crypto">Crypto payment pending</button>'+
+   '<button data-sim="closed">Closed checkout without paying</button>'+
+   '<button data-sim="late">Order created after the timer expired</button>'+
+  '</div></div>');
+};
+
+V.trialCheckout = function(){
+  var pt=P().pt;
+  return page(
+  '<h2 id="dlgTitle" tabindex="-1">Secure trial sign-up</h2>'+
+  '<div class="sim"><h3>Prototype simulator, not a design</h3>'+
+  '<p>Existing checkout for <strong>'+pt.name+'</strong>, $0 today. Collects or reuses a payment method for the renewal; 3D Secure if the bank asks.</p>'+
+  '<div class="btns"><button data-sim="trial_ok">Trial activated</button><button data-sim="trial_fail">Abandoned or failed</button></div></div>');
+};
+
+V.loading = function(msg){
+  return page('<div class="loading" role="status"><span class="spin" aria-hidden="true"></span><h2 id="dlgTitle" tabindex="-1" style="font-size:20px;margin:0">'+msg+'</h2><p style="margin:0">Please keep this window open.</p></div>');
+};
+
+V.platinum = function(){
+  var p=P(), pt=p.pt;
+  var strip = '<p class="done-strip">'+I.check+'<span><strong>Monthly renewal cancelled.</strong> VIP access stays until <span class="num">'+fmt(PAID_THROUGH)+'</span>.</span></p>';
+  if (pt.map==='blocked') return page(strip+
+   '<h2 id="dlgTitle" tabindex="-1">Platinum trial</h2>'+
+   '<div class="blocked"><b>BLOCKED - needs product mapping</b>'+(pt.cand?'Two candidate products: '+pt.cand+'. ':'There is no confirmed Platinum product for All Markets members. ')+'No trial product exists yet and there is no guarantee it can be created without duplicates. Until this is decided, production skips this screen and goes straight to the cancellation confirmation.</div>',
+   '<button type="button" class="btn btn-ink" data-act="toA">Show what production does</button>');
+  var plat=['1 TP per signal','1 SL per signal','One entry, one exit','We say when to open and close'];
+  var std=['Several TPs, you choose','1 SL per signal','You decide where to close','You manage breakeven'];
+  var platI=['ok','neu','ok','ok'], stdI=['neu','neu','neu','neu'];
+  if (pt.extra){ plat.push(pt.extra); platI.push('ok'); std.push('No extra metals or oil'); stdI.push('no'); }
+  function li(t,i){ return '<li>'+(i==='ok'?'<span class="ok-i">'+I.check+'</span>':i==='no'?'<span class="no-i">'+I.cross+'</span>':'<span class="neu-i">'+I.dot+'</span>')+'<span>'+t+'</span></li>'; }
+  return page(strip+
+  '<h2 id="dlgTitle" tabindex="-1">Try Platinum free for 30 days</h2>'+
+  '<div class="cmp">'+
+   '<div class="col pt"><h3>Platinum</h3><ul>'+plat.map(function(t,i){return li(t,platI[i]);}).join('')+'</ul></div>'+
+   '<div class="col std"><h3>Standard VIP</h3><ul>'+std.map(function(t,i){return li(t,stdI[i]);}).join('')+'</ul></div>'+
+  '</div>'+
+  '<label class="consent"><input type="checkbox" id="ptConsent"'+(S.consent?' checked':'')+'><span><strong class="num">$0 today, 30 days free.</strong> Then '+pt.name+' renews automatically at '+pt.price+'/month'+k('platinum.product_name + monthly_price')+' from <span class="num">'+fmt(TRIAL_END)+'</span>'+k('platinum.first_charge_on')+' until I cancel. I agree.</span></label>'+
+  (S.consent?'':'<p class="sr" id="needC">Tick the box above to start the trial.</p>')+
+  (pt.map==='provisional'?k('PROVISIONAL: Crypto Platinum = 2571 o 52372, confirmar'):''),
+  '<button type="button" class="btn btn-line" data-act="toA" data-ev="platinum_declined">No thanks</button>'+
+  '<button type="button" class="btn btn-gold" id="next" data-act="trial"'+(S.consent?'':' disabled aria-describedby="needC"')+'>Start free 30-day trial</button>');
+};
+
+function result(o){
+  return page('<div class="res">'+
+   '<div class="big-ic '+o.tone+'">'+({ok:I.okBig,wait:I.waitBig,err:I.errBig,info:I.infoBig})[o.tone]+'</div>'+
+   '<h2 id="dlgTitle" tabindex="-1">'+o.title+'</h2>'+
+   '<p class="lead">'+o.lead+'</p>'+
+   (o.facts?'<dl class="facts">'+o.facts.map(function(f){return '<div><dt>'+f[0]+'</dt><dd class="num">'+f[1]+'</dd></div>';}).join('')+'</dl>':'')+
+   (o.note||'')+
+  '</div>', o.actions||'<button type="button" class="btn btn-ink" data-act="close">Back to My Account</button>');
+}
+V.A = function(){ var p=P(); return result({tone:'ok', title:'Your subscription has been cancelled',
+  lead:'You keep VIP access until <strong class="num">'+fmt(PAID_THROUGH)+'</strong>. '+p.monthly+' will not renew.',
+  facts:[['VIP access until',fmt(PAID_THROUGH)+k('plan.paid_through')],['Next charge','None'],['Plan',p.monthly]]}); };
+V.Bsync = function(){ return result({tone:'wait', title:'Payment received. Activating your Lifetime',
+  lead:'Your $99 payment is confirmed. We are setting up your VIP access now.'+k('se muestra mientras se reconcilian membresia y Telegram; no es exito'),
+  note:'<p class="hint" style="text-align:center">You can close this window. Your Lifetime will show in My Account once it is ready.</p>',
+  actions:'<button type="button" class="btn btn-line" data-act="close">Back to My Account</button>'}); };
+V.B = function(){ var p=P(), am=S.plan==='am';
+  var facts=[['Plan',p.lifetime],['Paid','$99, one-time'],['Monthly renewal','Stopped']];
+  if (am) facts.push(['Crypto VIP access','Ends '+fmt(PAID_THROUGH)+k('am_change.crypto_access_ends_on')]);
+  return result({tone:'ok', title:'Your '+p.lifetime+' is active',
+  lead:'Payment confirmed and your VIP group access is in place. No more monthly charges.', facts:facts}); };
+V.Bup = function(){ var p=P(), am=S.plan==='am', c=CRYPTO_UP;
+  var feats=[
+    am?'Keep Crypto VIP after '+fmt(PAID_THROUGH):'Lifetime access to the Crypto VIP group',
+    'No monthly charges'
+  ];
+  var h=''+
+  '<p class="done-strip">'+I.check+'<span><strong>Payment confirmed.</strong> Your '+p.lifetime+' is active.</span></p>'+
+  '<h2 id="dlgTitle" tabindex="-1" class="ttl-top">Add Crypto for life</h2>'+
+  '<div class="offer">'+
+   '<div class="offer-top"><h3 class="offer-h">Lifetime special offer</h3></div>'+
+   '<p class="prod">'+c.product+k('upsell.product_name')+'</p>'+
+   '<div class="price num"><span class="big">'+c.price+'</span><s aria-label="Regular price '+c.ref+'">'+c.ref+'</s><span class="save">Save '+c.pct+'</span>'+k('upsell.price + reference_price')+'</div>'+
+   '<p class="once">One-time payment, no monthly fees</p>'+
+   '<button class="btn btn-gold btn-big btn-cta" data-act="upBuy"'+(S.busy?' disabled':'')+'>'+(S.busy?'<span class="spin" aria-hidden="true"></span>Opening secure checkout…':'Add Crypto Lifetime for '+c.price)+'</button>'+
+   '<ul class="feat">'+feats.map(function(f){return '<li>'+I.check+'<span>'+f+'</span></li>';}).join('')+'</ul>'+
+  '</div>'+
+  '<p class="fine">Uses the same secure checkout.'+k('checkout existente, tarjeta preseleccionada')+'</p>';
+  return page(h, '<button type="button" class="btn btn-line" data-act="upNo" data-ev="crypto_upsell_declined">No thanks, go to My Account</button>');
+};
+V.Bcrypto = function(){ var p=P();
+  return result({tone:'ok', title:'Crypto VIP Lifetime added',
+  lead:'Payment confirmed. You now have Forex &amp; Gold and Crypto VIP for life.',
+  facts:[['Plans',p.lifetime+' + '+CRYPTO_UP.product],['Paid',CRYPTO_UP.price+', one-time'],['Monthly charges','None']]}); };
+V.C = function(){ var ms=remaining();
+  return result({tone:'err', title:'Your payment wasn\'t completed',
+  lead:'Nothing has changed: your <strong>'+P().monthly+'</strong> is still active and renews as usual.',
+  note:(ms>0?'':'<p class="expired">The $99 offer has expired, so it can\'t be retried.</p>'),
+  actions:(ms>0
+    ? '<button type="button" class="btn btn-line" data-act="decline">Cancel instead</button><button type="button" class="btn btn-gold" data-act="buy"'+(S.busy?' disabled':'')+'>'+(S.busy?'<span class="spin" aria-hidden="true"></span>Opening…':'Try the payment again')+'</button>'
+    : '<button type="button" class="btn btn-line" data-act="keep">Keep plan</button><button type="button" class="btn btn-gold" data-act="decline">Continue cancellation</button>')}); };
+V.Cpending = function(){ return result({tone:'wait', title:'Your payment is being confirmed',
+  lead:'Crypto payments can take a while to confirm on the network. Your '+P().monthly+' stays as it is until then.',
+  facts:[['Order','#[ORDER_ID]'+k('order.id')],['Price','$99'+k('condiciones del pedido segun el proveedor cripto')],['Plan change','After confirmation'+k('decidir: renovacion del Monthly si el pago sigue pendiente')]]}); };
+V.D = function(){ var p=P(), pt=p.pt; return result({tone:'ok', title:'Your Platinum trial is active',
+  lead:'Free until <strong class="num">'+fmt(TRIAL_END)+'</strong>. Your '+p.monthly+' is still cancelled.',
+  facts:[['Trial',fmt('2026-10-23')+' to '+fmt(TRIAL_END)],['First charge',pt.price+' on '+fmt(TRIAL_END)+k('platinum.first_charge_on')],['Plan after trial',pt.name+', '+pt.price+'/month'],['VIP access until',fmt(PAID_THROUGH)]]}); };
+V.E = function(){ return result({tone:'info', title:'No Platinum trial was activated',
+  lead:'Your '+P().monthly+' is cancelled. You keep VIP access until <strong class="num">'+fmt(PAID_THROUGH)+'</strong>.',
+  actions:'<button type="button" class="btn btn-line" data-act="go" data-to="platinum">Try the trial again</button><button type="button" class="btn btn-ink" data-act="close">Back to My Account</button>'}); };
+V.cancelErr = function(){ return result({tone:'err', title:'We couldn\'t cancel your renewal',
+  lead:'Nothing has changed. Your '+P().monthly+' is still active and renews on <strong class="num">'+fmt(PAID_THROUGH)+'</strong>.',
+  actions:'<a class="btn btn-line" href="'+TG+encodeURIComponent(DRAFT.other)+'" target="_blank" rel="noopener">Contact support</a><button type="button" class="btn btn-ink" data-act="decline">Try again</button>'}); };
+V.out = function(){ return page(
+  '<h2 id="dlgTitle" tabindex="-1">Current cancellation flow</h2>'+
+  '<div class="sim"><h3>Out of scope, unchanged</h3><p>Status or product not eligible (On Hold, pending payment, pending cancel, Lifetime, Platinum, 7 Days, Small Caps, Account Management). The existing flow runs as today. On Hold pause terms are shown where the pause is managed, not here.</p></div>',
+  '<button type="button" class="btn btn-line" data-act="close">Close</button>'); };
+
+/* ===================== My Account de fondo ===================== */
+function renderAcct(){
+  var p=P(), b=document.getElementById('acctBody'), h='';
+  if (S.acct==='lifetime'){
+    h='<div class="subcard"><div><div class="nm">'+p.lifetime+'</div><div class="meta"><span class="pill ok">Active</span> One-time payment, no renewals</div></div></div>';
+    if (S.plan==='am') h+='<div class="banner-f"><div><b>Crypto VIP Lifetime</b><p>Add Crypto Lifetime to keep Crypto VIP after '+fmt(PAID_THROUGH)+'.'+k('F: importe pendiente de aprobacion, no activar')+'</p></div><button class="btn btn-line" disabled>Price coming soon</button></div>';
+  } else if (S.acct==='cancelled'){
+    h='<div class="subcard"><div><div class="nm">'+p.monthly+'</div><div class="meta"><span class="pill off">Cancelled</span> VIP access until '+fmt(PAID_THROUGH)+'</div></div></div>';
+  } else {
+    h='<div class="subcard"><div><div class="nm">'+p.monthly+'</div><div class="meta"><span class="pill ok">Active</span> '+(S.disc?p.disc:p.price)+'/month. Renews '+fmt(PAID_THROUGH)+'</div></div><button class="linkbtn" data-act="open">Cancel subscription</button></div>';
+  }
+  b.innerHTML=h;
+}
+
+/* ===================== NAVEGACION ===================== */
+var scrim=document.getElementById('scrim'), view=document.getElementById('view'), dlg=document.getElementById('dlg');
+var lastFocus=null, tick=null, navId=0;
+/* Las esperas simuladas solo actuan si nadie ha navegado (cerrar, Esc) mientras tanto */
+function later(fn, ms){ var my=navId; setTimeout(function(){ if (my===navId) fn(); }, ms); }
+function show(screen, opts){
+  opts=opts||{}; navId++;
+  if (!opts.noHist && S.screen && S.screen!=='account' && S.screen!==screen) S.hist.push(S.screen);
+  if (screen!==S.screen) S.busy=false;
+  S.screen=screen;
+  if (screen==='account'){ scrim.classList.remove('open'); view.innerHTML=''; clearInterval(tick); renderAcct(); sync(); var op=document.querySelector('[data-act="open"]'); if(op) op.focus(); return; }
+  if (!scrim.classList.contains('open')){ lastFocus=document.activeElement; scrim.classList.add('open'); }
+  var html;
+  if (screen==='loading-cancel') html=V.loading('Cancelling your renewal…');
+  else if (screen==='loading-sync') html=V.Bsync();
+  else html=(V[screen]||V.value)();
+  view.innerHTML='<div class="fade">'+html+'</div>';
+  /* En movil el enlace de la izquierda del pie (Back / Contact support) va en la cabecera */
+  var lft=view.querySelector('.dlg-foot .lft'), hl=document.getElementById('hdLeft'); hl.innerHTML='';
+  if (lft) hl.appendChild(lft.firstElementChild.cloneNode(true));
+  dlg.classList.toggle('wide', screen==='offer'||screen==='platinum'||screen==='Bup');
+  scrim.scrollTop=0; var sc=view.querySelector('.dlg-scroll'); if(sc) sc.scrollTop=0;
+  document.getElementById('closeBtn').setAttribute('aria-label', S.done?'Close':'Close and keep my subscription');
+  var t=view.querySelector('#dlgTitle'); if (t && !opts.keepFocus) t.focus({preventScroll:true});
+  clearInterval(tick);
+  if (screen==='offer' || screen==='C') tick=setInterval(updTimer, 1000);
+  sync();
+}
+function updTimer(){
+  var el=document.getElementById('tmr'); var ms=remaining();
+  if (ms<=0 && S.screen==='C' && view.querySelector('[data-act="buy"]')){ ev('offer_expired'); rerender(); clearInterval(tick); return; }
+  if (!el) return;
+  if (ms<=0){ ev('offer_expired'); show(S.screen,{noHist:true,keepFocus:true}); clearInterval(tick); return; }
+  el.textContent=mmss(ms);
+}
+function back(){ var prev=S.hist.pop(); show(prev||'value',{noHist:true}); }
+function rerender(){ show(S.screen,{noHist:true,keepFocus:true}); }
+
+function decline(){
+  ev('offer_declined'); show('loading-cancel');
+  later(function(){
+    if (S.cancel==='error'){ ev('cancellation_failed'); show('cancelErr'); return; }
+    ev('cancellation_confirmed',{paid_through:PAID_THROUGH}); S.acct='cancelled'; S.done=true;
+    var pt=P().pt;
+    if (S.reason==='poor' && S.pt==='eligible'){ ev('platinum_offer_viewed'); show('platinum'); }
+    else show('A');
+  }, 1100);
+}
+
+document.addEventListener('click', function(e){
+  var a=e.target.closest('[data-act],[data-sim],[data-ev]'); if(!a) return;
+  if (a.dataset.ev) ev(a.dataset.ev, a.dataset.ev==='help_link_clicked'?{reason:S.reason}:null);
+  var act=a.dataset.act, sim=a.dataset.sim;
+  if (act==='open'){
+    ev('cancel_flow_opened',{plan:S.plan,status:S.status});
+    show(S.status==='active'?'value':'out');
+  }
+  else if (act==='keep'){ ev('keep_clicked',{screen:S.screen}); S.hist=[]; show('account'); if(!S.done) toast('No changes made. Your subscription stays active.'); }
+  else if (act==='close'){ ev('flow_closed',{screen:S.screen}); S.hist=[]; show('account'); }
+  else if (act==='go') show(a.dataset.to);
+  else if (act==='back') back();
+  else if (act==='reasonNext'){ if(!reasonDone()) return; ev('reason_continue',{reason:S.reason, sub_reason:S.sub, detail_chars:S.reason==='other'?S.why.trim().length:0}); show(S.reason==='price'?'offer':'review'); }
+  else if (act==='buy'){
+    if (S.busy) return;
+    if (remaining()<=0){ rerender(); return; }
+    ev('offer_accept_clicked'); S.busy=true; rerender();
+    later(function(){ ev('checkout_opened',{product:P().lifetime,price:99}); show('checkout'); }, 900);
+  }
+  else if (act==='decline') decline();
+  else if (act==='toA') show('A');
+  else if (act==='upNo'){ S.hist=[]; show('account'); }
+  else if (act==='upBuy'){ if (S.busy) return; ev('crypto_upsell_clicked',{price:CRYPTO_UP.price}); S.busy=true; rerender();
+    later(function(){ ev('crypto_upsell_paid'); show('Bcrypto'); }, 1100); }
+  else if (act==='trial'){ ev('platinum_trial_clicked'); show('trialCheckout'); }
+  if ((sim==='paid'||sim==='3ds') && remaining()<=0){ ev('order_rejected_offer_expired'); S.hist.pop(); show('offer',{noHist:true}); }
+  else if (sim==='paid'||sim==='3ds'){ ev(sim==='3ds'?'payment_3ds_passed':'payment_confirmed'); S.done=true; show('loading-sync'); later(function(){ ev('lifetime_entitlements_synced'); S.acct='lifetime'; if (S.plan!=='crypto'){ ev('crypto_upsell_viewed'); show('Bup'); } else show('B'); }, 1400); }
+  else if (sim==='failed'){ ev('payment_failed'); show('C'); }
+  else if (sim==='crypto'){ ev('payment_pending_crypto'); show('Cpending'); }
+  else if (sim==='closed'){ ev('checkout_closed'); S.hist.pop(); show('offer',{noHist:true}); }
+  else if (sim==='late'){ ev('order_rejected_offer_expired'); S.timer='expired'; show('offer',{noHist:true}); }
+  else if (sim==='trial_ok'){ ev('platinum_trial_started'); show('D'); }
+  else if (sim==='trial_fail'){ ev('platinum_trial_abandoned'); show('E'); }
+});
+document.addEventListener('change', function(e){
+  var t=e.target;
+  if (t.name==='reason'){
+    /* Cambiar de motivo limpia el submotivo y el texto anteriores. Sin re-pintar: el foco no se mueve */
+    if (S.reason!==t.value){ S.sub=null; S.why=''; }
+    S.reason=t.value; ev('reason_selected',{reason:S.reason});
+    document.getElementById('sub').innerHTML=subBlock();
+    updReasonNext(); sync();
+  }
+  else if (t.name==='sub'){ S.sub=t.value; ev('sub_reason_selected',{reason:S.reason, sub_reason:S.sub}); updReasonNext(); sync(); }
+  else if (t.dataset.ack){ S.acks[t.dataset.ack]=t.checked; ev('review_ack',{row:t.dataset.ack,checked:t.checked}); if(S.reqAcks){ rerender(); var c=view.querySelector('[data-ack="'+t.dataset.ack+'"]'); if(c) c.focus(); } }
+  else if (t.id==='amAck'){ S.amAck=t.checked; ev('am_change_acknowledged',{checked:t.checked}); rerender(); document.getElementById('amAck').focus(); }
+  else if (t.id==='ptConsent'){ S.consent=t.checked; ev('platinum_consent',{checked:t.checked}); rerender(); document.getElementById('ptConsent').focus(); }
+});
+var cTimer=null;
+document.addEventListener('input', function(e){
+  if (e.target.id!=='why') return;
+  S.why=e.target.value; document.getElementById('whyCount').textContent=S.why.length+'/300'; updReasonNext();
+  clearTimeout(cTimer);
+  cTimer=setTimeout(function(){ ev('reason_detail_saved',{chars:S.why.length}); }, 700);
+});
+/* Escape = cerrar sin cambios; foco atrapado dentro del dialogo */
+document.addEventListener('keydown', function(e){
+  if (!scrim.classList.contains('open')) return;
+  if (e.key==='Escape'){ ev('flow_closed',{screen:S.screen,via:'esc'}); S.hist=[]; show('account'); }
+  if (e.key==='Tab'){
+    var f=[].slice.call(dlg.querySelectorAll('a[href],button:not([disabled]),input,textarea,[tabindex="0"]')).filter(function(el){ return el.getClientRects().length>0; });
+    if (!f.length) return; var first=f[0], last=f[f.length-1];
+    if (e.shiftKey && document.activeElement===first){ last.focus(); e.preventDefault(); }
+    else if (!e.shiftKey && document.activeElement===last){ first.focus(); e.preventDefault(); }
+  }
+});
+document.getElementById('closeBtn').addEventListener('click', function(){ ev('flow_closed',{screen:S.screen,via:'x'}); S.hist=[]; var d=S.done; show('account'); if(!d) toast('No changes made. Your subscription stays active.'); });
+
+function toast(msg){ var t=document.createElement('div'); t.className='toast'; t.setAttribute('role','status'); t.textContent=msg; document.body.appendChild(t); setTimeout(function(){t.remove();}, 3200); }
+
+/* ===================== Controles del prototipo ===================== */
+var CTRL={'c-plan':'plan','c-status':'status','c-disc':'disc','c-ct':'ct','c-extras':'extras','c-ref':'ref','c-acks':'reqAcks','c-pt':'pt','c-cancel':'cancel','c-timer':'timer'};
+Object.keys(CTRL).forEach(function(id){
+  var el=document.getElementById(id), key=CTRL[id];
+  var v=S[key]; el.value = (typeof v==='boolean') ? (v?'1':'0') : v;
+  el.addEventListener('change', function(){
+    S[key] = (key==='disc'||key==='ref'||key==='reqAcks') ? el.value==='1' : el.value;
+    if (key==='timer' && el.value==='fresh'){ try{ sessionStorage.removeItem('wx_offer_expires_'+S.plan); }catch(e){} }
+    if (S.screen==='account') renderAcct(); else rerender();
+  });
+});
+var JUMPS=[['account','My Account'],['value','1 Value'],['reason','2 Reason'],['review','3 Review'],['offer','4 Offer $99'],['checkout','Checkout sim'],['platinum','5 Platinum'],['A','A Cancelled'],['loading-sync','B Activating'],['B','B Lifetime'],['Bup','B Upsell Crypto'],['Bcrypto','B Crypto added'],['C','C Failed'],['Cpending','C Crypto pending'],['D','D Trial active'],['E','E No trial'],['cancelErr','Cancel error'],['out','Out of scope']];
+document.getElementById('jump').innerHTML=JUMPS.map(function(j){return '<button type="button" data-jump="'+j[0]+'">'+j[1]+'</button>';}).join('');
+document.getElementById('jump').addEventListener('click', function(e){ var b=e.target.closest('[data-jump]'); if(!b) return; S.hist=[]; show(b.dataset.jump,{noHist:true}); });
+var drawer=document.getElementById('drawer'), dBtn=document.getElementById('drawerBtn');
+dBtn.addEventListener('click', function(){ var o=drawer.classList.toggle('open'); dBtn.setAttribute('aria-expanded',o); });
+var nBtn=document.getElementById('notesBtn');
+nBtn.setAttribute('aria-pressed', document.body.classList.contains('notes'));
+nBtn.addEventListener('click', function(){ var o=document.body.classList.toggle('notes'); nBtn.setAttribute('aria-pressed',o); });
+function sync(){
+  var r=REASONS.filter(function(x){return x.id===S.reason;})[0];
+  document.getElementById('sum').textContent = P().monthly+' | '+(r?r.t:'no reason')+' | screen: '+S.screen;
+  var u=new URLSearchParams(location.search); u.set('s',S.screen); u.set('plan',S.plan); if(S.reason) u.set('reason',S.reason); else u.delete('reason'); if(S.sub) u.set('sub',S.sub); else u.delete('sub'); u.delete('why'); u.delete('comment'); u.set('l',S.l1); u.set('h',S.h1); u.set('r',S.r3);
+  history.replaceState(null,'','?'+u.toString());
+}
+
+/* Arranque: ?s=<pantalla> abre directamente esa vista (lo usan las capturas) */
+renderAcct();
+if (S.screen && S.screen!=='account') show(S.screen,{noHist:true}); else sync();
+</script>
+</body>
+</html>
