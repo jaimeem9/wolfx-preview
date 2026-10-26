@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>WolfX thank you page</title>
+<!--
+  Prototipo AISLADO de la thank you page tras comprar el Lifetime $99 (2026-10-26).
+  Tres variantes: ?v=1 | 2 | 3. Plan: ?plan=fg | am. Sin pagos ni datos reales.
+  "Only on this page" solo es verdad si Roberto la muestra UNA vez por cliente: es requisito.
+-->
+<style>
+:root{
+  --ink:#14161d; --ink-soft:#3a3f4c; --muted:#5d6472; --line:#e7e9ee;
+  --gold:#c9a227; --gold-2:#e0bd4b; --gold-pill:linear-gradient(180deg,#e8c860 0%,#c9a227 100%);
+  --gold-soft:#fffaef; --gold-ink:#7a5c00; --line-warm:#ece2c8; --ivory:#fbf8f1; --ivory-2:#f5efe0;
+  --green:#15803d; --green-soft:#ecfdf3;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);color:var(--ink);background:var(--ivory);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:8px}
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.top .in{max-width:1080px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.18em;font-size:13px;color:var(--gold-ink)}
+.brand img{width:26px;height:auto}
+.top .acct{font-size:14px;color:var(--muted);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 56px}
+.okline{display:flex;gap:10px;align-items:center;background:var(--green-soft);color:#14532d;border-radius:12px;padding:10px 14px;font-size:14.5px}
+.okline svg{flex:none;color:var(--green)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;min-height:48px;padding:12px 20px;font-weight:800;font-size:16px;cursor:pointer;text-decoration:none;border:0;text-align:center}
+.btn-gold{background:var(--gold-pill);color:var(--ink);width:100%;min-height:60px;font-size:18px;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 10px 26px rgba(201,162,39,.45),0 0 0 3px rgba(232,200,96,.25),inset 0 1px 0 rgba(255,255,255,.5);animation:nudge 3.2s ease-in-out infinite}
+.btn-gold::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite}
+@keyframes nudge{0%,62%,100%{transform:none}70%{transform:translateY(-2px) scale(1.02)}78%{transform:none}84%{transform:translateY(-1px) scale(1.01)}90%{transform:none}}
+@keyframes shine{0%,55%{left:-60%}80%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.btn-gold,.btn-gold::after{animation:none}.btn-gold::after{display:none}}
+.skip{display:block;margin:12px auto 0;background:none;border:0;color:var(--muted);font-size:14.5px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:44px;padding:0 8px}
+.price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.price .big{font-size:64px;line-height:1;font-weight:800;letter-spacing:-.035em}
+.price s{color:var(--muted);font-size:21px}
+.save{font-size:13px;font-weight:800;color:var(--gold-ink);background:#fff3cf;border-radius:999px;padding:3px 10px}
+.feat{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px}
+.feat li{display:grid;grid-template-columns:20px 1fr;gap:9px;font-size:15px;line-height:1.4;color:var(--ink-soft)}
+.feat svg{color:var(--green);margin-top:2px}
+.receipt{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.receipt h2{margin:0 0 12px;font-size:17px}
+.receipt dl{margin:0;display:grid;gap:10px}
+.receipt dl div{display:flex;justify-content:space-between;gap:12px;font-size:15px;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.receipt dl div:last-child{border:0;padding:0}
+.receipt dt{color:var(--muted)} .receipt dd{margin:0;font-weight:700;text-align:right}
+.fine{font-size:13px;color:var(--muted);margin:10px 0 0;text-align:center}
+.vbar{position:fixed;left:0;right:0;bottom:0;background:#14161d;color:#fff;font-size:13px;display:flex;gap:6px;justify-content:center;padding:8px;z-index:9}
+.vbar a{color:#fff;padding:6px 10px;border-radius:8px;text-decoration:none;border:1px solid #3a3f4c}
+.vbar a[aria-current]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+body.clean .vbar{display:none}
+
+/* ---------- V1: la oferta manda. Hero dorado a todo el ancho, confirmacion en una linea ---------- */
+.v1 .hero{margin-top:18px;border-radius:24px;padding:34px 22px;background:radial-gradient(120% 90% at 50% 0%,#fff6d6 0%,#fffaef 45%,#fff 100%);border:1px solid var(--line-warm);box-shadow:0 30px 80px rgba(201,162,39,.18);text-align:center}
+.v1 .eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink);background:#fff;border:1px solid var(--line-warm);border-radius:999px;padding:6px 14px}
+.v1 h1{font-size:44px;line-height:1.08;letter-spacing:-.03em;margin:18px auto 10px;max-width:640px}
+.v1 h1 em{font-style:normal;background:linear-gradient(transparent 62%,#f6dc8a 62%)}
+.v1 .sub{font-size:17px;color:var(--ink-soft);margin:0 auto;max-width:520px}
+.v1 .deal{max-width:460px;margin:24px auto 0;text-align:left}
+.v1 .deal .price{justify-content:center}
+.v1 .deal .feat{max-width:360px;margin-left:auto;margin-right:auto}
+.v1 .deal .btn-gold{margin-top:20px}
+.v1 .receipt{max-width:560px;margin:26px auto 0}
+@media (max-width:600px){.v1 h1{font-size:31px}.v1 .hero{padding:24px 16px;border-radius:20px}.v1 .sub{font-size:15.5px}.price .big{font-size:54px}}
+
+/* ---------- V2: recibo a la izquierda, cupon perforado a la derecha. Titular en serif ---------- */
+.v2 h1{font-family:var(--serif);font-weight:700;font-size:40px;line-height:1.1;letter-spacing:-.01em;margin:18px 0 6px}
+.v2 .lead{color:var(--ink-soft);margin:0 0 22px;font-size:17px}
+.v2 .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;align-items:start}
+.v2 .next{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 22px;font-size:15px;color:var(--ink-soft)}
+.v2 .next b{color:var(--ink)}
+.v2 .coupon{position:relative;background:#fff;border:2px dashed var(--gold);border-radius:20px;padding:26px 24px 22px}
+.v2 .coupon::before,.v2 .coupon::after{content:"";position:absolute;top:118px;width:26px;height:26px;border-radius:50%;background:var(--ivory);border:2px dashed var(--gold)}
+.v2 .coupon::before{left:-15px;clip-path:inset(0 0 0 50%)} .v2 .coupon::after{right:-15px;clip-path:inset(0 50% 0 0)}
+.v2 .stamp{position:absolute;top:-14px;right:18px;transform:rotate(4deg);background:var(--ink);color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:8px;padding:6px 10px}
+.v2 .coupon h2{font-family:var(--serif);font-size:27px;line-height:1.15;margin:0 0 4px}
+.v2 .coupon .k{font-size:15px;color:var(--ink-soft);margin:0 0 20px}
+.v2 .tear{border-top:2px dashed var(--line-warm);margin:0 -24px 18px}
+.v2 .coupon .btn-gold{margin-top:18px}
+@media (max-width:820px){.v2 .grid{grid-template-columns:1fr}.v2 .coupon{order:-1}}
+@media (max-width:600px){.v2 h1{font-size:30px}.v2 .lead{font-size:15.5px}.v2 .coupon{padding:24px 18px 18px}.v2 .tear{margin:0 -18px 16px}.v2 .coupon h2{font-size:23px}}
+
+/* ---------- V3: los tres mercados dibujados, Crypto bloqueado. Centrado y estrecho ---------- */
+.v3 .col{max-width:620px;margin:0 auto}
+.v3 h1{font-size:36px;line-height:1.12;letter-spacing:-.025em;margin:22px 0 8px;text-align:center}
+.v3 .lead{text-align:center;color:var(--ink-soft);margin:0 0 22px}
+.v3 .card{background:#fff;border-radius:24px;padding:26px 24px;box-shadow:0 1px 0 rgba(20,22,40,.04),0 20px 50px rgba(20,22,40,.10);border:1px solid var(--line)}
+.v3 .mk{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.v3 .m{border-radius:16px;padding:14px 10px;text-align:center;border:1.5px solid var(--line);background:#fff}
+.v3 .m .ic{width:40px;height:40px;border-radius:50%;margin:0 auto 8px;display:grid;place-items:center;background:var(--green-soft);color:var(--green)}
+.v3 .m b{display:block;font-size:15px}
+.v3 .m span{font-size:12.5px;color:var(--green);font-weight:700}
+.v3 .m.lock{border:2px solid var(--gold);background:linear-gradient(180deg,#fff7dc,#fff);box-shadow:0 10px 26px rgba(201,162,39,.22)}
+.v3 .m.lock .ic{background:var(--ink);color:#f6dc8a}
+.v3 .m.lock span{color:var(--gold-ink)}
+.v3 .once{display:flex;gap:10px;align-items:flex-start;background:var(--gold-soft);border:1px solid var(--line-warm);border-radius:14px;padding:12px 14px;font-size:14.5px;color:var(--ink-soft);margin:18px 0 0}
+.v3 .once svg{flex:none;color:var(--gold-ink);margin-top:2px}
+.v3 .once b{color:var(--ink)}
+.v3 .card .btn-gold{margin-top:18px}
+.v3 .receipt{margin-top:22px}
+@media (max-width:600px){.v3 h1{font-size:28px}.v3 .card{padding:20px 16px}.v3 .m{padding:12px 6px}.v3 .m b{font-size:14px}.v3 .m .ic{width:34px;height:34px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><span class="brand"><img alt="" src="data:image/webp;base64,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"><span>WOLFX SIGNALS</span></span><a class="acct" href="#">My Account</a></div></header>
+<main class="wrap" id="app"></main>
+<nav class="vbar" aria-label="Variants"><a href="?v=1">Option 1</a><a href="?v=2">Option 2</a><a href="?v=3">Option 3</a></nav>
+<script>
+var q=new URLSearchParams(location.search), V=q.get('v')||'1', AM=q.get('plan')==='am';
+if (q.get('clean')==='1') document.body.classList.add('clean');
+document.querySelectorAll('.vbar a').forEach(function(a){ var u=new URLSearchParams(q); u.set('v',a.getAttribute('href').slice(3)); a.href='?'+u; if(a.textContent.slice(-1)===V) a.setAttribute('aria-current','page'); });
+/* Datos de ejemplo: en produccion llegan del pedido y del backend */
+var D={plan:'Forex & Gold VIP Lifetime', paid:'$99', order:'#48213', up:'$99', ref:'$278', pct:'64%', until:'Nov 14, 2026'};
+var CK='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+var LOCK='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
+var EYE='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+function ok(){ return '<p class="okline">'+CK+'<span><strong>Payment confirmed.</strong> Your '+D.plan+' is active.</span></p>'; }
+function receipt(){ return '<section class="receipt"><h2>Your order</h2><dl class="num">'+
+  '<div><dt>Order</dt><dd>'+D.order+'</dd></div><div><dt>Plan</dt><dd>'+D.plan+'</dd></div>'+
+  '<div><dt>Paid</dt><dd>'+D.paid+', one-time</dd></div><div><dt>Monthly renewal</dt><dd>Stopped</dd></div>'+
+  (AM?'<div><dt>Crypto VIP access</dt><dd>Ends '+D.until+'</dd></div>':'')+'</dl></section>'; }
+function price(){ return '<div class="price num"><span class="big">'+D.up+'</span><s aria-hidden="true">'+D.ref+'</s><span class="save">Save '+D.pct+'</span></div>'; }
+function feats(){ return '<ul class="feat">'+[AM?'Keep Crypto VIP after '+D.until:'Lifetime access to the Crypto VIP group','One-time payment, no monthly fees','Same checkout, nothing else to set up'].map(function(f){return '<li>'+CK+'<span>'+f+'</span></li>';}).join('')+'</ul>'; }
+function cta(){ return '<button class="btn btn-gold" type="button">Yes, add Crypto Lifetime for '+D.up+'</button>'; }
+function skip(){ return '<button class="skip" type="button">No thanks, I\'ll skip Crypto</button>'; }
+var html={
+'1': '<div class="v1">'+ok()+
+  '<section class="hero"><span class="eyebrow">'+EYE+'Only on this page</span>'+
+  '<h1>Add <em>Crypto VIP Lifetime</em> for just '+D.up+' more</h1>'+
+  '<p class="sub">'+(AM?'Keep your Crypto signals for life instead of losing them on '+D.until+'. ':'')+'This price won\'t come back. Leave this page and it\'s gone.</p>'+
+  '<div class="deal">'+price()+feats()+cta()+skip()+'</div></section>'+receipt()+'</div>',
+'2': '<div class="v2">'+ok()+
+  '<h1>Welcome to Lifetime.</h1><p class="lead">You\'re in for good. Before you go, one offer we\'ll only show you once.</p>'+
+  '<div class="grid"><div>'+receipt()+'<div class="next"><b>What happens now:</b> your VIP group access stays as it is. No more monthly charges, nothing to do.</div></div>'+
+  '<section class="coupon"><span class="stamp">Shown once</span><h2>Add Crypto VIP Lifetime</h2><p class="k">'+(AM?'Keep Crypto after '+D.until+', for life.':'Crypto signals for life, on top of Forex &amp; Gold.')+'</p>'+
+  '<div class="tear" aria-hidden="true"></div>'+price()+feats()+cta()+skip()+'</section></div></div>',
+'3': '<div class="v3"><div class="col">'+ok()+
+  '<h1>One step from all markets, for life</h1><p class="lead">Forex and Gold are yours. Crypto is one click away.</p>'+
+  '<section class="card"><div class="mk">'+
+   '<div class="m"><div class="ic">'+CK+'</div><b>Forex</b><span>Lifetime</span></div>'+
+   '<div class="m"><div class="ic">'+CK+'</div><b>Gold</b><span>Lifetime</span></div>'+
+   '<div class="m lock"><div class="ic">'+LOCK+'</div><b>Crypto</b><span>'+(AM?'Ends '+D.until.replace(', 2026',''):'+ '+D.up)+'</span></div>'+
+  '</div>'+price()+feats()+
+  '<p class="once">'+EYE+'<span><b>You won\'t see this again.</b> This price is only on this page, right after your Lifetime.</span></p>'+
+  cta()+skip()+'</section>'+receipt()+'</div></div>'
+};
+document.getElementById('app').innerHTML=html[V]||html['1'];
+</script>
+</body>
+</html>
