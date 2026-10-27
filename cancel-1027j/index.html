@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>WolfX thank you page</title>
+<!--
+  Prototipo AISLADO de la thank you page tras el Lifetime $99 (2026-10-27), ronda premium.
+  Referencia de Jaime: hero oscuro con palabra en oro, subrayado en trazo, iconos en circulo
+  con aro dorado y boton dorado con halo. Elegido por Jaime (27-10): diseno noche, subrayado en linea fina, etiqueta Exclusive Lifetime upgrade.
+  "Only on this page" solo es verdad si Roberto la muestra UNA vez por cliente.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#e3b53b; --gold-2:#f6d67a; --gold-deep:#a8821a; --gold-ink:#7a5c00;
+  --font:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+/* Tema por diseno: fondo de pagina, tarjeta de oferta y textos */
+.d1{--page:#0a0c11;--card:transparent;--ink:#f5f6f8;--soft:#b9bec9;--muted:#8a909c;--line:rgba(255,255,255,.10);--ring:rgba(227,181,59,.55);--icbg:rgba(227,181,59,.10);--rc:#12151c;--ok:#4ade80;--okbg:rgba(74,222,128,.10)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);background:var(--page);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 64px}
+.ok{display:flex;gap:12px;align-items:center;justify-content:center;width:max-content;max-width:100%;margin:0 auto 6px;font-size:16px;color:#d1fae5;background:rgba(34,197,94,.12);border:1px solid rgba(74,222,128,.45);border-radius:999px;padding:10px 20px 10px 10px;box-shadow:0 0 30px rgba(34,197,94,.18)}
+.ok i{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#22c55e;color:#04220f}
+.ok b{color:#fff}
+.d1 .ic{color:#4ade80;background:rgba(34,197,94,.12);box-shadow:inset 0 0 0 1.5px rgba(74,222,128,.55)}
+@media (max-width:600px){.ok{font-size:14.5px;border-radius:16px;padding:10px 14px 10px 10px;text-align:left}}
+.offer{position:relative;text-align:center;border-radius:28px;padding:40px 24px 30px;margin-top:18px;background:var(--card)}
+.offer h1{font-size:52px;line-height:1.06;letter-spacing:-.035em;font-weight:800;margin:0 auto 26px;max-width:620px}
+.offer h1 .g{position:relative;display:inline-block;background:linear-gradient(180deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+/* Subrayado de "Crypto VIP": linea fina que se difumina en las puntas (elegida por Jaime 27-10) */
+.offer h1 .g::after{content:"";position:absolute;left:0;right:0;pointer-events:none;bottom:-.2em;height:2px;background:linear-gradient(90deg,rgba(227,181,59,0),#e3b53b 20%,#f6d67a 50%,#e3b53b 80%,rgba(227,181,59,0))}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.rows{list-style:none;padding:0;margin:0 auto 26px;display:inline-grid;gap:14px;text-align:left}
+.rows li{display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:center;font-size:17px;color:var(--soft)}
+.rows b{color:var(--ink);font-weight:700}
+.ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--icbg);box-shadow:inset 0 0 0 1.5px var(--ring);color:var(--gold)}
+.price{display:flex;justify-content:center;align-items:baseline;gap:12px;margin:0 0 22px;flex-wrap:wrap}
+.price .big{font-size:64px;line-height:1;font-weight:800;letter-spacing:-.04em;color:var(--ink)}
+.price s{font-size:22px;color:var(--muted)}
+.save{font-size:13px;font-weight:800;color:#3d2c00;background:linear-gradient(180deg,var(--gold-2),var(--gold));border-radius:999px;padding:4px 11px}
+.cta-wrap{display:inline-block;padding:7px;border-radius:22px;background:rgba(227,181,59,.16);box-shadow:0 0 0 1px rgba(227,181,59,.28),0 18px 50px rgba(227,181,59,.30)}
+.cta{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:19px;color:#1a1405;padding:19px 34px;border-radius:16px;min-height:62px;background:linear-gradient(180deg,#f3d27a 0%,#e3b53b 52%,#c99a25 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.12)}
+.cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:shine 3.4s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-60%}85%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.cta::after{animation:none;display:none}}
+.skip{display:block;margin:16px auto 0;background:none;border:0;font:inherit;color:var(--muted);font-size:15px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px;padding:0 8px}
+.rc{max-width:520px;margin:30px auto 0;background:var(--rc);border:1px solid var(--line);border-radius:20px;padding:18px 22px}
+.rc h2{font-size:15px;margin:0 0 8px;color:var(--ink)}
+.rc dl{margin:0}
+.rc dl div{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:9px 0;border-top:1px solid var(--line)}
+.rc dt{color:var(--muted)} .rc dd{margin:0;font-weight:700;text-align:right;color:var(--ink)}
+
+/* 1 Noche: como la referencia. Halo dorado arriba, todo oscuro */
+.d1 body,body.d1{background:radial-gradient(70% 50% at 50% 0%,rgba(227,181,59,.16),transparent 70%),var(--page)}
+.d1 .offer{border:1px solid rgba(227,181,59,.16);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}
+
+@media (max-width:600px){
+  .wrap{padding-top:20px}
+  .offer{padding:30px 16px 24px;border-radius:22px}
+  .offer h1{font-size:34px;margin-bottom:24px;line-height:1.3}
+  .rows li{font-size:15.5px;grid-template-columns:40px 1fr;gap:12px}
+  .ic{width:40px;height:40px}
+  .price .big{font-size:54px}
+  .cta-wrap{display:block}
+  .cta{width:100%;justify-content:center;font-size:17.5px;padding:17px 18px}
+}
+@media (max-width:380px){.offer h1{font-size:30px}.rows li{font-size:15px}}
+.pbar{position:fixed;left:0;right:0;bottom:0;background:#14161d;border-top:1px solid #2a2e38;padding:6px 8px;z-index:9;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;align-items:center;font-family:-apple-system,sans-serif}
+.pbar span{color:#8a909c;font-size:12px;margin-right:2px}
+.pbar a{color:#fff;font-size:12.5px;padding:7px 10px;border-radius:8px;text-decoration:none;border:1px solid #3a3f4c}
+.pbar a[aria-current]{background:#e3b53b;color:#14161d;border-color:#e3b53b}
+body:not(.clean){padding-bottom:96px}
+body.clean .pbar{display:none}
+</style>
+</head>
+<body>
+<main class="wrap" id="app"></main>
+<script>
+var q=new URLSearchParams(location.search), AM=q.get('plan')==='am', BUY=q.get('buy')||'funnel';
+document.body.classList.add('d1');
+if (q.get('clean')==='1') document.body.classList.add('clean');
+function svg(p,w){ return '<svg width="'+(w||20)+'" height="'+(w||20)+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p+'</svg>'; }
+var I={
+  ok:svg('<path d="M5 12.5l4.5 4.5L19 7.5"/>',16),
+  tick:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  arrow:svg('<path d="M5 12h14M13 6l6 6-6 6"/>')
+};
+/* Datos de ejemplo: en produccion llegan del pedido y del backend (precios de /plans-lp/ el 23-10: 89 al mes, 278 lifetime) */
+var X={order:'#48213', up:'$99', ref:'$278', pct:'64%', until:'Nov 14, 2026', renew:'Nov 27, 2026'};
+var FG='Forex &amp; Gold VIP', CR='Crypto VIP', ONCE='<b>Only on this page.</b> Gone when you leave';
+/* Que compro -> que se le ofrece (Jaime 27-10). Add = otro mercado Lifetime; Upgrade = de Monthly a Lifetime (el Monthly se cancela al pagar) */
+var CASES={
+  funnel:{plan:FG+' Lifetime', paid:[['Paid','$99, one-time'],['Monthly renewal','Stopped']], kind:'add', mk:CR},
+  fgm:{plan:FG+' Monthly', paid:[['Paid','$89, monthly'],['Next renewal',X.renew]], kind:'up', mk:FG},
+  cm:{plan:CR+' Monthly', paid:[['Paid','$89, monthly'],['Next renewal',X.renew]], kind:'up', mk:CR},
+  fgl:{plan:FG+' Lifetime', paid:[['Paid','$278, one-time']], kind:'add', mk:CR},
+  cl:{plan:CR+' Lifetime', paid:[['Paid','$278, one-time']], kind:'add', mk:FG},
+  /* All Markets Monthly: upgrade a All Markets Lifetime $149 con $399 tachado (Jaime 27-10) */
+  amm:{plan:'All Markets VIP Monthly', paid:[['Paid','$139, monthly'],['Next renewal',X.renew]], kind:'up', mk:'All Markets VIP', r1:'Keep <b>All Markets VIP</b> for life', up:'$149', ref:'$399', pct:'63%'}
+};
+var C=Object.prototype.hasOwnProperty.call(CASES,BUY)?CASES[BUY]:CASES.funnel, add=C.kind==='add', am=AM&&BUY==='funnel';
+var PR={up:C.up||X.up, ref:C.ref||X.ref, pct:C.pct||X.pct};
+var rows=add?[
+  am?'Keep <b>Crypto VIP</b> after '+X.until:'Lifetime access to the <b>'+C.mk+' group</b>',
+  '<b>One payment</b>, no monthly fees', ONCE
+]:[
+  C.r1||'Keep the <b>'+C.mk+' group</b> for life',
+  '<b>One payment</b>, your monthly billing stops', ONCE
+];
+var facts=[['Order',X.order],['Plan',C.plan]].concat(C.paid);
+if (am) facts.push(['Crypto VIP access','Ends '+X.until]);
+document.getElementById('app').innerHTML=
+ '<p class="ok"><i>'+I.ok+'</i><span><b>Payment confirmed.</b> Your '+C.plan+' is active.</span></p>'+
+ '<section class="offer">'+
+  '<span class="tag">Exclusive Lifetime upgrade</span>'+
+  (add?'<h1>Add <span class="g">'+C.mk+'</span> Lifetime</h1>':'<h1>Upgrade to <span class="g">Lifetime</span></h1>')+
+  '<ul class="rows">'+rows.map(function(r){return '<li><span class="ic">'+I.tick+'</span><span>'+r+'</span></li>';}).join('')+'</ul>'+
+  '<div class="price num"><span class="big">'+PR.up+'</span><s>'+PR.ref+'</s><span class="save">Save '+PR.pct+'</span></div>'+
+  '<span class="cta-wrap"><button class="cta" type="button">'+(add?'Yes, add '+C.mk:'Yes, upgrade to Lifetime')+' '+I.arrow+'</button></span>'+
+  '<button class="skip" type="button">No thanks, go to My Account</button>'+
+ '</section>'+
+ '<section class="rc"><h2>Your order</h2><dl class="num">'+
+  facts.map(function(f){return '<div><dt>'+f[0]+'</dt><dd>'+f[1]+'</dd></div>';}).join('')+'</dl></section>';
+/* Selector de casos, solo para la preview */
+var L=[['funnel','Cancel flow'],['fgm','Forex Monthly'],['cm','Crypto Monthly'],['fgl','Forex Lifetime'],['cl','Crypto Lifetime'],['amm','All Markets Monthly']];
+var nav=document.createElement('nav'); nav.className='pbar'; nav.setAttribute('aria-label','Purchase');
+nav.innerHTML='<span>Bought</span>'+L.map(function(l){return '<a href="?buy='+l[0]+'"'+(l[0]===BUY&&!AM?' aria-current="page"':'')+'>'+l[1]+'</a>';}).join('')+'<a href="?buy=funnel&amp;plan=am"'+(AM?' aria-current="page"':'')+'>Cancel flow AM</a>';
+document.body.appendChild(nav);
+</script>
+</body>
+</html>
