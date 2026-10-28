@@ -1,19 +1,19 @@
 {
   "sample": false,
   "monthlyEstimated": false,
-  "updatedAt": "2026-10-28T15:15:02Z",
+  "updatedAt": "2026-10-28T16:15:03Z",
   "source": "myfxbook-api",
   "account": {
     "name": "The Howl",
     "myfxbookUrl": "https://www.myfxbook.com/members/Thehowl/howl/12236359",
-    "gain": 21.09,
-    "monthly": 1.6,
-    "drawdown": 9.03,
+    "gain": 19.81,
+    "monthly": 1.51,
+    "drawdown": 9.43,
     "daily": 0.05,
-    "profitFactor": 1.24,
-    "pips": 81778.1,
+    "profitFactor": 1.22,
+    "pips": 78118.1,
     "trackingSince": "2025-10-31",
-    "balance": 2040.79,
+    "balance": 2019.2,
     "currency": "USD"
   },
   "monthlyGains": [
@@ -67,7 +67,7 @@
     },
     {
       "month": "2026-10",
-      "gain": 0.05
+      "gain": -1.01
     }
   ]
 }
