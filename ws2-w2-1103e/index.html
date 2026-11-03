@@ -273,6 +273,11 @@ html.wx-osc,html.wx-osc body{background:#090a0c!important;color-scheme:dark}
 .wx-lp .wx-sp-fila{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;font-family:'Sora',-apple-system,system-ui,sans-serif;font-size:13px;line-height:21px;color:#adb3bb;flex-wrap:wrap}
 .wx-lp .wx-sp-fila b{color:#fff;font-weight:800}
 .wx-lp .wx-sp-fila i{width:4px;height:4px;border-radius:50%;background:#3a3f4c}
+.wx-lp .wx-tp-carousel{-webkit-mask-image:none;mask-image:none}
+.wx-lp .wx-tp-track{will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.wx-lp .wx-tp-carousel::before,.wx-lp .wx-tp-carousel::after{content:"";position:absolute;top:0;bottom:0;width:28px;z-index:2;pointer-events:none}
+.wx-lp .wx-tp-carousel::before{left:0;background:linear-gradient(90deg,#121210,rgba(18,18,16,0))}
+.wx-lp .wx-tp-carousel::after{right:0;background:linear-gradient(270deg,#121210,rgba(18,18,16,0))}
 .wx-lp .wx-par-botones{--ancho-solo:200px}
 </style>
 <div class="wx-lp wx-osc">
