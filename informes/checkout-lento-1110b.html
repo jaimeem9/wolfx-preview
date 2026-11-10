@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Checkout lento WolfX</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: una columna de lectura; cifras grandes arriba, causas por impacto */
+:root{
+  --bg:#f6f5f2; --fg:#1c1a17; --muted:#6a655c; --line:#e2ded5; --card:#fff;
+  --accent:#a8780f; --bad:#b3261e; --warn:#9a6200; --ok:#1e7a46;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Source Sans 3",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--fg:#efebe3;--muted:#a59f93;--line:#2f2b24;--card:#1d1a15;--accent:#e2b545;--bad:#ff8a80;--warn:#f0b35a;--ok:#6fd39b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--fg:#efebe3;--muted:#a59f93;--line:#2f2b24;--card:#1d1a15;--accent:#e2b545;--bad:#ff8a80;--warn:#f0b35a;--ok:#6fd39b;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:17px/1.55 var(--body)}
+.wrap{max-width:760px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--display);text-wrap:balance;line-height:1.15}
+h1{font-size:2rem;margin:0 0 8px}
+h2{font-size:1.3rem;margin:40px 0 12px}
+.lede{color:var(--muted);margin:0 0 24px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.n{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.n b{display:block;font-family:var(--display);font-size:2rem;font-variant-numeric:tabular-nums;color:var(--bad)}
+.n span{color:var(--muted);font-size:.92rem}
+ol,ul{padding-left:1.2em;margin:0;display:grid;gap:12px}
+li{min-width:0}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid currentColor;margin-right:6px}
+.alta{color:var(--bad)}.media{color:var(--warn)}.baja{color:var(--muted)}
+.num{font-family:var(--display);font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+td.r,th.r{text-align:right;font-family:var(--display);font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:.92rem;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>El checkout de wolfxsignals.com tarda demasiado en dejar pagar en móvil</h1>
+<p class="lede">Medido el 09-11-2026 en wolfxsignals.com, simulando un clic en «All Markets VIP» de /plans/ (producto 1754), con Chromium en un iPhone 13 con 4G medio y CPU media. El pago funciona; el problema es la espera.</p>
+
+<div class="nums">
+  <div class="n"><b>21,6-22,5 s</b><span>hasta que el botón de pagar estaba usable en móvil, antes de tocar nada (2 pasadas)</span></div>
+  <div class="n"><b>14 s</b><span>lo mismo en PC sin limitar la red (1 pasada)</span></div>
+  <div class="n"><b>397</b><span>peticiones al abrir el checkout</span></div>
+  <div class="n"><b>7,1 MB</b><span>descargados, de ellos 5,4 MB de JavaScript</span></div>
+</div>
+
+<h2>10-11: activo para todos</h2>
+<ul>
+  <li><span class="tag baja">En vivo</span>Snippet activado para todos. En vivo, con los 17 productos: mismo producto, total y métodos de pago, campo de tarjeta de Stripe cargado, cero errores. PC a 1280 sin desbordes. El píxel de Meta, GA4, Google Ads, Clarity y el seguimiento propio siguen disparando.</li>
+  <li><span class="tag baja">Cifras</span>Las 21,6-22,5 s de arriba salieron del primer método de medida (09-11 por la mañana). Con el método afinado, el mismo checkout daba 18,3 s antes del snippet y 16,0 s después; las cifras de abajo usan ese.</li>
+  <li><span class="tag media">Tiempos</span>Botón de pagar usable, en vivo y en los 17 productos: <b>móvil medio de 14,2 a 17,3 s</b> (mediana <span class="num">16,0 s</span>; antes 18,3 s). <b>Buena conexión, de 6,7 a 7,3 s</b> (igual que antes).</li>
+  <li><span class="tag baja">Seguridad</span>El snippet solo deja de cargar scripts en el checkout: no lee datos del cliente, no abre accesos nuevos y no cambia permisos: es una función enganchada a <code>wp_enqueue_scripts</code> y <code>wp_footer</code> que desencola scripts por handle o ruta, solo cuando <code>is_checkout()</code>.</li>
+  <li><span class="tag alta">Pendiente</span>Nuestro objetivo es bajar de 5 s en móvil medio. Eso exige reducir los 3,8 s del servidor (con una copia de prueba en SiteGround) y el CSS combinado de 1,6 MB.</li>
+</ul>
+
+<h2>Sobre la caché y la pasarela</h2>
+<ul>
+  <li><span class="tag media">Medido el 10-11</span>El checkout no pasa nunca por la caché: en tres cargas de hoy, con cookies como un navegador normal, SiteGround respondió <code>x-proxy-cache: BYPASS</code> con <code>Cache-Control: no-cache, max-age=0, private</code>, y tardó 3,79, 3,87 y 3,95 s en servir la página (curl, tiempo total). /plans/, que sí se cachea, sirvió su primer byte en 1,49 s. Entendemos que dejar el checkout fuera de caché es lo normal; si hay algo de la configuración que se nos escapa, nos lo decís.</li>
+  <li><span class="tag media">Pasarela</span>No vemos una caída de la pasarela: los tiempos se repiten en todas las pasadas de dos días y en los 17 productos. El tiempo se reparte entre los 3,8 s del servidor, el CSS combinado de 1,6 MB y lo que cargan las pasarelas en cada visita (abajo).</li>
+</ul>
+
+<h2>Métodos de pago: lo que se usa y lo que pesa</h2>
+<p class="lede">Pedidos nuevos pagados desde el checkout del 12-08 al 10-11-2026 (90 días, sin renovaciones ni pedidos de 0 USD). Peso medido en una carga del checkout en móvil el 09-11, en bytes transferidos; las pasarelas cargan lo mismo con el snippet activo.</p>
+<div class="tbl"><table>
+<tr><th>Método</th><th class="r">Pedidos</th><th class="r">USD</th><th class="r">Peso en el checkout</th></tr>
+<tr><td>Tarjeta (Stripe)</td><td class="r">68</td><td class="r">12.217</td><td class="r">2,23 MB, 134 peticiones</td></tr>
+<tr><td>Apple Pay</td><td class="r">39</td><td class="r">5.937</td><td class="r">casi nada, 24 peticiones</td></tr>
+<tr><td>Cripto (Payerurl)</td><td class="r">26</td><td class="r">3.892</td><td class="r">0,01 MB, 2 peticiones</td></tr>
+<tr><td>Google Pay</td><td class="r">18</td><td class="r">2.696</td><td class="r">0,52 MB, 27 peticiones</td></tr>
+<tr><td>PayPal</td><td class="r">10</td><td class="r">1.958</td><td class="r">0,19 MB, 21 peticiones</td></tr>
+<tr><td>Link (Stripe)</td><td class="r">0</td><td class="r">0</td><td class="r">0,67 MB, 6 peticiones</td></tr>
+<tr><td>Los 8 métodos alternativos de PayPal</td><td class="r">0</td><td class="r">0</td><td class="r">dentro de PayPal</td></tr>
+<tr><td>hCaptcha (antifraude de Stripe)</td><td class="r">-</td><td class="r">-</td><td class="r">1,21 MB, 19 peticiones</td></tr>
+</table></div>
+<ul style="margin-top:16px">
+  <li><span class="tag alta">Link</span>Ningún pedido aparece pagado con Link y en la carga medida pesó 0,67 MB. Un pago con Link podría quedar registrado como tarjeta, así que convendría confirmarlo en el panel de Stripe (Payments, filtrando por método) antes de apagarlo. ¿Lo veis vosotros o preferís que lo hagamos nosotros?</li>
+  <li><span class="tag media">PayPal</span>Los 10 pedidos son «PayPal» a secas: ninguno de los métodos alternativos ni Pay Later. Los mensajes de Pay Later además dieron error 422 en la carga medida. ¿Veis bien quitar los mensajes de Pay Later y los métodos que no se usan?</li>
+  <li><span class="tag media">hCaptcha</span>Es lo más pesado después de la base de Stripe. Es protección contra fraude, así que no proponemos quitarlo sin vuestro criterio: ¿se puede cargar solo al pulsar pagar?</li>
+  <li><span class="tag baja">Se quedan</span>Tarjeta, Apple Pay, Google Pay y cripto venden; no tocaríamos ninguno.</li>
+</ul>
+
+<h2>Actualización 09-11, 21:45: lo que hemos hecho nosotros</h2>
+<ul>
+  <li><span class="tag media">Preparado</span><b>Snippet «Web OS - Checkout ligero» (Code Snippets, id 50).</b> Quita del checkout los scripts que no usa: Responsive Addons, el reproductor de vídeo de WordPress, la galería de ficha de producto y el medidor de contraseña. Hasta el 10-11 solo actuaba con una cookie de prueba; desde entonces está activo para todos.</li>
+  <li><span class="tag baja">Medido</span>Móvil medio, All Markets: botón de pagar a los <span class="num">16,0 s</span> en vez de <span class="num">18,3 s</span> (dos pasadas de cada). Con buena conexión no cambia: unos <span class="num">7 s</span> con y sin él.</li>
+  <li><span class="tag baja">Comprobado</span>Los 17 productos con ventas en los últimos 90 días: mismo producto, total y métodos de pago con y sin el snippet, sin errores y sin desbordes a 390 px. Captura comparada píxel a píxel: idéntica.</li>
+  <li><span class="tag alta">No aplicado</span>Quitar también el CSS de Responsive Addons (1,6 MB pasaría a 0,75 MB; en una pasada de prueba ganó unos 5 s) <b>cambia el aspecto</b>: la caja de pago y los puntos del carrusel de reseñas usan ese CSS. Para hacerlo hay que copiar antes esas reglas al CSS del checkout.</li>
+  <li><span class="tag alta">El suelo</span>Antes de que el móvil reciba nada pasan unos <span class="num">3,8 s</span> en el servidor: <span class="num">1,7 s</span> para meter el producto en el carrito y redirigir, y <span class="num">2,1 s</span> para generar el checkout. Mientras eso siga así, nuestro objetivo de 5 s no se alcanza.</li>
+  <li><span class="tag baja">Visto de paso</span>En el carrusel de reseñas del checkout, la primera tarjeta sale cortada por la izquierda a 390 px (ya pasaba antes del snippet).</li>
+</ul>
+
+<h2>Por qué tarda, de más a menos impacto</h2>
+<ol>
+  <li><span class="tag alta">Alta</span><b>Las pasarelas cargan de todo a la vez.</b> Solo Stripe hace 46 peticiones y baja 2,7 MB: monta el formulario de tarjeta, Link, Google Pay y cuatro marcos de Apple Pay, y además carga hCaptcha antifraude (1 MB). PayPal añade 9 peticiones más y Payerurl (cripto) otra. Solo Stripe es algo más de un tercio del peso de la página.</li>
+  <li><span class="tag alta">Alta</span><b>El servidor es lento en todo lo que no se puede cachear.</b> El HTML del checkout tarda 1,8-4 s en generarse. Incluso la API vacía de WordPress (/wp-json/) tarda 1,5 s, así que el coste es de base (plugins o PHP), no de esta página.</li>
+  <li><span class="tag media">Media</span><b>121 ficheros propios sueltos, muchos bloqueando el pintado.</b> 21 de WooCommerce, 24 de WordPress, 9 a 18 de «Responsive Addons for Elementor», Happy Addons, Jetpack. Cada uno espera 0,5-0,8 s al servidor. Entre ellos zxcvbn (405 KB), el medidor de fuerza de contraseña, que solo hace falta si el cliente escribe una contraseña al crear la cuenta.</li>
+  <li><span class="tag media">Media</span><b>El HTML del checkout pesa 468 KB</b> antes de comprimir, por CSS y datos metidos en línea.</li>
+  <li><span class="tag media">Media</span><b>Hipótesis por confirmar: el antibot de SiteGround.</b> Tras unas pocas cargas seguidas desde la misma IP, SiteGround dejó de servir el checkout y mandó su pantalla de verificación (sgcaptcha). Un cliente que recarga porque ve que tarda podría acabar ahí. Se mira en Site Tools &gt; Security.</li>
+</ol>
+
+<h2>Otros fallos encontrados en la web</h2>
+<ul>
+  <li><span class="tag alta">Alta</span><b>La home y /plans/ cargan un vídeo de 757 KB desde el servidor de demos del tema</b> (staging2.liquid-themes.com). Es el fichero más pesado de las dos páginas, no es nuestro y si lo borran desaparece. En una de las pasadas falló la carga.</li>
+  <li><span class="tag media">Media</span><b>Una fuente de iconos de 557 KB</b> (huge-icons de Happy Addons) en home y /plans/, para unos pocos iconos.</li>
+  <li><span class="tag media">Media</span><b>/checkout/ con el carrito vacío entra en bucle</b>: más de 10 redirecciones y 12 s hasta que el navegador se rinde.</li>
+  <li><span class="tag baja">Baja</span><b>PayPal da error 422</b> al pedir los mensajes de «Pay Later»: dos errores en consola en cada checkout.</li>
+</ul>
+
+<h2>Cifras por página (móvil medio)</h2>
+<div class="tbl"><table>
+<tr><th>Página</th><th class="r">Primer byte</th><th class="r">Contenido principal</th><th class="r">Peticiones</th><th class="r">Peso</th></tr>
+<tr><td>Home</td><td class="r">0,9 s</td><td class="r">4,4 s</td><td class="r">81</td><td class="r">2,5 MB</td></tr>
+<tr><td>/plans/</td><td class="r">0,9 s</td><td class="r">4,5 s</td><td class="r">79</td><td class="r">2,5 MB</td></tr>
+<tr><td>Checkout All Markets</td><td class="r">4,2 s</td><td class="r">8,6 s</td><td class="r">397</td><td class="r">7,1 MB</td></tr>
+</table></div>
+<p class="note">Home y /plans/ medidas una vez cada una; el checkout, dos veces en móvil (22,5 s y 21,6 s hasta el botón) y una en PC. Por curl, el checkout con producto tarda 3,6-4,0 s en servirse en seis pruebas con tres productos distintos.</p>
+
+<h2>Lo que os proponemos mirar, por orden de impacto</h2>
+<ol>
+  <li><b>Pasarelas:</b> dejar en el checkout solo los métodos que se usan. En el plugin de Stripe (woo-stripe-payment), quitar los botones que estén duplicados y Link si no aporta ventas; en PayPal, apagar los mensajes de Pay Later.</li>
+  <li><b>Scripts sobrantes en el checkout:</b> el JS de Responsive Addons y zxcvbn ya los quita el snippet 50. Quedan Happy Addons y las estadísticas de Jetpack, y el CSS de Responsive Addons (antes hay que copiar al checkout las reglas que usa la caja de pago).</li>
+  <li><b>Servidor:</b> versión de PHP, caché de objetos (Memcached en SiteGround) y combinar/diferir JS en Speed Optimizer, excluyendo los de pago. Y revisar si el antibot está bloqueando a clientes.</li>
+  <li><b>Home y /plans/:</b> subir el vídeo a la biblioteca de medios (o quitarlo) y cambiar la fuente de iconos por SVG.</li>
+  <li><b>Arreglar el bucle</b> de /checkout/ vacío.</li>
+</ol>
+<p class="note">Lo único que hemos tocado es el snippet 50 de Code Snippets («Web OS - Checkout ligero»): solo deja de cargar scripts en el checkout y se apaga desactivándolo. Lo demás es configuración de WordPress y SiteGround, y ahí preferimos vuestro criterio: ¿qué veis viable de esta lista y para cuándo podríais tenerlo?</p>
+</div>
+</body>
+</html>
